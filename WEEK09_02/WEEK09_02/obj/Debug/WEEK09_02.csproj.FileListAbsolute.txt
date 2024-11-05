@@ -1,0 +1,10 @@
+C:\Users\gipro\source\repos\WEEK09_02\WEEK09_02\bin\Debug\WEEK09_02.exe.config
+C:\Users\gipro\source\repos\WEEK09_02\WEEK09_02\bin\Debug\WEEK09_02.exe
+C:\Users\gipro\source\repos\WEEK09_02\WEEK09_02\bin\Debug\WEEK09_02.pdb
+C:\Users\gipro\source\repos\WEEK09_02\WEEK09_02\obj\Debug\WEEK09_02.csproj.AssemblyReference.cache
+C:\Users\gipro\source\repos\WEEK09_02\WEEK09_02\obj\Debug\WEEK09_02.Form1.resources
+C:\Users\gipro\source\repos\WEEK09_02\WEEK09_02\obj\Debug\WEEK09_02.Properties.Resources.resources
+C:\Users\gipro\source\repos\WEEK09_02\WEEK09_02\obj\Debug\WEEK09_02.csproj.GenerateResource.cache
+C:\Users\gipro\source\repos\WEEK09_02\WEEK09_02\obj\Debug\WEEK09_02.csproj.CoreCompileInputs.cache
+C:\Users\gipro\source\repos\WEEK09_02\WEEK09_02\obj\Debug\WEEK09_02.exe
+C:\Users\gipro\source\repos\WEEK09_02\WEEK09_02\obj\Debug\WEEK09_02.pdb

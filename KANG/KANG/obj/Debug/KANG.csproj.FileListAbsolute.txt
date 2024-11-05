@@ -1,0 +1,10 @@
+C:\Users\gipro\source\repos\KANG\KANG\bin\Debug\KANG.exe.config
+C:\Users\gipro\source\repos\KANG\KANG\bin\Debug\KANG.exe
+C:\Users\gipro\source\repos\KANG\KANG\bin\Debug\KANG.pdb
+C:\Users\gipro\source\repos\KANG\KANG\obj\Debug\KANG.csproj.AssemblyReference.cache
+C:\Users\gipro\source\repos\KANG\KANG\obj\Debug\KANG.Form1.resources
+C:\Users\gipro\source\repos\KANG\KANG\obj\Debug\KANG.Properties.Resources.resources
+C:\Users\gipro\source\repos\KANG\KANG\obj\Debug\KANG.csproj.GenerateResource.cache
+C:\Users\gipro\source\repos\KANG\KANG\obj\Debug\KANG.csproj.CoreCompileInputs.cache
+C:\Users\gipro\source\repos\KANG\KANG\obj\Debug\KANG.exe
+C:\Users\gipro\source\repos\KANG\KANG\obj\Debug\KANG.pdb
