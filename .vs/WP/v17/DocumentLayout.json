@@ -7,7 +7,11 @@
       "RelativeMoniker": "D:0:0:{6A2BCEDC-57DB-4E39-9900-1F65BE4ED288}|pr1\\pr1.csproj|solutionrelative:pr1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6A2BCEDC-57DB-4E39-9900-1F65BE4ED288}|pr1\\pr1.csproj|c:\\users\\baek\\documents\\\uD559\uAD50\uC790\uB8CC\\\uB300\uD559\uC790\uB8CC\\2\uD559\uB1442\uD559\uAE30\\\uC708\uB3C4\uC6B0\uD504\uB85C\uADF8\uB798\uBC0D\\projects\\team_task\\wp\\pr1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{6A2BCEDC-57DB-4E39-9900-1F65BE4ED288}|pr1\\pr1.csproj|c:\\users\\baek\\documents\\\uD559\uAD50\uC790\uB8CC\\\uB300\uD559\uC790\uB8CC\\2\uD559\uB1442\uD559\uAE30\\\uC708\uB3C4\uC6B0\uD504\uB85C\uADF8\uB798\uBC0D\\projects\\team_task\\wp\\pr1\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{6A2BCEDC-57DB-4E39-9900-1F65BE4ED288}|pr1\\pr1.csproj|solutionrelative:pr1\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6A2BCEDC-57DB-4E39-9900-1F65BE4ED288}|pr1\\pr1.csproj|C:\\Users\\Baek\\Documents\\\uD559\uAD50\uC790\uB8CC\\\uB300\uD559\uC790\uB8CC\\2\uD559\uB1442\uD559\uAE30\\\uC708\uB3C4\uC6B0\uD504\uB85C\uADF8\uB798\uBC0D\\projects\\team_task\\WP\\pr1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{6A2BCEDC-57DB-4E39-9900-1F65BE4ED288}|pr1\\pr1.csproj|solutionrelative:pr1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
@@ -18,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -34,20 +38,33 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "App.config",
+              "DocumentMoniker": "C:\\Users\\Baek\\Documents\\\uD559\uAD50\uC790\uB8CC\\\uB300\uD559\uC790\uB8CC\\2\uD559\uB1442\uD559\uAE30\\\uC708\uB3C4\uC6B0\uD504\uB85C\uADF8\uB798\uBC0D\\projects\\team_task\\WP\\pr1\\App.config",
+              "RelativeDocumentMoniker": "pr1\\App.config",
+              "ToolTip": "C:\\Users\\Baek\\Documents\\\uD559\uAD50\uC790\uB8CC\\\uB300\uD559\uC790\uB8CC\\2\uD559\uB1442\uD559\uAE30\\\uC708\uB3C4\uC6B0\uD504\uB85C\uADF8\uB798\uBC0D\\projects\\team_task\\WP\\pr1\\App.config",
+              "RelativeToolTip": "pr1\\App.config",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAPAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2024-11-07T14:55:43.316Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Form1.cs",
               "DocumentMoniker": "C:\\Users\\Baek\\Documents\\\uD559\uAD50\uC790\uB8CC\\\uB300\uD559\uC790\uB8CC\\2\uD559\uB1442\uD559\uAE30\\\uC708\uB3C4\uC6B0\uD504\uB85C\uADF8\uB798\uBC0D\\projects\\team_task\\WP\\pr1\\Form1.cs",
               "RelativeDocumentMoniker": "pr1\\Form1.cs",
               "ToolTip": "C:\\Users\\Baek\\Documents\\\uD559\uAD50\uC790\uB8CC\\\uB300\uD559\uC790\uB8CC\\2\uD559\uB1442\uD559\uAE30\\\uC708\uB3C4\uC6B0\uD504\uB85C\uADF8\uB798\uBC0D\\projects\\team_task\\WP\\pr1\\Form1.cs",
               "RelativeToolTip": "pr1\\Form1.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAQAAAA",
+              "ViewState": "AQIAAC0AAAAAAAAAAAAAADUAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-07T14:36:31.981Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Form1.cs [\uB514\uC790\uC778]",
               "DocumentMoniker": "C:\\Users\\Baek\\Documents\\\uD559\uAD50\uC790\uB8CC\\\uB300\uD559\uC790\uB8CC\\2\uD559\uB1442\uD559\uAE30\\\uC708\uB3C4\uC6B0\uD504\uB85C\uADF8\uB798\uBC0D\\projects\\team_task\\WP\\pr1\\Form1.cs",
               "RelativeDocumentMoniker": "pr1\\Form1.cs",

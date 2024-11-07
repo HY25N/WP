@@ -9,13 +9,31 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SQLite;
 using System.IO;
-using System.Data.SqlClient;
-using System.Runtime.InteropServices;
-using System.Xml.Linq;
-using System.Runtime.Remoting.Contexts;
+using System.Data.Entity;
+using System.Diagnostics;
+
 
 namespace pr1
 {
+    public class Student
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public int Age { get; set; }
+        public string Major { get; set; }
+    }
+
+    public class ApplicationDbContext : DbContext
+    {
+        public DbSet<Student> Students { get; set; }
+
+        public ApplicationDbContext() : base("DefaultConnection")
+        {
+            Database.SetInitializer(new CreateDatabaseIfNotExists<ApplicationDbContext>());
+
+        }
+    }
+
 
     public partial class Form1 : Form
     {
@@ -30,6 +48,35 @@ namespace pr1
         private void Form1_Load(object sender, EventArgs e)
         {
             // todo 더 상위에서 초기화 해야할듯
+            var context = new ApplicationDbContext();
+            context.Database.Initialize(force: true);
+            // context.Database.Create();
+
+            // 자동 생성에 문자가 있어서 테이블 수동 생성한다.
+            context.Database.ExecuteSqlCommand(@"
+                CREATE TABLE IF NOT EXISTS Students (
+                    Id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    Name TEXT NOT NULL,
+                    Age INTEGER NOT NULL,
+                    Major TEXT NOT NULL
+                )");
+
+            // 데이터 추가
+            context.Students.Add(new Student { Name = "Alice", Age = 21, Major = "Computer Science" });
+            context.SaveChanges();
+
+            // 데이터 조회
+            var students = context.Students.ToList();
+            foreach (var student in students)
+            {
+                Debug.WriteLine($"ID: {student.Id}, Name: {student.Name}, Age: {student.Age}, Major: {student.Major}");
+            }
+
+
+
+
+
+
             InitDB("db");
 
             UpdateListView();
