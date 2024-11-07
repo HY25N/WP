@@ -1,0 +1,10 @@
+C:\Users\Baek\Documents\학교자료\대학자료\2학년2학기\윈도우프로그래밍\projects\team_task\WP\practice1\bin\Debug\practice1.exe.config
+C:\Users\Baek\Documents\학교자료\대학자료\2학년2학기\윈도우프로그래밍\projects\team_task\WP\practice1\bin\Debug\practice1.exe
+C:\Users\Baek\Documents\학교자료\대학자료\2학년2학기\윈도우프로그래밍\projects\team_task\WP\practice1\bin\Debug\practice1.pdb
+C:\Users\Baek\Documents\학교자료\대학자료\2학년2학기\윈도우프로그래밍\projects\team_task\WP\practice1\obj\Debug\practice1.csproj.AssemblyReference.cache
+C:\Users\Baek\Documents\학교자료\대학자료\2학년2학기\윈도우프로그래밍\projects\team_task\WP\practice1\obj\Debug\practice1.Form1.resources
+C:\Users\Baek\Documents\학교자료\대학자료\2학년2학기\윈도우프로그래밍\projects\team_task\WP\practice1\obj\Debug\practice1.Properties.Resources.resources
+C:\Users\Baek\Documents\학교자료\대학자료\2학년2학기\윈도우프로그래밍\projects\team_task\WP\practice1\obj\Debug\practice1.csproj.GenerateResource.cache
+C:\Users\Baek\Documents\학교자료\대학자료\2학년2학기\윈도우프로그래밍\projects\team_task\WP\practice1\obj\Debug\practice1.csproj.CoreCompileInputs.cache
+C:\Users\Baek\Documents\학교자료\대학자료\2학년2학기\윈도우프로그래밍\projects\team_task\WP\practice1\obj\Debug\practice1.exe
+C:\Users\Baek\Documents\학교자료\대학자료\2학년2학기\윈도우프로그래밍\projects\team_task\WP\practice1\obj\Debug\practice1.pdb

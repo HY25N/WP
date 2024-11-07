@@ -1,0 +1,10 @@
+C:\Users\Baek\Documents\학교자료\대학자료\2학년2학기\윈도우프로그래밍\projects\20212164_백홍빈\WEEK09_07\bin\Debug\WEEK09_07.exe.config
+C:\Users\Baek\Documents\학교자료\대학자료\2학년2학기\윈도우프로그래밍\projects\20212164_백홍빈\WEEK09_07\bin\Debug\WEEK09_07.exe
+C:\Users\Baek\Documents\학교자료\대학자료\2학년2학기\윈도우프로그래밍\projects\20212164_백홍빈\WEEK09_07\bin\Debug\WEEK09_07.pdb
+C:\Users\Baek\Documents\학교자료\대학자료\2학년2학기\윈도우프로그래밍\projects\20212164_백홍빈\WEEK09_07\obj\Debug\WEEK09_07.csproj.AssemblyReference.cache
+C:\Users\Baek\Documents\학교자료\대학자료\2학년2학기\윈도우프로그래밍\projects\20212164_백홍빈\WEEK09_07\obj\Debug\WEEK09_07.Form1.resources
+C:\Users\Baek\Documents\학교자료\대학자료\2학년2학기\윈도우프로그래밍\projects\20212164_백홍빈\WEEK09_07\obj\Debug\WEEK09_07.Properties.Resources.resources
+C:\Users\Baek\Documents\학교자료\대학자료\2학년2학기\윈도우프로그래밍\projects\20212164_백홍빈\WEEK09_07\obj\Debug\WEEK09_07.csproj.GenerateResource.cache
+C:\Users\Baek\Documents\학교자료\대학자료\2학년2학기\윈도우프로그래밍\projects\20212164_백홍빈\WEEK09_07\obj\Debug\WEEK09_07.csproj.CoreCompileInputs.cache
+C:\Users\Baek\Documents\학교자료\대학자료\2학년2학기\윈도우프로그래밍\projects\20212164_백홍빈\WEEK09_07\obj\Debug\WEEK09_07.exe
+C:\Users\Baek\Documents\학교자료\대학자료\2학년2학기\윈도우프로그래밍\projects\20212164_백홍빈\WEEK09_07\obj\Debug\WEEK09_07.pdb

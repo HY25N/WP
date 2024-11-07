@@ -1,0 +1,65 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Baek\\Documents\\\uD559\uAD50\uC790\uB8CC\\\uB300\uD559\uC790\uB8CC\\2\uD559\uB1442\uD559\uAE30\\\uC708\uB3C4\uC6B0\uD504\uB85C\uADF8\uB798\uBC0D\\projects\\team_task\\WP\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{6A2BCEDC-57DB-4E39-9900-1F65BE4ED288}|pr1\\pr1.csproj|c:\\users\\baek\\documents\\\uD559\uAD50\uC790\uB8CC\\\uB300\uD559\uC790\uB8CC\\2\uD559\uB1442\uD559\uAE30\\\uC708\uB3C4\uC6B0\uD504\uB85C\uADF8\uB798\uBC0D\\projects\\team_task\\wp\\pr1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6A2BCEDC-57DB-4E39-9900-1F65BE4ED288}|pr1\\pr1.csproj|solutionrelative:pr1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6A2BCEDC-57DB-4E39-9900-1F65BE4ED288}|pr1\\pr1.csproj|c:\\users\\baek\\documents\\\uD559\uAD50\uC790\uB8CC\\\uB300\uD559\uC790\uB8CC\\2\uD559\uB1442\uD559\uAE30\\\uC708\uB3C4\uC6B0\uD504\uB85C\uADF8\uB798\uBC0D\\projects\\team_task\\wp\\pr1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{6A2BCEDC-57DB-4E39-9900-1F65BE4ED288}|pr1\\pr1.csproj|solutionrelative:pr1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "C:\\Users\\Baek\\Documents\\\uD559\uAD50\uC790\uB8CC\\\uB300\uD559\uC790\uB8CC\\2\uD559\uB1442\uD559\uAE30\\\uC708\uB3C4\uC6B0\uD504\uB85C\uADF8\uB798\uBC0D\\projects\\team_task\\WP\\pr1\\Form1.cs",
+              "RelativeDocumentMoniker": "pr1\\Form1.cs",
+              "ToolTip": "C:\\Users\\Baek\\Documents\\\uD559\uAD50\uC790\uB8CC\\\uB300\uD559\uC790\uB8CC\\2\uD559\uB1442\uD559\uAE30\\\uC708\uB3C4\uC6B0\uD504\uB85C\uADF8\uB798\uBC0D\\projects\\team_task\\WP\\pr1\\Form1.cs",
+              "RelativeToolTip": "pr1\\Form1.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-07T14:36:31.981Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Form1.cs [\uB514\uC790\uC778]",
+              "DocumentMoniker": "C:\\Users\\Baek\\Documents\\\uD559\uAD50\uC790\uB8CC\\\uB300\uD559\uC790\uB8CC\\2\uD559\uB1442\uD559\uAE30\\\uC708\uB3C4\uC6B0\uD504\uB85C\uADF8\uB798\uBC0D\\projects\\team_task\\WP\\pr1\\Form1.cs",
+              "RelativeDocumentMoniker": "pr1\\Form1.cs",
+              "ToolTip": "C:\\Users\\Baek\\Documents\\\uD559\uAD50\uC790\uB8CC\\\uB300\uD559\uC790\uB8CC\\2\uD559\uB1442\uD559\uAE30\\\uC708\uB3C4\uC6B0\uD504\uB85C\uADF8\uB798\uBC0D\\projects\\team_task\\WP\\pr1\\Form1.cs [\uB514\uC790\uC778]",
+              "RelativeToolTip": "pr1\\Form1.cs [\uB514\uC790\uC778]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-07T14:36:29.039Z",
+              "EditorCaption": " [\uB514\uC790\uC778]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+C:\Users\Baek\Documents\학교자료\대학자료\2학년2학기\윈도우프로그래밍\projects\team_task\WP\WP\bin\Debug\WP.exe.config
+C:\Users\Baek\Documents\학교자료\대학자료\2학년2학기\윈도우프로그래밍\projects\team_task\WP\WP\bin\Debug\WP.exe
+C:\Users\Baek\Documents\학교자료\대학자료\2학년2학기\윈도우프로그래밍\projects\team_task\WP\WP\bin\Debug\WP.pdb
+C:\Users\Baek\Documents\학교자료\대학자료\2학년2학기\윈도우프로그래밍\projects\team_task\WP\WP\obj\Debug\WP.csproj.AssemblyReference.cache
+C:\Users\Baek\Documents\학교자료\대학자료\2학년2학기\윈도우프로그래밍\projects\team_task\WP\WP\obj\Debug\WP.Form1.resources
+C:\Users\Baek\Documents\학교자료\대학자료\2학년2학기\윈도우프로그래밍\projects\team_task\WP\WP\obj\Debug\WP.Properties.Resources.resources
+C:\Users\Baek\Documents\학교자료\대학자료\2학년2학기\윈도우프로그래밍\projects\team_task\WP\WP\obj\Debug\WP.csproj.GenerateResource.cache
+C:\Users\Baek\Documents\학교자료\대학자료\2학년2학기\윈도우프로그래밍\projects\team_task\WP\WP\obj\Debug\WP.csproj.CoreCompileInputs.cache
+C:\Users\Baek\Documents\학교자료\대학자료\2학년2학기\윈도우프로그래밍\projects\team_task\WP\WP\obj\Debug\WP.exe
+C:\Users\Baek\Documents\학교자료\대학자료\2학년2학기\윈도우프로그래밍\projects\team_task\WP\WP\obj\Debug\WP.pdb
