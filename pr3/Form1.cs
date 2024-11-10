@@ -76,7 +76,7 @@ namespace pr3
             );");
 
 
-
+            // todo 클래스 생성 순서 때문인지 아래 쿼리보다 더미데이터가 먼저 생성되는 듯.
             // 학번은 pk로 쓸 것이기 때문에 숫자타입으로 정의한다.
             context.Database.ExecuteSqlCommand(@"
                 UPDATE sqlite_sequence 
@@ -117,6 +117,9 @@ namespace pr3
         private void UpdateStudentGridView()
         {
             StudentControl studentListViewControl = new StudentControl();
+
+            // 유저컨트롤의 경우, 디자이너 화면에는 dock 속성이 보이질 않아 코드로 작성함. 
+            studentListViewControl.Dock = DockStyle.Fill;
             
             var students = context.Students.ToList();
             
