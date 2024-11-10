@@ -10,11 +10,14 @@ using System.Linq;
 using System.Runtime.Remoting.Contexts;
 using System.Windows.Forms;
 
+
 namespace pr3
 {
+
     public partial class Form1 : Form
     {
-        private ApplicationDbContext context;
+        public ApplicationDbContext context;
+        private StudentControl studentListViewControl;
 
 
         public Form1()
@@ -26,15 +29,18 @@ namespace pr3
         {
             InitDB("db");
 
-            LoginForm logInForm = new LoginForm();
-            logInForm.ShowDialog();
+            // LoginForm logInForm = new LoginForm();
+            // logInForm.ShowDialog();
 
-            UserControl uc = new SampleUserControl1();
-            // studentPanel.BackColor = Color.White;
-            // studentPanel.ForeColor = Color.White;
-            
-            // viewPanel.Controls.Clear();
-            viewPanel.Controls.Add(uc);
+            // UserControl uc = new SampleUserControl1();
+            // // studentPanel.BackColor = Color.White;
+            // // studentPanel.ForeColor = Color.White;
+            //
+            // // viewPanel.Controls.Clear();
+            // viewPanel.Controls.Add(uc);
+            studentListViewControl = new StudentControl(context);
+
+            UpdateStudentGridView();
 
             CreateStudentsDummy();
         }
@@ -66,26 +72,52 @@ namespace pr3
             context.Database.Initialize(force: true);
 
             // todo 자동 생성에 문자가 있어서 테이블을 수동 생성한다.
-            context.Database.ExecuteSqlCommand(@"
-                CREATE TABLE IF NOT EXISTS Students (
-                StudentID INTEGER PRIMARY KEY AUTOINCREMENT,  -- 학번 (자동 증가)
-                Name VARCHAR(100) NOT NULL,                          -- 이름
-                DateOfBirth Date NULL,                   -- 생년월일 (YYYY-MM-DD 형식)
-                Department VARCHAR(250) NOT NULL,                    -- 학과
-                Grade INTEGER CHECK(Grade BETWEEN 0 AND 20) NOT NULL,    -- 학년 (0~10학년)
-                PhoneNumber VARCHAR(20) NULL,                            -- 전화번호
-                Email VARCHAR(250) UNIQUE NULL,                           -- 이메일 (중복 불가)
-                Address VARCHAR(500) NULL                               -- 주소
-            );");
+            // context.Database.ExecuteSqlCommand(@"
+            //     CREATE TABLE IF NOT EXISTS Students (
+            //     StudentID INTEGER PRIMARY KEY AUTOINCREMENT,  -- 학번 (자동 증가)
+            //     Name VARCHAR(100) NOT NULL,                          -- 이름
+            //     DateOfBirth Date NULL,                   -- 생년월일 (YYYY-MM-DD 형식)
+            //     Department VARCHAR(250) NOT NULL,                    -- 학과
+            //     Grade INTEGER CHECK(Grade BETWEEN 0 AND 20) NOT NULL,    -- 학년 (0~10학년)
+            //     PhoneNumber VARCHAR(20) NULL,                            -- 전화번호
+            //     Email VARCHAR(250) UNIQUE NULL,                           -- 이메일 (중복 불가)
+            //     Address VARCHAR(500) NULL                               -- 주소
+            // );");
 
 
             // todo 클래스 생성 순서 때문인지 아래 쿼리보다 더미데이터가 먼저 생성되는 듯.
             // 학번은 pk로 쓸 것이기 때문에 숫자타입으로 정의한다.
+            // context.Database.ExecuteSqlCommand(@"
+            //     UPDATE sqlite_sequence 
+            //     SET seq=20240000
+            //     WHERE name ='Students'
+            //     ");
+
             context.Database.ExecuteSqlCommand(@"
+                CREATE TABLE IF NOT EXISTS Students (
+                    StudentID INTEGER PRIMARY KEY AUTOINCREMENT,  -- 학번 (자동 증가)
+                    Name VARCHAR(100) NOT NULL,                   -- 이름
+                    DateOfBirth DATE NULL,                        -- 생년월일 (YYYY-MM-DD 형식)
+                    Department VARCHAR(250) NOT NULL,             -- 학과
+                    Grade INTEGER CHECK(Grade BETWEEN 0 AND 20) NOT NULL, -- 학년 (0~20학년)
+                    PhoneNumber VARCHAR(20) NULL,                 -- 전화번호
+                    Email VARCHAR(250) UNIQUE NULL,               -- 이메일 (중복 불가)
+                    Address VARCHAR(500) NULL                     -- 주소
+                );
+
+                -- Students 테이블에 데이터가 없으면 기본값 삽입
+                INSERT INTO Students (Name, Department, Grade) 
+                SELECT 'Placeholder', 'Default', 1
+                WHERE NOT EXISTS (SELECT 1 FROM Students);
+
+                -- 시퀀스 값 업데이트 (학번 초기값 설정)
                 UPDATE sqlite_sequence 
-                SET seq=20240000
-                WHERE name ='Students'
-                ");
+                SET seq = 20240000
+                WHERE name = 'Students';
+
+                -- Placeholder 데이터 삭제
+                DELETE FROM Students WHERE Name = 'Placeholder';
+            ");
 
 
         }
@@ -95,7 +127,7 @@ namespace pr3
             // 더미 데이터 생성
             Random rand = new Random();
 
-            if (context.Students.ToList().Count != 0) return;
+            if (context.Students.ToList().Count <= 2) return;
 
             List<Student> studentsList = new List<Student>();
             for (int i = 0; i < 200; i++)
@@ -104,10 +136,10 @@ namespace pr3
                 {
                     Name = "김" + rand.Next(0, 999),
                     DateOfBirth = new DateTime(rand.Next(1955, 2026), rand.Next(1, 13), rand.Next(1, 29)),
-                    Department = "제 " + rand.Next(1, 53) + "번 째 통합발전첨단미래기술학과",
+                    Department = "제 " + rand.Next(1, 53) + "번 째 통합된 학과명",
                     Grade = rand.Next(0, 15),
-                    Address = "한국 집주소 " + rand.Next(-999999, 999999) + " 번지 프리미엄하이택스암홈리스 팰리스",
-                    Email = "fakeda" + rand.Next(0, 212121212) + "@gmgm.com",
+                    Address = "한국 집주소 " + rand.Next(-999999, 999999) + " 번지 하이앤드수퍼클래스팰리스타운",
+                    Email = "fakeda" + rand.Next(0, 212121212) + "@domain.com",
                     PhoneNumber = "010-" + rand.Next(1000, 9999) + "-" + rand.Next(1000, 9999)
                 });
             }
@@ -119,14 +151,12 @@ namespace pr3
 
         private void UpdateStudentGridView()
         {
-            StudentControl studentListViewControl = new StudentControl();
-
             // 유저컨트롤의 경우, 디자이너 화면에는 dock 속성이 보이질 않아 코드로 작성함. 
             studentListViewControl.Dock = DockStyle.Fill;
             
             var students = context.Students.ToList();
             
-            studentListViewControl.UpdateView(students);
+            studentListViewControl.UpdateView(students, null);
 
             viewPanel.Controls.Clear();
             viewPanel.Controls.Add(studentListViewControl);
