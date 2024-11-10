@@ -26,6 +26,9 @@ namespace pr3
         {
             InitDB("db");
 
+            LoginForm logInForm = new LoginForm();
+            logInForm.ShowDialog();
+
             UserControl uc = new SampleUserControl1();
             // studentPanel.BackColor = Color.White;
             // studentPanel.ForeColor = Color.White;
