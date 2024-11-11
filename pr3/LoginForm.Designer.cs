@@ -40,18 +40,20 @@
             // 
             this.loginTitle.AutoSize = true;
             this.loginTitle.Font = new System.Drawing.Font("굴림", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.loginTitle.Location = new System.Drawing.Point(137, 42);
+            this.loginTitle.Location = new System.Drawing.Point(196, 63);
+            this.loginTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.loginTitle.Name = "loginTitle";
-            this.loginTitle.Size = new System.Drawing.Size(429, 48);
+            this.loginTitle.Size = new System.Drawing.Size(631, 72);
             this.loginTitle.TabIndex = 0;
             this.loginTitle.Text = "학사관리 프로그램";
             // 
             // usernameInput
             // 
             this.usernameInput.Font = new System.Drawing.Font("굴림", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.usernameInput.Location = new System.Drawing.Point(286, 147);
+            this.usernameInput.Location = new System.Drawing.Point(409, 220);
+            this.usernameInput.Margin = new System.Windows.Forms.Padding(4);
             this.usernameInput.Name = "usernameInput";
-            this.usernameInput.Size = new System.Drawing.Size(189, 29);
+            this.usernameInput.Size = new System.Drawing.Size(268, 40);
             this.usernameInput.TabIndex = 1;
             this.usernameInput.Enter += new System.EventHandler(this.usernameInput_Enter);
             this.usernameInput.KeyDown += new System.Windows.Forms.KeyEventHandler(this.usernameInput_KeyDown);
@@ -61,9 +63,10 @@
             // passwordInput
             // 
             this.passwordInput.Font = new System.Drawing.Font("굴림", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.passwordInput.Location = new System.Drawing.Point(286, 201);
+            this.passwordInput.Location = new System.Drawing.Point(409, 302);
+            this.passwordInput.Margin = new System.Windows.Forms.Padding(4);
             this.passwordInput.Name = "passwordInput";
-            this.passwordInput.Size = new System.Drawing.Size(189, 29);
+            this.passwordInput.Size = new System.Drawing.Size(268, 40);
             this.passwordInput.TabIndex = 2;
             this.passwordInput.Enter += new System.EventHandler(this.passwordInput_Enter);
             this.passwordInput.KeyDown += new System.Windows.Forms.KeyEventHandler(this.passwordInput_KeyDown);
@@ -74,9 +77,10 @@
             // 
             this.usernameInputLabel.AutoSize = true;
             this.usernameInputLabel.Font = new System.Drawing.Font("굴림", 24.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.usernameInputLabel.Location = new System.Drawing.Point(199, 147);
+            this.usernameInputLabel.Location = new System.Drawing.Point(284, 220);
+            this.usernameInputLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.usernameInputLabel.Name = "usernameInputLabel";
-            this.usernameInputLabel.Size = new System.Drawing.Size(70, 33);
+            this.usernameInputLabel.Size = new System.Drawing.Size(105, 50);
             this.usernameInputLabel.TabIndex = 3;
             this.usernameInputLabel.Text = "ID :";
             // 
@@ -84,18 +88,20 @@
             // 
             this.passwordInputLabel.AutoSize = true;
             this.passwordInputLabel.Font = new System.Drawing.Font("굴림", 24.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.passwordInputLabel.Location = new System.Drawing.Point(181, 197);
+            this.passwordInputLabel.Location = new System.Drawing.Point(259, 296);
+            this.passwordInputLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.passwordInputLabel.Name = "passwordInputLabel";
-            this.passwordInputLabel.Size = new System.Drawing.Size(88, 33);
+            this.passwordInputLabel.Size = new System.Drawing.Size(133, 50);
             this.passwordInputLabel.TabIndex = 4;
             this.passwordInputLabel.Text = "PW :";
             // 
             // login
             // 
             this.login.Font = new System.Drawing.Font("굴림", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.login.Location = new System.Drawing.Point(261, 265);
+            this.login.Location = new System.Drawing.Point(373, 398);
+            this.login.Margin = new System.Windows.Forms.Padding(4);
             this.login.Name = "login";
-            this.login.Size = new System.Drawing.Size(152, 42);
+            this.login.Size = new System.Drawing.Size(217, 63);
             this.login.TabIndex = 3;
             this.login.Text = "로그인";
             this.login.UseVisualStyleBackColor = true;
@@ -103,17 +109,20 @@
             // 
             // LoginForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::pr3.Properties.Resources.loginBackground;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(686, 335);
+            this.ClientSize = new System.Drawing.Size(978, 504);
             this.Controls.Add(this.login);
             this.Controls.Add(this.passwordInputLabel);
             this.Controls.Add(this.usernameInputLabel);
             this.Controls.Add(this.passwordInput);
             this.Controls.Add(this.usernameInput);
             this.Controls.Add(this.loginTitle);
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximumSize = new System.Drawing.Size(1000, 560);
+            this.MinimumSize = new System.Drawing.Size(1000, 560);
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "머씻는 학사관리 프로그램";
