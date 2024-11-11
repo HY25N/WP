@@ -127,7 +127,7 @@ namespace pr3
             // 더미 데이터 생성
             Random rand = new Random();
 
-            if (context.Students.ToList().Count <= 2) return;
+            //if (context.Students.ToList().Count >= 2) return;
 
             List<Student> studentsList = new List<Student>();
             for (int i = 0; i < 200; i++)
@@ -160,6 +160,20 @@ namespace pr3
 
             viewPanel.Controls.Clear();
             viewPanel.Controls.Add(studentListViewControl);
+        }
+
+        private void lecturelabel_Click(object sender, EventArgs e)
+        {
+            lectureView();
+        }
+        private void lectureView()
+        {
+            lectureControl lectureViewControl = new lectureControl();
+
+            lectureViewControl.Dock = DockStyle.Fill;
+
+            viewPanel.Controls.Clear();
+            viewPanel.Controls.Add(lectureViewControl);
         }
     }
 

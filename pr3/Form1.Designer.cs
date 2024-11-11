@@ -35,6 +35,7 @@
             this.파일FToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.lecturelabel = new System.Windows.Forms.Label();
             this.sidebar.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -43,19 +44,22 @@
             // sidebar
             // 
             this.sidebar.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.sidebar.Controls.Add(this.lecturelabel);
             this.sidebar.Controls.Add(this.studentButton);
             this.sidebar.Dock = System.Windows.Forms.DockStyle.Left;
-            this.sidebar.Location = new System.Drawing.Point(3, 3);
+            this.sidebar.Location = new System.Drawing.Point(2, 2);
+            this.sidebar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.sidebar.Name = "sidebar";
-            this.sidebar.Size = new System.Drawing.Size(342, 1204);
+            this.sidebar.Size = new System.Drawing.Size(239, 804);
             this.sidebar.TabIndex = 52;
             // 
             // studentButton
             // 
             this.studentButton.Font = new System.Drawing.Font("굴림", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.studentButton.Location = new System.Drawing.Point(38, 44);
+            this.studentButton.Location = new System.Drawing.Point(27, 29);
+            this.studentButton.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.studentButton.Name = "studentButton";
-            this.studentButton.Size = new System.Drawing.Size(222, 37);
+            this.studentButton.Size = new System.Drawing.Size(155, 25);
             this.studentButton.TabIndex = 0;
             this.studentButton.Text = "학생관리";
             this.studentButton.Click += new System.EventHandler(this.label1_Click);
@@ -64,21 +68,22 @@
             // 
             this.viewPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.viewPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.viewPanel.Location = new System.Drawing.Point(351, 3);
+            this.viewPanel.Location = new System.Drawing.Point(245, 2);
+            this.viewPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.viewPanel.Name = "viewPanel";
-            this.viewPanel.Size = new System.Drawing.Size(1770, 1204);
+            this.viewPanel.Size = new System.Drawing.Size(1240, 804);
             this.viewPanel.TabIndex = 0;
             // 
             // menuStrip1
             // 
-            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(28, 28);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.파일FToolStripMenuItem,
             this.rToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(2124, 36);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 1, 0, 1);
+            this.menuStrip1.Size = new System.Drawing.Size(1347, 24);
             this.menuStrip1.TabIndex = 54;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
@@ -86,13 +91,13 @@
             // 파일FToolStripMenuItem
             // 
             this.파일FToolStripMenuItem.Name = "파일FToolStripMenuItem";
-            this.파일FToolStripMenuItem.Size = new System.Drawing.Size(83, 32);
+            this.파일FToolStripMenuItem.Size = new System.Drawing.Size(57, 22);
             this.파일FToolStripMenuItem.Text = "파일(&F)";
             // 
             // rToolStripMenuItem
             // 
             this.rToolStripMenuItem.Name = "rToolStripMenuItem";
-            this.rToolStripMenuItem.Size = new System.Drawing.Size(34, 32);
+            this.rToolStripMenuItem.Size = new System.Drawing.Size(23, 22);
             this.rToolStripMenuItem.Text = "r";
             // 
             // tableLayoutPanel1
@@ -107,22 +112,33 @@
             this.tableLayoutPanel1.Controls.Add(this.sidebar, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.viewPanel, 1, 0);
             this.tableLayoutPanel1.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.FixedSize;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 33);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 22);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(2124, 1210);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1487, 807);
             this.tableLayoutPanel1.TabIndex = 55;
+            // 
+            // lecturelabel
+            // 
+            this.lecturelabel.Font = new System.Drawing.Font("굴림", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lecturelabel.Location = new System.Drawing.Point(27, 126);
+            this.lecturelabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lecturelabel.Name = "lecturelabel";
+            this.lecturelabel.Size = new System.Drawing.Size(155, 25);
+            this.lecturelabel.TabIndex = 1;
+            this.lecturelabel.Text = "강의";
+            this.lecturelabel.Click += new System.EventHandler(this.lecturelabel_Click);
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(2124, 1243);
+            this.ClientSize = new System.Drawing.Size(1347, 707);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
@@ -144,6 +160,7 @@
         private System.Windows.Forms.Label studentButton;
         private System.Windows.Forms.ToolStripMenuItem rToolStripMenuItem;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Label lecturelabel;
     }
 }
 
