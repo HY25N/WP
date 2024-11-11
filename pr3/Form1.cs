@@ -9,6 +9,7 @@ using System.IO;
 using System.Linq;
 using System.Runtime.Remoting.Contexts;
 using System.Windows.Forms;
+using 강의;
 
 
 namespace pr3
@@ -76,6 +77,23 @@ namespace pr3
         {
             Debug.WriteLine("최상위 부모 창: " + this.Width);
             Debug.WriteLine("최상위 부모 창의 뷰 패널: " + viewPanel.Width);
+        }
+
+        private void lectureButton_Click(object sender, EventArgs e)
+        {
+            lectureControl lc = new lectureControl();
+            viewPanel.Controls.Clear();
+            viewPanel.Controls.Add(lc);
+        }
+
+        private void rToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void 프로그램정보ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
