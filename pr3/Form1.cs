@@ -9,7 +9,6 @@ using System.IO;
 using System.Linq;
 using System.Runtime.Remoting.Contexts;
 using System.Windows.Forms;
-using 강의;
 
 
 namespace pr3
@@ -46,7 +45,7 @@ namespace pr3
 
             UpdateStudentGridView();
 
-            repo.CreateStudentsDummy();
+            if (context.Students.ToList().Count == 0) repo.CreateStudentsDummy();
         }
 
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
@@ -71,29 +70,20 @@ namespace pr3
 
             viewPanel.Controls.Clear();
             viewPanel.Controls.Add(studentListViewControl);
-        }   
-
-        private void Form1_Resize(object sender, EventArgs e)
-        {
-            Debug.WriteLine("최상위 부모 창: " + this.Width);
-            Debug.WriteLine("최상위 부모 창의 뷰 패널: " + viewPanel.Width);
         }
 
-        private void lectureButton_Click(object sender, EventArgs e)
+        private void lecturelabel_Click(object sender, EventArgs e)
         {
-            lectureControl lc = new lectureControl();
+            lectureView();
+        }
+        private void lectureView()
+        {
+            lectureControl lectureViewControl = new lectureControl(context);
+
+            lectureViewControl.Dock = DockStyle.Fill;
+
             viewPanel.Controls.Clear();
-            viewPanel.Controls.Add(lc);
-        }
-
-        private void rToolStripMenuItem2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void 프로그램정보ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
+            viewPanel.Controls.Add(lectureViewControl);
         }
     }
 }

@@ -65,7 +65,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="repository.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,12 +92,6 @@
     <Compile Include="StudentControl.Designer.cs">
       <DependentUpon>StudentControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="SampleUserControl1.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="SampleUserControl1.Designer.cs">
-      <DependentUpon>SampleUserControl1.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -119,9 +113,6 @@
     </Compile>
     <EmbeddedResource Include="StudentControl.resx">
       <DependentUpon>StudentControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SampleUserControl1.resx">
-      <DependentUpon>SampleUserControl1.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Student.datasource" />

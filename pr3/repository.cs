@@ -24,12 +24,11 @@ namespace pr3
 
         private void InitDB(String dbName)
         {
-
             // db 생성 경로 지정 (레거시이다. 이전 네이티브 방식에서 쓰던 것)
-            string exeDirPathString = Application.StartupPath;
-            exeDirPathString = Directory.GetParent(exeDirPathString).ToString();
-            exeDirPathString = Directory.GetParent(exeDirPathString).ToString();
-            var dbPath = $"{exeDirPathString}\\{dbName}.sqlite";
+            // string exeDirPathString = Application.StartupPath;
+            // exeDirPathString = Directory.GetParent(exeDirPathString).ToString();
+            // exeDirPathString = Directory.GetParent(exeDirPathString).ToString();
+            // var dbPath = $"{exeDirPathString}\\{dbName}.sqlite";
 
             context = new ApplicationDbContext();
 
@@ -59,7 +58,7 @@ namespace pr3
             //     ");
 
             context.Database.ExecuteSqlCommand(@"
-                CREATE TABLE IF NOT EXISTS Students (
+                CREATE TABLE IF NOT EXISTS Student (
                     StudentID INTEGER PRIMARY KEY AUTOINCREMENT,  -- 학번 (자동 증가)
                     Name VARCHAR(100) NOT NULL,                   -- 이름
                     DateOfBirth DATE NULL,                        -- 생년월일 (YYYY-MM-DD 형식)
@@ -70,18 +69,31 @@ namespace pr3
                     Address VARCHAR(500) NULL                     -- 주소
                 );
 
-                -- Students 테이블에 데이터가 없으면 기본값 삽입
-                INSERT INTO Students (Name, Department, Grade) 
+                -- Student 테이블에 데이터가 없으면 기본값 삽입
+                INSERT INTO Student (Name, Department, Grade) 
                 SELECT 'Placeholder', 'Default', 1
-                WHERE NOT EXISTS (SELECT 1 FROM Students);
+                WHERE NOT EXISTS (SELECT 1 FROM Student);
 
                 -- 시퀀스 값 업데이트 (학번 초기값 설정)
                 UPDATE sqlite_sequence 
                 SET seq = 20240000
-                WHERE name = 'Students';
+                WHERE name = 'Student';
 
                 -- Placeholder 데이터 삭제
-                DELETE FROM Students WHERE Name = 'Placeholder';
+                DELETE FROM Student WHERE Name = 'Placeholder';
+            ");
+
+
+            context.Database.ExecuteSqlCommand(@"
+                CREATE TABLE IF NOT EXISTS Lecture (
+                    Id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    Name VARCHAR(200) NOT NULL,            
+                    Code INTEGER NULL,
+                    Manager VARCHAR(100) NOT NULL,
+                    Credit INTEGER CHECK(Credit BETWEEN 0 AND 10),
+                    Place VARCHAR(100) NULL,
+                    Capacity INTEGER NOT NULL
+                );
             ");
 
 
@@ -89,9 +101,6 @@ namespace pr3
 
         public void CreateStudentsDummy()
         {
-
-            if (context.Students.ToList().Count >= 2) return;
-
             // 더미 데이터 생성
             Random rand = new Random();
 
@@ -104,8 +113,8 @@ namespace pr3
                     DateOfBirth = new DateTime(rand.Next(1955, 2026), rand.Next(1, 13), rand.Next(1, 29)),
                     Department = "제 " + rand.Next(1, 53) + "번 째 통합된 학과명",
                     Grade = rand.Next(0, 15),
-                    Address = "한국 집주소 " + rand.Next(-999999, 999999) + " 번지 하이앤드수퍼클래스팰리스타운",
-                    Email = "fakeda" + rand.Next(0, 212121212) + "@domain.com",
+                    Address = "한국 집주소 " + rand.Next(-999999, 999999) + " 번지 아파트",
+                    Email = "fake" + rand.Next(0, 212121212) + "@domain.com",
                     PhoneNumber = "010-" + rand.Next(1000, 9999) + "-" + rand.Next(1000, 9999)
                 });
             }
@@ -119,20 +128,20 @@ namespace pr3
     public class ApplicationDbContext : DbContext
     {
         public DbSet<Student> Students { get; set; }
+        public DbSet<Lecture> Lectures { get; set; }
 
         public ApplicationDbContext() : base("DefaultConnection")
         {
             // 파일 존재 여부는 여기서 처리해준다.
             Database.SetInitializer(new CreateDatabaseIfNotExists<ApplicationDbContext>());
-
         }
     }
 
 
 
-    // 이하 테이블
+    // 이하 테이블(엔티티)
 
-    [Table("Students")]
+    [Table("Student")]
     public class Student
     {
         [Key]
@@ -162,5 +171,36 @@ namespace pr3
 
         [StringLength(500)]
         public string Address { get; set; }  // 주소
+    }
+
+
+
+    [Table("Lecture")]
+    public class Lecture
+    {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int Id { get; set; }  
+
+        [Required]
+        [StringLength(200)]
+        public string Name { get; set; }  
+
+        [Required]
+        public int Code { get; set; }  
+
+        [Required]
+        [StringLength(100)]
+        public string Manager { get; set; } 
+
+        [Required]
+        [Range(0, 10)]
+        public int Credit { get; set; } 
+
+        [StringLength(250)]
+        public string Place { get; set; } 
+
+        [Required]
+        public int Capacity { get; set; } 
     }
 }

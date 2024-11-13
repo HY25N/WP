@@ -29,21 +29,22 @@
         private void InitializeComponent()
         {
             this.sidebar = new System.Windows.Forms.Panel();
+            this.lecturelabel = new System.Windows.Forms.Label();
             this.studentButton = new System.Windows.Forms.Label();
             this.viewPanel = new System.Windows.Forms.Panel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.파일FToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.끝내기XToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.데이터불러오기ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.계정수정미구현ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.데이터백업ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.도움말보기VToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.프로그램정보ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.rToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.lectureButton = new System.Windows.Forms.Label();
-            this.끝내기XToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.계정수정미구현ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.데이터불러오기ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.데이터백업ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.도움말보기VToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.프로그램정보ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sidebar.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -51,23 +52,32 @@
             // 
             // sidebar
             // 
-            this.sidebar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
             this.sidebar.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.sidebar.Controls.Add(this.lectureButton);
+            this.sidebar.Controls.Add(this.lecturelabel);
             this.sidebar.Controls.Add(this.studentButton);
+            this.sidebar.Dock = System.Windows.Forms.DockStyle.Left;
             this.sidebar.Location = new System.Drawing.Point(3, 3);
             this.sidebar.Name = "sidebar";
-            this.sidebar.Size = new System.Drawing.Size(259, 987);
+            this.sidebar.Size = new System.Drawing.Size(370, 963);
             this.sidebar.TabIndex = 52;
+            // 
+            // lecturelabel
+            // 
+            this.lecturelabel.Font = new System.Drawing.Font("굴림", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lecturelabel.Location = new System.Drawing.Point(39, 189);
+            this.lecturelabel.Name = "lecturelabel";
+            this.lecturelabel.Size = new System.Drawing.Size(221, 38);
+            this.lecturelabel.TabIndex = 1;
+            this.lecturelabel.Text = "강의";
+            this.lecturelabel.Click += new System.EventHandler(this.lecturelabel_Click);
             // 
             // studentButton
             // 
             this.studentButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.studentButton.Font = new System.Drawing.Font("굴림", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.studentButton.Location = new System.Drawing.Point(38, 44);
+            this.studentButton.Location = new System.Drawing.Point(39, 44);
             this.studentButton.Name = "studentButton";
-            this.studentButton.Size = new System.Drawing.Size(169, 37);
+            this.studentButton.Size = new System.Drawing.Size(241, 56);
             this.studentButton.TabIndex = 0;
             this.studentButton.Text = "학생관리";
             this.studentButton.Click += new System.EventHandler(this.label1_Click);
@@ -80,10 +90,10 @@
             this.viewPanel.AutoSize = true;
             this.viewPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.viewPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.viewPanel.Location = new System.Drawing.Point(273, 8);
-            this.viewPanel.Margin = new System.Windows.Forms.Padding(8);
+            this.viewPanel.Location = new System.Drawing.Point(385, 9);
+            this.viewPanel.Margin = new System.Windows.Forms.Padding(9);
             this.viewPanel.Name = "viewPanel";
-            this.viewPanel.Size = new System.Drawing.Size(1746, 977);
+            this.viewPanel.Size = new System.Drawing.Size(1900, 951);
             this.viewPanel.TabIndex = 0;
             // 
             // menuStrip1
@@ -96,7 +106,7 @@
             this.rToolStripMenuItem2});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(2027, 33);
+            this.menuStrip1.Size = new System.Drawing.Size(2294, 33);
             this.menuStrip1.TabIndex = 54;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
@@ -110,6 +120,18 @@
             this.파일FToolStripMenuItem.Size = new System.Drawing.Size(83, 29);
             this.파일FToolStripMenuItem.Text = "파일(&F)";
             // 
+            // 끝내기XToolStripMenuItem
+            // 
+            this.끝내기XToolStripMenuItem.Name = "끝내기XToolStripMenuItem";
+            this.끝내기XToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.끝내기XToolStripMenuItem.Text = "끝내기(&X)";
+            // 
+            // 데이터불러오기ToolStripMenuItem
+            // 
+            this.데이터불러오기ToolStripMenuItem.Name = "데이터불러오기ToolStripMenuItem";
+            this.데이터불러오기ToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.데이터불러오기ToolStripMenuItem.Text = "데이터 불러오기";
+            // 
             // rToolStripMenuItem
             // 
             this.rToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -119,6 +141,18 @@
             this.rToolStripMenuItem.Size = new System.Drawing.Size(91, 29);
             this.rToolStripMenuItem.Text = "관리(&M)";
             // 
+            // 계정수정미구현ToolStripMenuItem
+            // 
+            this.계정수정미구현ToolStripMenuItem.Name = "계정수정미구현ToolStripMenuItem";
+            this.계정수정미구현ToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.계정수정미구현ToolStripMenuItem.Text = "계정 수정(미구현)";
+            // 
+            // 데이터백업ToolStripMenuItem
+            // 
+            this.데이터백업ToolStripMenuItem.Name = "데이터백업ToolStripMenuItem";
+            this.데이터백업ToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.데이터백업ToolStripMenuItem.Text = "데이터 백업";
+            // 
             // rToolStripMenuItem2
             // 
             this.rToolStripMenuItem2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -127,7 +161,18 @@
             this.rToolStripMenuItem2.Name = "rToolStripMenuItem2";
             this.rToolStripMenuItem2.Size = new System.Drawing.Size(105, 29);
             this.rToolStripMenuItem2.Text = "도움말(&H)";
-            this.rToolStripMenuItem2.Click += new System.EventHandler(this.rToolStripMenuItem2_Click);
+            // 
+            // 도움말보기VToolStripMenuItem
+            // 
+            this.도움말보기VToolStripMenuItem.Name = "도움말보기VToolStripMenuItem";
+            this.도움말보기VToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.도움말보기VToolStripMenuItem.Text = "도움말 보기(&V)";
+            // 
+            // 프로그램정보ToolStripMenuItem
+            // 
+            this.프로그램정보ToolStripMenuItem.Name = "프로그램정보ToolStripMenuItem";
+            this.프로그램정보ToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.프로그램정보ToolStripMenuItem.Text = "프로그램 정보(&V)";
             // 
             // tableLayoutPanel1
             // 
@@ -144,7 +189,7 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(2027, 993);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(2294, 969);
             this.tableLayoutPanel1.TabIndex = 55;
             // 
             // rToolStripMenuItem1
@@ -162,60 +207,20 @@
             this.lectureButton.Size = new System.Drawing.Size(173, 37);
             this.lectureButton.TabIndex = 1;
             this.lectureButton.Text = "강의관리";
-            this.lectureButton.Click += new System.EventHandler(this.lectureButton_Click);
-            // 
-            // 끝내기XToolStripMenuItem
-            // 
-            this.끝내기XToolStripMenuItem.Name = "끝내기XToolStripMenuItem";
-            this.끝내기XToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
-            this.끝내기XToolStripMenuItem.Text = "끝내기(&X)";
-            // 
-            // 계정수정미구현ToolStripMenuItem
-            // 
-            this.계정수정미구현ToolStripMenuItem.Name = "계정수정미구현ToolStripMenuItem";
-            this.계정수정미구현ToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
-            this.계정수정미구현ToolStripMenuItem.Text = "계정 수정(미구현)";
-            // 
-            // 데이터불러오기ToolStripMenuItem
-            // 
-            this.데이터불러오기ToolStripMenuItem.Name = "데이터불러오기ToolStripMenuItem";
-            this.데이터불러오기ToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
-            this.데이터불러오기ToolStripMenuItem.Text = "데이터 불러오기";
-            // 
-            // 데이터백업ToolStripMenuItem
-            // 
-            this.데이터백업ToolStripMenuItem.Name = "데이터백업ToolStripMenuItem";
-            this.데이터백업ToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
-            this.데이터백업ToolStripMenuItem.Text = "데이터 백업";
-            // 
-            // 도움말보기VToolStripMenuItem
-            // 
-            this.도움말보기VToolStripMenuItem.Name = "도움말보기VToolStripMenuItem";
-            this.도움말보기VToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
-            this.도움말보기VToolStripMenuItem.Text = "도움말 보기(&V)";
-            // 
-            // 프로그램정보ToolStripMenuItem
-            // 
-            this.프로그램정보ToolStripMenuItem.Name = "프로그램정보ToolStripMenuItem";
-            this.프로그램정보ToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
-            this.프로그램정보ToolStripMenuItem.Text = "프로그램 정보(&V)";
-            this.프로그램정보ToolStripMenuItem.Click += new System.EventHandler(this.프로그램정보ToolStripMenuItem_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(2027, 1026);
+            this.ClientSize = new System.Drawing.Size(2294, 1002);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.MinimumSize = new System.Drawing.Size(1184, 608);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.Resize += new System.EventHandler(this.Form1_Resize);
             this.sidebar.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -234,6 +239,7 @@
         private System.Windows.Forms.Label studentButton;
         private System.Windows.Forms.ToolStripMenuItem rToolStripMenuItem;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Label lecturelabel;
         private System.Windows.Forms.ToolStripMenuItem rToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem rToolStripMenuItem1;
         private System.Windows.Forms.Label lectureButton;
