@@ -29,13 +29,14 @@
         private void InitializeComponent()
         {
             this.sidebar = new System.Windows.Forms.Panel();
+            this.lecturelabel = new System.Windows.Forms.Label();
             this.studentButton = new System.Windows.Forms.Label();
             this.viewPanel = new System.Windows.Forms.Panel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.파일FToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.lecturelabel = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.sidebar.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -44,14 +45,26 @@
             // sidebar
             // 
             this.sidebar.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.sidebar.Controls.Add(this.label1);
             this.sidebar.Controls.Add(this.lecturelabel);
             this.sidebar.Controls.Add(this.studentButton);
             this.sidebar.Dock = System.Windows.Forms.DockStyle.Left;
             this.sidebar.Location = new System.Drawing.Point(2, 2);
-            this.sidebar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.sidebar.Margin = new System.Windows.Forms.Padding(2);
             this.sidebar.Name = "sidebar";
-            this.sidebar.Size = new System.Drawing.Size(239, 804);
+            this.sidebar.Size = new System.Drawing.Size(239, 805);
             this.sidebar.TabIndex = 52;
+            // 
+            // lecturelabel
+            // 
+            this.lecturelabel.Font = new System.Drawing.Font("굴림", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lecturelabel.Location = new System.Drawing.Point(27, 126);
+            this.lecturelabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lecturelabel.Name = "lecturelabel";
+            this.lecturelabel.Size = new System.Drawing.Size(155, 25);
+            this.lecturelabel.TabIndex = 1;
+            this.lecturelabel.Text = "강의";
+            this.lecturelabel.Click += new System.EventHandler(this.lecturelabel_Click);
             // 
             // studentButton
             // 
@@ -69,9 +82,9 @@
             this.viewPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.viewPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.viewPanel.Location = new System.Drawing.Point(245, 2);
-            this.viewPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.viewPanel.Margin = new System.Windows.Forms.Padding(2);
             this.viewPanel.Name = "viewPanel";
-            this.viewPanel.Size = new System.Drawing.Size(1240, 804);
+            this.viewPanel.Size = new System.Drawing.Size(1240, 805);
             this.viewPanel.TabIndex = 0;
             // 
             // menuStrip1
@@ -113,29 +126,28 @@
             this.tableLayoutPanel1.Controls.Add(this.viewPanel, 1, 0);
             this.tableLayoutPanel1.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.FixedSize;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 22);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1487, 807);
             this.tableLayoutPanel1.TabIndex = 55;
             // 
-            // lecturelabel
+            // label1
             // 
-            this.lecturelabel.Font = new System.Drawing.Font("굴림", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lecturelabel.Location = new System.Drawing.Point(27, 126);
-            this.lecturelabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lecturelabel.Name = "lecturelabel";
-            this.lecturelabel.Size = new System.Drawing.Size(155, 25);
-            this.lecturelabel.TabIndex = 1;
-            this.lecturelabel.Text = "강의";
-            this.lecturelabel.Click += new System.EventHandler(this.lecturelabel_Click);
+            this.label1.Font = new System.Drawing.Font("굴림", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label1.Location = new System.Drawing.Point(27, 201);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(155, 25);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "성적";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1347, 707);
+            this.ClientSize = new System.Drawing.Size(1347, 676);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
@@ -161,6 +173,7 @@
         private System.Windows.Forms.ToolStripMenuItem rToolStripMenuItem;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label lecturelabel;
+        private System.Windows.Forms.Label label1;
     }
 }
 

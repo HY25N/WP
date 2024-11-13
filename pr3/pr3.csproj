@@ -85,6 +85,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="scoreControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="scoreControl.Designer.cs">
+      <DependentUpon>scoreControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="StudentControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -116,6 +122,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="scoreControl.resx">
+      <DependentUpon>scoreControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="StudentControl.resx">
       <DependentUpon>StudentControl.cs</DependentUpon>
     </EmbeddedResource>
