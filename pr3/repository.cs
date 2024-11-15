@@ -33,6 +33,7 @@ namespace pr3
             context = new ApplicationDbContext();
 
             // 이하 DDL
+            // 아래 작동 안됨...
             context.Database.Initialize(force: true);
 
             // todo 자동 생성에 문자가 있어서 테이블을 수동 생성한다.
@@ -57,6 +58,8 @@ namespace pr3
             //     WHERE name ='Students'
             //     ");
 
+
+            // Student 테이블 생성
             context.Database.ExecuteSqlCommand(@"
                 CREATE TABLE IF NOT EXISTS Student (
                     StudentID INTEGER PRIMARY KEY AUTOINCREMENT,  -- 학번 (자동 증가)
@@ -83,7 +86,7 @@ namespace pr3
                 DELETE FROM Student WHERE Name = 'Placeholder';
             ");
 
-
+            // Lecture 테이블 생성
             context.Database.ExecuteSqlCommand(@"
                 CREATE TABLE IF NOT EXISTS Lecture (
                     Id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -96,6 +99,28 @@ namespace pr3
                 );
             ");
 
+            // Enrollment 테이블 생성
+            context.Database.ExecuteSqlCommand(@"
+                CREATE TABLE IF NOT EXISTS Enrollment (
+                    Id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    StudentId INTEGER NOT NULL,
+                    Year INTEGER,
+                    Semester INTEGER
+                );
+            ");
+
+            // Registration 테이블 생성
+            context.Database.ExecuteSqlCommand(@"
+                CREATE TABLE IF NOT EXISTS Registration (
+                    Id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    EnrollmentId INTEGER NOT NULL,
+                    LectureId INTEGER NOT NULL,
+                    MidTerm INTEGER,
+                    FinalTerm INTEGER,
+                    Attendance INTEGER
+                );
+            ");
+
 
         }
 
@@ -105,7 +130,7 @@ namespace pr3
             Random rand = new Random();
 
             List<Student> studentsList = new List<Student>();
-            for (int i = 0; i < 200; i++)
+            for (int i = 0; i < 10; i++)
             {
                 studentsList.Add(new Student
                 {
@@ -125,6 +150,8 @@ namespace pr3
         }
     }
 
+
+    // db와 연결하는 콘텍스트 겍체
     public class ApplicationDbContext : DbContext
     {
         public DbSet<Student> Students { get; set; }
@@ -140,7 +167,6 @@ namespace pr3
 
 
     // 이하 테이블(엔티티)
-
     [Table("Student")]
     public class Student
     {
@@ -167,6 +193,7 @@ namespace pr3
 
         [StringLength(250)]
         [EmailAddress]
+        [Index(IsUnique = true)]
         public string Email { get; set; }  // 이메일 (중복 불가)
 
         [StringLength(500)]
@@ -203,4 +230,54 @@ namespace pr3
         [Required]
         public int Capacity { get; set; } 
     }
+
+    [Table("Enrollment")]
+    public class Enrollment
+    {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int Id { get; set; }  // Enrollment ID (자동 증가)
+
+        [Required]
+        public int StudentId { get; set; }  // Student 테이블의 외래 키
+
+        [ForeignKey("StudentId")]
+        public Student Student { get; set; }  // Student와의 네비게이션 속성
+
+        [Range(2000, 2100)]
+        public int Year { get; set; }  // 학년도
+
+        [Range(1, 2)]
+        public int Semester { get; set; }  // 학기 (1: 1학기, 2: 2학기)
+    }
+
+    [Table("Registration")]
+    public class Registration
+    {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int Id { get; set; }  // Registration ID (자동 증가)
+
+        [Required]
+        public int EnrollmentId { get; set; }  // Enrollment 테이블의 외래 키
+
+        [ForeignKey("EnrollmentId")]
+        public Enrollment Enrollment { get; set; }  // Enrollment와의 네비게이션 속성
+
+        [Required]
+        public int LectureId { get; set; }  // Lecture 테이블의 외래 키
+
+        [ForeignKey("LectureId")]
+        public Lecture Lecture { get; set; }  // Lecture와의 네비게이션 속성
+
+        [Range(0, 100)]
+        public int? MidTerm { get; set; }  // 중간고사 점수 (0~100)
+
+        [Range(0, 100)]
+        public int? FinalTerm { get; set; }  // 기말고사 점수 (0~100)
+
+        public int? Attendance { get; set; }
+    }
+
+
 }

@@ -5,10 +5,12 @@ using System.ComponentModel.DataAnnotations;
 using System.Data.Entity; // EF6 네임스페이스
 using System.Data.SQLite;
 using System.Diagnostics;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Runtime.Remoting.Contexts;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 
 
 namespace pr3
@@ -84,6 +86,16 @@ namespace pr3
 
             viewPanel.Controls.Clear();
             viewPanel.Controls.Add(lectureViewControl);
+        }
+
+        private void satisticsLabel_Click(object sender, EventArgs e)
+        {
+            Statistics s = new Statistics(context);
+
+            s.Dock = DockStyle.Fill;
+
+            viewPanel.Controls.Clear();
+            viewPanel.Controls.Add(s);
         }
     }
 }

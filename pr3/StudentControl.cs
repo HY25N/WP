@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity.Migrations;
 using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
@@ -93,7 +94,7 @@ namespace pr3
             int StudentID = CreateStudentByUserInterface().StudentID;
             Student student = Context.Students.SingleOrDefault(s => s.StudentID == StudentID);
 
-            // StudentID = int.Parse(studentIDBox.Text),
+            StudentID = int.Parse(studentIDBox.Text);
             student.Name = nameBox.Text;
             student.Department = departmentBox.Text;
             student.Address = addressBox.Text;
@@ -102,6 +103,7 @@ namespace pr3
             student.PhoneNumber = phoneNumberBox.Text;
             student.Grade = int.Parse(grade1Box.Text) + int.Parse(grade2Box.Text);
 
+            Context.Students.AddOrUpdate(student);
             Context.SaveChanges();
         }
 
@@ -113,8 +115,8 @@ namespace pr3
             addressBox.Text = studentDataGridView.Rows[e.RowIndex].Cells["addressColum"].Value.ToString() ?? "";
             phoneNumberBox.Text = studentDataGridView.Rows[e.RowIndex].Cells["phoneNumberColumn"].Value.ToString() ?? "";
             emailBox.Text = studentDataGridView.Rows[e.RowIndex].Cells["emailDataGridViewTextBoxColumn"].Value.ToString() ?? "";
-            grade1Box.Text = (((int)studentDataGridView.Rows[e.RowIndex].Cells["gradeColum"].Value + 1) / 2).ToString() ?? "";
-            grade2Box.Text = ((int)studentDataGridView.Rows[e.RowIndex].Cells["gradeColum"].Value % 3).ToString() ?? "";
+            grade1Box.Text = (CalculateGrade((int)studentDataGridView.Rows[e.RowIndex].Cells["gradeColum"].Value).Item1).ToString() ?? "";
+            grade2Box.Text = (CalculateGrade((int)studentDataGridView.Rows[e.RowIndex].Cells["gradeColum"].Value).Item2).ToString() ?? "";
             modeLabel.Text = "현재 모드:\n읽기";
         }
 
@@ -136,12 +138,17 @@ namespace pr3
 
 
                     Student removeTarget = Context.Students.SingleOrDefault(student => student.StudentID == studentID);
+
+                    DialogResult result1 = MessageBox.Show($"{removeTarget.StudentID} {removeTarget.Name}\n정말 삭제하시겠습니까?", "진짜로?", MessageBoxButtons.YesNo);
+                    if (result1 == DialogResult.No) { MessageBox.Show("취소되었습니다."); return; }
+
                     Context.Students.Remove(removeTarget);
                     dataTable.Rows[rowIndex].Delete();
 
                     dataTable.AcceptChanges();
                     Context.SaveChanges();
                 }
+                MessageBox.Show("삭제되었습니다..");
             }
             else
             {
@@ -154,8 +161,22 @@ namespace pr3
             modeLabel.Text = "현재 모드:\n등록";
             Student student = CreateStudentByUserInterface();
 
-            Context.Students.Add(student);
-            Context.SaveChanges();
+
+            try 
+            {
+                Context.Students.Add(student);
+                // Context.Students.Attach(student);
+                Context.SaveChanges();
+            }
+            catch (System.Data.Entity.Infrastructure.DbUpdateException ex)
+            {
+                MessageBox.Show("이미 등록된 정보입니다.\n등록할 수 없습니다.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("알 수 없는 오류가 발생했습니다.\n등록할 수 없습니다.");
+            }
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -164,8 +185,11 @@ namespace pr3
 
             switch (filterColum.Text)
             {
+                case "학번": UpdateView(row => row["StudentId"].ToString().Contains(filter1)); break;
                 case "이름": UpdateView(row => row["Name"].ToString().Contains(filter1)); break;
                 case "이메일": UpdateView(row => row["Email"].ToString().Contains(filter1)); break;
+                case "주소": UpdateView(row => row["Address"].ToString().Contains(filter1)); break;
+                default: UpdateView(row => row["Name"].ToString().Contains(filter1)); break;
             }
         }
 
@@ -186,7 +210,7 @@ namespace pr3
                 DateOfBirth = birthdayDateTimePicker.Value,
                 Email = emailBox.Text,
                 PhoneNumber = phoneNumberBox.Text,
-                Grade = int.Parse(grade1Box.Text) + int.Parse(grade2Box.Text)
+                Grade = CalculateGrade(int.Parse(grade1Box.Text), int.Parse(grade2Box.Text))
             };
 
             return student;
@@ -194,9 +218,8 @@ namespace pr3
 
         private void StudentControl_Load(object sender, EventArgs e)
         {
-            this.Dock = DockStyle.Fill;
+            // this.Dock = DockStyle.Fill;
             filterColum.SelectedIndex = 0;
-            // this.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
         }
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
@@ -208,5 +231,28 @@ namespace pr3
         {
             CreateView(Context.Students.ToList(), null);
         }
+
+
+
+        // 디비에 저장된 단일 정수 값을 n학년 m학기 튜플로 반환
+        public (int, int) CalculateGrade(int grade)
+        {
+            if (grade <= 1) return (grade, grade);
+
+            int grade1 = (grade+1) / 2;
+            int grade2 = (grade % 2 == 1) ? 1 : 2;
+
+            return (grade1, grade2);
+        }
+
+        // 입력학 n학기 m학년을 디비에 저장하기 위해 단일 정수 값으로 변환
+        public int CalculateGrade(int grade1, int grade2)
+        {
+            if (grade1 == 0) return 0;
+            if (grade1 == 1) return grade2;
+
+            return (grade1 - 1) * 2 + grade2;
+        }
+
     }
 }
