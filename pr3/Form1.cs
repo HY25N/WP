@@ -175,6 +175,11 @@ namespace pr3
             viewPanel.Controls.Clear();
             viewPanel.Controls.Add(lectureViewControl);
         }
+
+        private void label1_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 
     [Table("Students")]
