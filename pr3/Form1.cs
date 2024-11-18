@@ -95,5 +95,12 @@ namespace pr3
         {
 
         }
+
+        private void scorebutton_Click(object sender, EventArgs e)
+        {
+            score lc = new score();
+            viewPanel.Controls.Clear();
+            viewPanel.Controls.Add(lc);
+        }
     }
 }
