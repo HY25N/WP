@@ -3,10 +3,10 @@
   <Profiles />
   <Settings>
     <Setting Name="loginUsername" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">wp2024</Value>
+      <Value Profile="(Default)">qw</Value>
     </Setting>
     <Setting Name="loginPassword" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">wpwp</Value>
+      <Value Profile="(Default)">qw</Value>
     </Setting>
     <Setting Name="usernameInputPlaceholder" Type="System.String" Scope="Application">
       <Value Profile="(Default)">아이디를 입력하세요.</Value>

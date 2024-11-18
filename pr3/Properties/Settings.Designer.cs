@@ -25,7 +25,7 @@ namespace pr3.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("wp2024")]
+        [global::System.Configuration.DefaultSettingValueAttribute("qw")]
         public string loginUsername {
             get {
                 return ((string)(this["loginUsername"]));
@@ -34,7 +34,7 @@ namespace pr3.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("wpwp")]
+        [global::System.Configuration.DefaultSettingValueAttribute("qw")]
         public string loginPassword {
             get {
                 return ((string)(this["loginPassword"]));

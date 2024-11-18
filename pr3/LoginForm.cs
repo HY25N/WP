@@ -14,7 +14,7 @@ namespace pr3
 {
     public partial class LoginForm : Form
     {
-        Boolean isAuthenticated = false;
+        public Boolean isAuthenticated = false;
 
         public LoginForm()
         {
@@ -29,8 +29,7 @@ namespace pr3
 
         private void Form2_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (isAuthenticated) return;
-            Application.Exit();
+            if (!isAuthenticated) Application.Exit();
         }
 
 
@@ -43,7 +42,6 @@ namespace pr3
                 password.Equals(Properties.Settings.Default.loginPassword))
             {
                 isAuthenticated = true;
-                this.Close();
                 return true;
             }
 
@@ -67,12 +65,15 @@ namespace pr3
 
         private void passwordInput_KeyUp(object sender, KeyEventArgs e)
         {
-            if (e.KeyData == Keys.Enter) authentication();
+            if (e.KeyData == Keys.Enter)
+            {
+                if (authentication()) this.Close();
+            }
         }
 
         private void login_Click(object sender, EventArgs e)
         {
-            authentication();
+            if (authentication()) this.Close();
         }
 
         private void passwordInput_Leave(object sender, EventArgs e)
@@ -119,6 +120,11 @@ namespace pr3
         private void passwordInput_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyData == Keys.Enter) e.SuppressKeyPress = true;
+        }
+
+        private void loginTitle_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

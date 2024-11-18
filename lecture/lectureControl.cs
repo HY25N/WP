@@ -8,16 +8,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace pr3
+namespace 강의
 {
-    public partial class SampleUserControl1 : UserControl
+    public partial class lectureControl : UserControl
     {
-        public SampleUserControl1()
+        public lectureControl()
         {
             InitializeComponent();
         }
 
-        private void studentButton_Click(object sender, EventArgs e)
+        private void UserControl1_Load(object sender, EventArgs e)
         {
 
         }
