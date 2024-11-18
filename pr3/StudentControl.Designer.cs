@@ -64,9 +64,11 @@
             this.addressBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.sqLiteCommandBuilder1 = new System.Data.SQLite.SQLiteCommandBuilder();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.modeLabel = new System.Windows.Forms.Label();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.dateOfBirthDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.phoneNumberColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -147,7 +149,7 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.studentDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
             this.studentDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.studentDataGridView.Location = new System.Drawing.Point(4, 314);
+            this.studentDataGridView.Location = new System.Drawing.Point(4, 308);
             this.studentDataGridView.Margin = new System.Windows.Forms.Padding(4);
             this.studentDataGridView.Name = "studentDataGridView";
             this.studentDataGridView.ReadOnly = true;
@@ -155,7 +157,7 @@
             this.studentDataGridView.RowHeadersWidth = 72;
             this.studentDataGridView.RowTemplate.Height = 28;
             this.studentDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.studentDataGridView.Size = new System.Drawing.Size(1735, 811);
+            this.studentDataGridView.Size = new System.Drawing.Size(1735, 817);
             this.studentDataGridView.TabIndex = 53;
             this.studentDataGridView.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.studentDataGridView_RowEnter);
             // 
@@ -212,7 +214,7 @@
             // 
             // studentInfoGroupBox
             // 
-            this.studentInfoGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.studentInfoGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.studentInfoGroupBox.AutoSize = true;
             this.studentInfoGroupBox.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
@@ -243,7 +245,7 @@
             this.studentInfoGroupBox.Margin = new System.Windows.Forms.Padding(4);
             this.studentInfoGroupBox.Name = "studentInfoGroupBox";
             this.studentInfoGroupBox.Padding = new System.Windows.Forms.Padding(4);
-            this.studentInfoGroupBox.Size = new System.Drawing.Size(836, 302);
+            this.studentInfoGroupBox.Size = new System.Drawing.Size(1032, 296);
             this.studentInfoGroupBox.TabIndex = 57;
             this.studentInfoGroupBox.TabStop = false;
             this.studentInfoGroupBox.Text = "학생 정보";
@@ -251,7 +253,7 @@
             // resetButton
             // 
             this.resetButton.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.resetButton.Location = new System.Drawing.Point(742, 235);
+            this.resetButton.Location = new System.Drawing.Point(928, 229);
             this.resetButton.Margin = new System.Windows.Forms.Padding(4);
             this.resetButton.Name = "resetButton";
             this.resetButton.Size = new System.Drawing.Size(86, 38);
@@ -263,7 +265,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button1.Location = new System.Drawing.Point(619, 235);
+            this.button1.Location = new System.Drawing.Point(805, 232);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(115, 35);
@@ -285,32 +287,32 @@
             this.filterColum.Location = new System.Drawing.Point(10, 235);
             this.filterColum.Margin = new System.Windows.Forms.Padding(4);
             this.filterColum.Name = "filterColum";
-            this.filterColum.Size = new System.Drawing.Size(88, 32);
+            this.filterColum.Size = new System.Drawing.Size(114, 32);
             this.filterColum.TabIndex = 70;
             // 
             // filterValue
             // 
             this.filterValue.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.filterValue.Location = new System.Drawing.Point(115, 235);
+            this.filterValue.Location = new System.Drawing.Point(144, 232);
             this.filterValue.Margin = new System.Windows.Forms.Padding(4);
             this.filterValue.Name = "filterValue";
-            this.filterValue.Size = new System.Drawing.Size(496, 35);
+            this.filterValue.Size = new System.Drawing.Size(653, 35);
             this.filterValue.TabIndex = 69;
             // 
             // emailBox
             // 
             this.emailBox.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.emailBox.Location = new System.Drawing.Point(548, 141);
+            this.emailBox.Location = new System.Drawing.Point(665, 152);
             this.emailBox.Margin = new System.Windows.Forms.Padding(4);
             this.emailBox.Name = "emailBox";
-            this.emailBox.Size = new System.Drawing.Size(275, 35);
+            this.emailBox.Size = new System.Drawing.Size(287, 35);
             this.emailBox.TabIndex = 66;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label8.Location = new System.Drawing.Point(462, 144);
+            this.label8.Location = new System.Drawing.Point(567, 152);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(90, 24);
@@ -320,18 +322,18 @@
             // phoneNumberBox
             // 
             this.phoneNumberBox.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.phoneNumberBox.Location = new System.Drawing.Point(277, 92);
+            this.phoneNumberBox.Location = new System.Drawing.Point(374, 95);
             this.phoneNumberBox.Margin = new System.Windows.Forms.Padding(4);
             this.phoneNumberBox.Mask = "000-9000-0000";
             this.phoneNumberBox.Name = "phoneNumberBox";
-            this.phoneNumberBox.Size = new System.Drawing.Size(139, 35);
+            this.phoneNumberBox.Size = new System.Drawing.Size(183, 35);
             this.phoneNumberBox.TabIndex = 64;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label7.Location = new System.Drawing.Point(189, 95);
+            this.label7.Location = new System.Drawing.Point(276, 98);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(90, 24);
@@ -342,7 +344,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label6.Location = new System.Drawing.Point(430, 99);
+            this.label6.Location = new System.Drawing.Point(576, 106);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(106, 24);
@@ -352,7 +354,7 @@
             // birthdayDateTimePicker
             // 
             this.birthdayDateTimePicker.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.birthdayDateTimePicker.Location = new System.Drawing.Point(530, 95);
+            this.birthdayDateTimePicker.Location = new System.Drawing.Point(690, 99);
             this.birthdayDateTimePicker.Margin = new System.Windows.Forms.Padding(4);
             this.birthdayDateTimePicker.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             this.birthdayDateTimePicker.Name = "birthdayDateTimePicker";
@@ -367,17 +369,17 @@
             this.grade2Box.Items.AddRange(new object[] {
             " 1",
             " 2"});
-            this.grade2Box.Location = new System.Drawing.Point(678, 36);
+            this.grade2Box.Location = new System.Drawing.Point(786, 42);
             this.grade2Box.Margin = new System.Windows.Forms.Padding(4);
             this.grade2Box.Name = "grade2Box";
-            this.grade2Box.Size = new System.Drawing.Size(54, 32);
+            this.grade2Box.Size = new System.Drawing.Size(93, 32);
             this.grade2Box.TabIndex = 60;
             // 
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
             this.radioButton1.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.radioButton1.Location = new System.Drawing.Point(740, 59);
+            this.radioButton1.Location = new System.Drawing.Point(900, 23);
             this.radioButton1.Margin = new System.Windows.Forms.Padding(4);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(83, 28);
@@ -392,14 +394,14 @@
             this.departmentBox.Location = new System.Drawing.Point(72, 36);
             this.departmentBox.Margin = new System.Windows.Forms.Padding(4);
             this.departmentBox.Name = "departmentBox";
-            this.departmentBox.Size = new System.Drawing.Size(282, 35);
+            this.departmentBox.Size = new System.Drawing.Size(321, 35);
             this.departmentBox.TabIndex = 54;
             // 
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
             this.radioButton2.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.radioButton2.Location = new System.Drawing.Point(740, 23);
+            this.radioButton2.Location = new System.Drawing.Point(900, 59);
             this.radioButton2.Margin = new System.Windows.Forms.Padding(4);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(83, 28);
@@ -414,7 +416,7 @@
             this.nameBox.Location = new System.Drawing.Point(72, 87);
             this.nameBox.Margin = new System.Windows.Forms.Padding(4);
             this.nameBox.Name = "nameBox";
-            this.nameBox.Size = new System.Drawing.Size(98, 35);
+            this.nameBox.Size = new System.Drawing.Size(186, 35);
             this.nameBox.TabIndex = 52;
             // 
             // grade1Box
@@ -432,16 +434,16 @@
             "7",
             "8",
             "9"});
-            this.grade1Box.Location = new System.Drawing.Point(607, 36);
+            this.grade1Box.Location = new System.Drawing.Point(690, 44);
             this.grade1Box.Margin = new System.Windows.Forms.Padding(4);
             this.grade1Box.Name = "grade1Box";
-            this.grade1Box.Size = new System.Drawing.Size(63, 32);
+            this.grade1Box.Size = new System.Drawing.Size(88, 32);
             this.grade1Box.TabIndex = 57;
             // 
             // studentIDBox
             // 
             this.studentIDBox.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.studentIDBox.Location = new System.Drawing.Point(439, 36);
+            this.studentIDBox.Location = new System.Drawing.Point(492, 39);
             this.studentIDBox.Margin = new System.Windows.Forms.Padding(4);
             this.studentIDBox.Name = "studentIDBox";
             this.studentIDBox.Size = new System.Drawing.Size(87, 35);
@@ -462,7 +464,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label5.Location = new System.Drawing.Point(553, 39);
+            this.label5.Location = new System.Drawing.Point(613, 50);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(58, 24);
@@ -487,7 +489,7 @@
             this.addressBox.Location = new System.Drawing.Point(72, 141);
             this.addressBox.Margin = new System.Windows.Forms.Padding(4);
             this.addressBox.Name = "addressBox";
-            this.addressBox.Size = new System.Drawing.Size(382, 35);
+            this.addressBox.Size = new System.Drawing.Size(464, 35);
             this.addressBox.TabIndex = 53;
             // 
             // label2
@@ -505,7 +507,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label1.Location = new System.Drawing.Point(383, 42);
+            this.label1.Location = new System.Drawing.Point(426, 47);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(58, 24);
@@ -513,11 +515,15 @@
             this.label1.Text = "학번";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
+            // sqLiteCommandBuilder1
+            // 
+            this.sqLiteCommandBuilder1.DataAdapter = null;
+            this.sqLiteCommandBuilder1.QuoteSuffix = "]";
+            // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.AutoScroll = true;
             this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 1040F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Controls.Add(this.studentDataGridView, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.studentInfoGroupBox, 0, 0);
@@ -538,18 +544,18 @@
             this.groupBox1.Controls.Add(this.deleteButton);
             this.groupBox1.Controls.Add(this.editButton);
             this.groupBox1.Controls.Add(this.createButton);
-            this.groupBox1.Location = new System.Drawing.Point(847, 3);
+            this.groupBox1.Location = new System.Drawing.Point(1043, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(155, 297);
+            this.groupBox1.Size = new System.Drawing.Size(172, 297);
             this.groupBox1.TabIndex = 59;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "조작판";
+            this.groupBox1.Text = "제어기";
             // 
             // modeLabel
             // 
             this.modeLabel.AutoSize = true;
             this.modeLabel.Font = new System.Drawing.Font("굴림", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.modeLabel.Location = new System.Drawing.Point(11, 24);
+            this.modeLabel.Location = new System.Drawing.Point(0, 24);
             this.modeLabel.Name = "modeLabel";
             this.modeLabel.Size = new System.Drawing.Size(175, 64);
             this.modeLabel.TabIndex = 68;
@@ -590,12 +596,10 @@
             // studentBindingSource
             // 
             this.studentBindingSource.DataSource = typeof(pr3.Student);
-            this.studentBindingSource.CurrentChanged += new System.EventHandler(this.studentBindingSource_CurrentChanged);
             // 
             // StudentControl
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
-            this.AutoScroll = true;
             this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.Info;
             this.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -643,8 +647,10 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.BindingSource studentBindingSource;
+        private System.Data.SQLite.SQLiteCommandBuilder sqLiteCommandBuilder1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.Label modeLabel;
         private System.Windows.Forms.TextBox filterValue;
         private System.Windows.Forms.Button button1;

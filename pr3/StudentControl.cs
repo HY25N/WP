@@ -26,7 +26,7 @@ namespace pr3
 
         public void UpdateView(Func<DataRow, Boolean> filterFunc)
         {
-            DataTable dataTable = (DataTable) studentDataGridView.DataSource;
+            DataTable dataTable = (DataTable)studentDataGridView.DataSource;
 
             // 데이터 테이블의 행을 역순으로 순회 (삭제 시 인덱스 꼬임 방지)
             for (int i = dataTable.Rows.Count - 1; i >= 0; i--)
@@ -161,6 +161,7 @@ namespace pr3
                     if (removeTarget == null) { MessageBox.Show("존재하지 않는 학생입니다."); return; }
 
 
+
                     DialogResult result1 = MessageBox.Show($"{removeTarget.StudentID} {removeTarget.Name}\n정말 삭제하시겠습니까?", "진짜로?", MessageBoxButtons.YesNo);
                     if (result1 == DialogResult.No) { MessageBox.Show("취소되었습니다."); return; }
 
@@ -177,7 +178,7 @@ namespace pr3
                         MessageBox.Show(ex.Message);
                     }
 
-                    
+
                 }
                 MessageBox.Show("삭제되었습니다.");
             }
@@ -214,7 +215,7 @@ namespace pr3
                 Context.Database.Connection.Close();
                 Context = new ApplicationDbContext();
             }
-            
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -277,7 +278,7 @@ namespace pr3
         {
             if (grade <= 1) return (grade, grade);
 
-            int grade1 = (grade+1) / 2;
+            int grade1 = (grade + 1) / 2;
             int grade2 = (grade % 2 == 1) ? 1 : 2;
 
             return (grade1, grade2);
@@ -290,11 +291,6 @@ namespace pr3
             if (grade1 == 1) return grade2;
 
             return (grade1 - 1) * 2 + grade2;
-        }
-
-        private void studentBindingSource_CurrentChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

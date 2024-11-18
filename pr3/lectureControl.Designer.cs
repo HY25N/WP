@@ -41,15 +41,13 @@
             this.searhgroupBox = new System.Windows.Forms.GroupBox();
             this.lectureGridView = new System.Windows.Forms.DataGridView();
             this.lectureBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.managerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.creditDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.placeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.capacityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.searhgroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lectureGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lectureBindingSource)).BeginInit();
@@ -170,15 +168,13 @@
             this.lectureGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedHeaders;
             this.lectureGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.lectureGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column5,
-            this.Column6,
-            this.Column7,
-            this.Column8,
-            this.Column9});
+            this.idDataGridViewTextBoxColumn,
+            this.nameDataGridViewTextBoxColumn,
+            this.codeDataGridViewTextBoxColumn,
+            this.managerDataGridViewTextBoxColumn,
+            this.creditDataGridViewTextBoxColumn,
+            this.placeDataGridViewTextBoxColumn,
+            this.capacityDataGridViewTextBoxColumn});
             this.lectureGridView.DataSource = this.lectureBindingSource;
             this.lectureGridView.Location = new System.Drawing.Point(4, 165);
             this.lectureGridView.Margin = new System.Windows.Forms.Padding(4);
@@ -192,70 +188,60 @@
             // 
             this.lectureBindingSource.DataSource = typeof(pr3.Lecture);
             // 
-            // Column1
+            // idDataGridViewTextBoxColumn
             // 
-            this.Column1.DataPropertyName = "Code";
-            this.Column1.HeaderText = "학수번호";
-            this.Column1.MinimumWidth = 8;
-            this.Column1.Name = "Column1";
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "pk";
+            this.idDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
             // 
-            // Column2
+            // nameDataGridViewTextBoxColumn
             // 
-            this.Column2.DataPropertyName = "Name";
-            this.Column2.HeaderText = "교과목명";
-            this.Column2.MinimumWidth = 8;
-            this.Column2.Name = "Column2";
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "교과목명";
+            this.nameDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
             // 
-            // Column3
+            // codeDataGridViewTextBoxColumn
             // 
-            this.Column3.DataPropertyName = "Manager";
-            this.Column3.HeaderText = "교수명";
-            this.Column3.MinimumWidth = 8;
-            this.Column3.Name = "Column3";
+            this.codeDataGridViewTextBoxColumn.DataPropertyName = "Code";
+            this.codeDataGridViewTextBoxColumn.HeaderText = "학수번호";
+            this.codeDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.codeDataGridViewTextBoxColumn.Name = "codeDataGridViewTextBoxColumn";
             // 
-            // Column4
+            // managerDataGridViewTextBoxColumn
             // 
-            this.Column4.HeaderText = "이수구분";
-            this.Column4.MinimumWidth = 8;
-            this.Column4.Name = "Column4";
+            this.managerDataGridViewTextBoxColumn.DataPropertyName = "Manager";
+            this.managerDataGridViewTextBoxColumn.HeaderText = "교수";
+            this.managerDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.managerDataGridViewTextBoxColumn.Name = "managerDataGridViewTextBoxColumn";
             // 
-            // Column5
+            // creditDataGridViewTextBoxColumn
             // 
-            this.Column5.DataPropertyName = "Credit";
-            this.Column5.HeaderText = "학점";
-            this.Column5.MinimumWidth = 8;
-            this.Column5.Name = "Column5";
+            this.creditDataGridViewTextBoxColumn.DataPropertyName = "Credit";
+            this.creditDataGridViewTextBoxColumn.HeaderText = "학점";
+            this.creditDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.creditDataGridViewTextBoxColumn.Name = "creditDataGridViewTextBoxColumn";
             // 
-            // Column6
+            // placeDataGridViewTextBoxColumn
             // 
-            this.Column6.HeaderText = "강의요일 / 시간";
-            this.Column6.MinimumWidth = 8;
-            this.Column6.Name = "Column6";
+            this.placeDataGridViewTextBoxColumn.DataPropertyName = "Place";
+            this.placeDataGridViewTextBoxColumn.HeaderText = "강의실";
+            this.placeDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.placeDataGridViewTextBoxColumn.Name = "placeDataGridViewTextBoxColumn";
             // 
-            // Column7
+            // capacityDataGridViewTextBoxColumn
             // 
-            this.Column7.DataPropertyName = "Place";
-            this.Column7.HeaderText = "강의실";
-            this.Column7.MinimumWidth = 8;
-            this.Column7.Name = "Column7";
-            // 
-            // Column8
-            // 
-            this.Column8.DataPropertyName = "Capacity";
-            this.Column8.HeaderText = "수강인원";
-            this.Column8.MinimumWidth = 8;
-            this.Column8.Name = "Column8";
-            // 
-            // Column9
-            // 
-            this.Column9.HeaderText = "분반";
-            this.Column9.MinimumWidth = 8;
-            this.Column9.Name = "Column9";
+            this.capacityDataGridViewTextBoxColumn.DataPropertyName = "Capacity";
+            this.capacityDataGridViewTextBoxColumn.HeaderText = "수강인원";
+            this.capacityDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.capacityDataGridViewTextBoxColumn.Name = "capacityDataGridViewTextBoxColumn";
             // 
             // lectureControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.Controls.Add(this.searhgroupBox);
             this.Controls.Add(this.lectureGridView);
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -283,14 +269,12 @@
         private System.Windows.Forms.DataGridView lectureGridView;
         private System.Windows.Forms.GroupBox searhgroupBox;
         private System.Windows.Forms.BindingSource lectureBindingSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn managerDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn creditDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn placeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn capacityDataGridViewTextBoxColumn;
     }
 }

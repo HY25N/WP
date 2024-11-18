@@ -209,28 +209,28 @@ namespace pr3
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }  
+        public int Id { get; set; }
 
         [Required]
         [StringLength(200)]
-        public string Name { get; set; }  
+        public string Name { get; set; }
 
         [Required]
-        public int Code { get; set; }  
+        public int Code { get; set; }
 
         [Required]
         [StringLength(100)]
-        public string Manager { get; set; } 
+        public string Manager { get; set; }
 
         [Required]
         [Range(0, 10)]
-        public int Credit { get; set; } 
+        public int Credit { get; set; }
 
         [StringLength(250)]
-        public string Place { get; set; } 
+        public string Place { get; set; }
 
         [Required]
-        public int Capacity { get; set; } 
+        public int Capacity { get; set; }
     }
 
     [Table("Enrollment")]
