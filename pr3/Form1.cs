@@ -5,11 +5,12 @@ using System.ComponentModel.DataAnnotations;
 using System.Data.Entity; // EF6 네임스페이스
 using System.Data.SQLite;
 using System.Diagnostics;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Runtime.Remoting.Contexts;
 using System.Windows.Forms;
-using 강의;
+using System.Windows.Forms.DataVisualization.Charting;
 
 
 namespace pr3
@@ -46,7 +47,7 @@ namespace pr3
 
             UpdateStudentGridView();
 
-            repo.CreateStudentsDummy();
+            if (context.Students.ToList().Count == 0) repo.CreateStudentsDummy();
         }
 
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
@@ -71,29 +72,30 @@ namespace pr3
 
             viewPanel.Controls.Clear();
             viewPanel.Controls.Add(studentListViewControl);
-        }   
-
-        private void Form1_Resize(object sender, EventArgs e)
-        {
-            Debug.WriteLine("최상위 부모 창: " + this.Width);
-            Debug.WriteLine("최상위 부모 창의 뷰 패널: " + viewPanel.Width);
         }
 
-        private void lectureButton_Click(object sender, EventArgs e)
+        private void lecturelabel_Click(object sender, EventArgs e)
         {
-            lectureControl lc = new lectureControl();
+            lectureView();
+        }
+        private void lectureView()
+        {
+            lectureControl lectureViewControl = new lectureControl(context);
+
+            lectureViewControl.Dock = DockStyle.Fill;
+
             viewPanel.Controls.Clear();
-            viewPanel.Controls.Add(lc);
+            viewPanel.Controls.Add(lectureViewControl);
         }
 
-        private void rToolStripMenuItem2_Click(object sender, EventArgs e)
+        private void satisticsLabel_Click(object sender, EventArgs e)
         {
+            Statistics s = new Statistics(context);
 
-        }
+            s.Dock = DockStyle.Fill;
 
-        private void 프로그램정보ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
+            viewPanel.Controls.Clear();
+            viewPanel.Controls.Add(s);
         }
 
         private void scorebutton_Click(object sender, EventArgs e)

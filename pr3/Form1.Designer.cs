@@ -46,6 +46,7 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.rToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.splitter1 = new System.Windows.Forms.Splitter();
+            this.satisticsLabel = new System.Windows.Forms.Label();
             this.sidebar.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -182,7 +183,18 @@
             this.rToolStripMenuItem2.Name = "rToolStripMenuItem2";
             this.rToolStripMenuItem2.Size = new System.Drawing.Size(137, 36);
             this.rToolStripMenuItem2.Text = "도움말(&H)";
-            this.rToolStripMenuItem2.Click += new System.EventHandler(this.rToolStripMenuItem2_Click);
+            // 
+            // 도움말보기VToolStripMenuItem
+            // 
+            this.도움말보기VToolStripMenuItem.Name = "도움말보기VToolStripMenuItem";
+            this.도움말보기VToolStripMenuItem.Size = new System.Drawing.Size(289, 40);
+            this.도움말보기VToolStripMenuItem.Text = "도움말 보기(&V)";
+            // 
+            // 프로그램정보ToolStripMenuItem
+            // 
+            this.프로그램정보ToolStripMenuItem.Name = "프로그램정보ToolStripMenuItem";
+            this.프로그램정보ToolStripMenuItem.Size = new System.Drawing.Size(289, 40);
+            this.프로그램정보ToolStripMenuItem.Text = "프로그램 정보(&V)";
             // 
             // 도움말보기VToolStripMenuItem
             // 
@@ -229,6 +241,23 @@
             this.splitter1.Size = new System.Drawing.Size(3, 707);
             this.splitter1.TabIndex = 3;
             this.splitter1.TabStop = false;
+            this.lectureButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lectureButton.Font = new System.Drawing.Font("굴림", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lectureButton.Location = new System.Drawing.Point(34, 170);
+            this.lectureButton.Name = "lectureButton";
+            this.lectureButton.Size = new System.Drawing.Size(173, 37);
+            this.lectureButton.TabIndex = 1;
+            this.lectureButton.Text = "강의관리";
+            // 
+            // satisticsLabel
+            // 
+            this.satisticsLabel.Font = new System.Drawing.Font("굴림", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.satisticsLabel.Location = new System.Drawing.Point(52, 609);
+            this.satisticsLabel.Name = "satisticsLabel";
+            this.satisticsLabel.Size = new System.Drawing.Size(283, 38);
+            this.satisticsLabel.TabIndex = 2;
+            this.satisticsLabel.Text = "통계(테스트)";
+            this.satisticsLabel.Click += new System.EventHandler(this.satisticsLabel_Click);
             // 
             // Form1
             // 
@@ -240,11 +269,11 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(5);
             this.MinimumSize = new System.Drawing.Size(1531, 787);
+
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "시스템";
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.Resize += new System.EventHandler(this.Form1_Resize);
             this.sidebar.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -263,6 +292,7 @@
         private System.Windows.Forms.Label studentButton;
         private System.Windows.Forms.ToolStripMenuItem rToolStripMenuItem;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Label lecturelabel;
         private System.Windows.Forms.ToolStripMenuItem rToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem rToolStripMenuItem1;
         private System.Windows.Forms.Label lectureButton;
@@ -274,6 +304,7 @@
         private System.Windows.Forms.ToolStripMenuItem 프로그램정보ToolStripMenuItem;
         private System.Windows.Forms.Label scorebutton;
         private System.Windows.Forms.Splitter splitter1;
+        private System.Windows.Forms.Label satisticsLabel;
     }
 }
 

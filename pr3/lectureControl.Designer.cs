@@ -1,4 +1,4 @@
-﻿namespace 강의
+﻿namespace pr3
 {
     partial class lectureControl
     {
@@ -38,6 +38,7 @@
             this.subjectlabel = new System.Windows.Forms.Label();
             this.numberlabel = new System.Windows.Forms.Label();
             this.searchbutton = new System.Windows.Forms.Button();
+            this.searhgroupBox = new System.Windows.Forms.GroupBox();
             this.lectureGridView = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -52,7 +53,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.lectureGridView)).BeginInit();
             this.SuspendLayout();
             // 
-            // searhgroupBox
+            // professortextBox
             // 
             this.searhgroupBox.Controls.Add(this.professortextBox);
             this.searhgroupBox.Controls.Add(this.professorlabel);
@@ -160,6 +161,26 @@
             this.searchbutton.Text = "검색";
             this.searchbutton.UseVisualStyleBackColor = true;
             // 
+            // searhgroupBox
+            // 
+            this.searhgroupBox.Controls.Add(this.professortextBox);
+            this.searhgroupBox.Controls.Add(this.professorlabel);
+            this.searhgroupBox.Controls.Add(this.choicecomboBox);
+            this.searhgroupBox.Controls.Add(this.Completionlabel);
+            this.searhgroupBox.Controls.Add(this.subjecttextBox);
+            this.searhgroupBox.Controls.Add(this.numbertextBox);
+            this.searhgroupBox.Controls.Add(this.subjectlabel);
+            this.searhgroupBox.Controls.Add(this.numberlabel);
+            this.searhgroupBox.Controls.Add(this.searchbutton);
+            this.searhgroupBox.Location = new System.Drawing.Point(4, 4);
+            this.searhgroupBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.searhgroupBox.Name = "searhgroupBox";
+            this.searhgroupBox.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.searhgroupBox.Size = new System.Drawing.Size(1956, 152);
+            this.searhgroupBox.TabIndex = 8;
+            this.searhgroupBox.TabStop = false;
+            this.searhgroupBox.Text = "강의 검색";
+            // 
             // lectureGridView
             // 
             this.lectureGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -241,7 +262,6 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.lectureGridView);
             this.Controls.Add(this.searhgroupBox);
             this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Name = "lectureControl";
@@ -255,25 +275,26 @@
         }
 
         #endregion
-        private System.Windows.Forms.GroupBox searhgroupBox;
+
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.TextBox professortextBox;
+        private System.Windows.Forms.Label professorlabel;
+        private System.Windows.Forms.ComboBox choicecomboBox;
+        private System.Windows.Forms.Label Completionlabel;
         private System.Windows.Forms.TextBox subjecttextBox;
         private System.Windows.Forms.TextBox numbertextBox;
         private System.Windows.Forms.Label subjectlabel;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.Label numberlabel;
         private System.Windows.Forms.Button searchbutton;
         private System.Windows.Forms.DataGridView lectureGridView;
-        private System.Windows.Forms.Label Completionlabel;
-        private System.Windows.Forms.ComboBox choicecomboBox;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
-        private System.Windows.Forms.TextBox professortextBox;
-        private System.Windows.Forms.Label professorlabel;
+        private System.Windows.Forms.GroupBox searhgroupBox;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
     }
 }
