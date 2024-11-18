@@ -28,33 +28,42 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             this.loginTitle = new System.Windows.Forms.Label();
             this.usernameInput = new System.Windows.Forms.TextBox();
             this.passwordInput = new System.Windows.Forms.TextBox();
-            this.usernameInputLabel = new System.Windows.Forms.Label();
-            this.passwordInputLabel = new System.Windows.Forms.Label();
             this.login = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // loginTitle
             // 
             this.loginTitle.AutoSize = true;
-            this.loginTitle.Font = new System.Drawing.Font("굴림", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.loginTitle.Location = new System.Drawing.Point(196, 63);
-            this.loginTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.loginTitle.BackColor = System.Drawing.Color.Transparent;
+            this.loginTitle.Font = new System.Drawing.Font("바탕", 19.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.loginTitle.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.loginTitle.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.loginTitle.Location = new System.Drawing.Point(95, 49);
+            this.loginTitle.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.loginTitle.Name = "loginTitle";
-            this.loginTitle.Size = new System.Drawing.Size(631, 72);
+            this.loginTitle.Size = new System.Drawing.Size(412, 53);
             this.loginTitle.TabIndex = 0;
-            this.loginTitle.Text = "학사관리 프로그램";
+            this.loginTitle.Text = "원광대 학적관리";
+            this.loginTitle.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.loginTitle.Click += new System.EventHandler(this.loginTitle_Click);
             // 
             // usernameInput
             // 
-            this.usernameInput.Font = new System.Drawing.Font("굴림", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.usernameInput.Location = new System.Drawing.Point(409, 220);
-            this.usernameInput.Margin = new System.Windows.Forms.Padding(4);
+            this.usernameInput.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.usernameInput.Location = new System.Drawing.Point(104, 191);
+            this.usernameInput.Margin = new System.Windows.Forms.Padding(5);
             this.usernameInput.Name = "usernameInput";
-            this.usernameInput.Size = new System.Drawing.Size(268, 40);
+            this.usernameInput.Size = new System.Drawing.Size(369, 44);
             this.usernameInput.TabIndex = 1;
+            this.usernameInput.Text = "아이디를 입력해주세요";
+            this.usernameInput.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.usernameInput.Enter += new System.EventHandler(this.usernameInput_Enter);
             this.usernameInput.KeyDown += new System.Windows.Forms.KeyEventHandler(this.usernameInput_KeyDown);
             this.usernameInput.KeyUp += new System.Windows.Forms.KeyEventHandler(this.usernameInput_KeyUp);
@@ -62,74 +71,76 @@
             // 
             // passwordInput
             // 
-            this.passwordInput.Font = new System.Drawing.Font("굴림", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.passwordInput.Location = new System.Drawing.Point(409, 302);
-            this.passwordInput.Margin = new System.Windows.Forms.Padding(4);
+            this.passwordInput.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.passwordInput.Location = new System.Drawing.Point(104, 258);
+            this.passwordInput.Margin = new System.Windows.Forms.Padding(5);
             this.passwordInput.Name = "passwordInput";
-            this.passwordInput.Size = new System.Drawing.Size(268, 40);
+            this.passwordInput.Size = new System.Drawing.Size(369, 44);
             this.passwordInput.TabIndex = 2;
+            this.passwordInput.Text = "비밀번호를 입력해주세요";
+            this.passwordInput.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.passwordInput.Enter += new System.EventHandler(this.passwordInput_Enter);
             this.passwordInput.KeyDown += new System.Windows.Forms.KeyEventHandler(this.passwordInput_KeyDown);
             this.passwordInput.KeyUp += new System.Windows.Forms.KeyEventHandler(this.passwordInput_KeyUp);
             this.passwordInput.Leave += new System.EventHandler(this.passwordInput_Leave);
             // 
-            // usernameInputLabel
-            // 
-            this.usernameInputLabel.AutoSize = true;
-            this.usernameInputLabel.Font = new System.Drawing.Font("굴림", 24.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.usernameInputLabel.Location = new System.Drawing.Point(284, 220);
-            this.usernameInputLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.usernameInputLabel.Name = "usernameInputLabel";
-            this.usernameInputLabel.Size = new System.Drawing.Size(105, 50);
-            this.usernameInputLabel.TabIndex = 3;
-            this.usernameInputLabel.Text = "ID :";
-            // 
-            // passwordInputLabel
-            // 
-            this.passwordInputLabel.AutoSize = true;
-            this.passwordInputLabel.Font = new System.Drawing.Font("굴림", 24.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.passwordInputLabel.Location = new System.Drawing.Point(259, 296);
-            this.passwordInputLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.passwordInputLabel.Name = "passwordInputLabel";
-            this.passwordInputLabel.Size = new System.Drawing.Size(133, 50);
-            this.passwordInputLabel.TabIndex = 4;
-            this.passwordInputLabel.Text = "PW :";
-            // 
             // login
             // 
-            this.login.Font = new System.Drawing.Font("굴림", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.login.Location = new System.Drawing.Point(373, 398);
-            this.login.Margin = new System.Windows.Forms.Padding(4);
+            this.login.BackColor = System.Drawing.Color.White;
+            this.login.Font = new System.Drawing.Font("굴림", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.login.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.login.Location = new System.Drawing.Point(230, 346);
+            this.login.Margin = new System.Windows.Forms.Padding(5);
             this.login.Name = "login";
-            this.login.Size = new System.Drawing.Size(217, 63);
+            this.login.Size = new System.Drawing.Size(130, 40);
             this.login.TabIndex = 3;
             this.login.Text = "로그인";
-            this.login.UseVisualStyleBackColor = true;
+            this.login.UseVisualStyleBackColor = false;
             this.login.Click += new System.EventHandler(this.login_Click);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.BackColor = System.Drawing.Color.White;
+            this.groupBox1.Controls.Add(this.login);
+            this.groupBox1.Controls.Add(this.loginTitle);
+            this.groupBox1.Controls.Add(this.passwordInput);
+            this.groupBox1.Controls.Add(this.usernameInput);
+            this.groupBox1.Location = new System.Drawing.Point(30, 99);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(590, 430);
+            this.groupBox1.TabIndex = 4;
+            this.groupBox1.TabStop = false;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("groupBox2.BackgroundImage")));
+            this.groupBox2.Location = new System.Drawing.Point(644, 99);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(590, 430);
+            this.groupBox2.TabIndex = 5;
+            this.groupBox2.TabStop = false;
             // 
             // LoginForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::pr3.Properties.Resources.loginBackground;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(978, 504);
-            this.Controls.Add(this.login);
-            this.Controls.Add(this.passwordInputLabel);
-            this.Controls.Add(this.usernameInputLabel);
-            this.Controls.Add(this.passwordInput);
-            this.Controls.Add(this.usernameInput);
-            this.Controls.Add(this.loginTitle);
-            this.Margin = new System.Windows.Forms.Padding(4);
-            this.MaximumSize = new System.Drawing.Size(1000, 560);
-            this.MinimumSize = new System.Drawing.Size(1000, 560);
+            this.ClientSize = new System.Drawing.Size(1266, 652);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
+            this.ForeColor = System.Drawing.Color.White;
+            this.Margin = new System.Windows.Forms.Padding(5);
+            this.MaximumSize = new System.Drawing.Size(1292, 723);
+            this.MinimumSize = new System.Drawing.Size(1292, 723);
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "머씻는 학사관리 프로그램";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form2_FormClosing);
             this.Load += new System.EventHandler(this.Form2_Load);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -138,8 +149,8 @@
         private System.Windows.Forms.Label loginTitle;
         private System.Windows.Forms.TextBox usernameInput;
         private System.Windows.Forms.TextBox passwordInput;
-        private System.Windows.Forms.Label usernameInputLabel;
-        private System.Windows.Forms.Label passwordInputLabel;
         private System.Windows.Forms.Button login;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBox2;
     }
 }
