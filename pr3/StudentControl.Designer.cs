@@ -594,7 +594,7 @@
             this.modeLabel.Font = new System.Drawing.Font("굴림", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.modeLabel.Location = new System.Drawing.Point(22, 24);
             this.modeLabel.Name = "modeLabel";
-            this.modeLabel.Size = new System.Drawing.Size(175, 64);
+            this.modeLabel.Size = new System.Drawing.Size(147, 54);
             this.modeLabel.TabIndex = 68;
             this.modeLabel.Text = "현재 모드: \r\n읽기";
             // 
