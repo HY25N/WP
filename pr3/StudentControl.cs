@@ -26,7 +26,7 @@ namespace pr3
 
         public void UpdateView(Func<DataRow, Boolean> filterFunc)
         {
-            DataTable dataTable = (DataTable) studentDataGridView.DataSource;
+            DataTable dataTable = (DataTable)studentDataGridView.DataSource;
 
             // 데이터 테이블의 행을 역순으로 순회 (삭제 시 인덱스 꼬임 방지)
             for (int i = dataTable.Rows.Count - 1; i >= 0; i--)
@@ -40,7 +40,6 @@ namespace pr3
 
         public void CreateView(List<Student> students, Func<Student, Boolean> filterFunc)
         {
-
             // BindingSource bindingSource = new BindingSource();
             // bindingSource.DataSource = students;
             // studentDataGridView.DataSource = bindingSource;
@@ -91,8 +90,12 @@ namespace pr3
         {
             modeLabel.Text = "현재 모드:\n수정";
 
+            DialogResult result1 = MessageBox.Show($"수정하시겠습니까?", "복구불가!", MessageBoxButtons.YesNo);
+            if (result1 == DialogResult.No) { MessageBox.Show("취소되었습니다."); return; }
+
             int StudentID = CreateStudentByUserInterface().StudentID;
             Student student = Context.Students.SingleOrDefault(s => s.StudentID == StudentID);
+            if (student == null) { MessageBox.Show("존재하지 않는 학생입니다."); return; }
 
             StudentID = int.Parse(studentIDBox.Text);
             student.Name = nameBox.Text;
@@ -103,8 +106,25 @@ namespace pr3
             student.PhoneNumber = phoneNumberBox.Text;
             student.Grade = int.Parse(grade1Box.Text) + int.Parse(grade2Box.Text);
 
-            Context.Students.AddOrUpdate(student);
-            Context.SaveChanges();
+
+            try
+            {
+                Context.Students.AddOrUpdate(student);
+                Context.SaveChanges();
+                MessageBox.Show("수정되었습니다.");
+            }
+            catch (System.Data.Entity.Infrastructure.DbUpdateException ex)
+            {
+                MessageBox.Show("다시 시도해 주십시오.");
+                Context.Database.Connection.Close();
+                Context = new ApplicationDbContext();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("오류");
+                Context.Database.Connection.Close();
+                Context = new ApplicationDbContext();
+            }
         }
 
         private void studentDataGridView_RowEnter(object sender, DataGridViewCellEventArgs e)
@@ -138,17 +158,28 @@ namespace pr3
 
 
                     Student removeTarget = Context.Students.SingleOrDefault(student => student.StudentID == studentID);
+                    if (removeTarget == null) { MessageBox.Show("존재하지 않는 학생입니다."); return; }
+
 
                     DialogResult result1 = MessageBox.Show($"{removeTarget.StudentID} {removeTarget.Name}\n정말 삭제하시겠습니까?", "진짜로?", MessageBoxButtons.YesNo);
                     if (result1 == DialogResult.No) { MessageBox.Show("취소되었습니다."); return; }
 
-                    Context.Students.Remove(removeTarget);
                     dataTable.Rows[rowIndex].Delete();
-
                     dataTable.AcceptChanges();
-                    Context.SaveChanges();
+
+                    try
+                    {
+                        Context.Students.Remove(removeTarget);
+                        Context.SaveChanges();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+
+
                 }
-                MessageBox.Show("삭제되었습니다..");
+                MessageBox.Show("삭제되었습니다.");
             }
             else
             {
@@ -162,21 +193,28 @@ namespace pr3
             Student student = CreateStudentByUserInterface();
 
 
-            try 
+            // 뭐가 문제인지 예외가 한번 발생하면 정상입력이 들어와도 예외가 발생한다.
+            // 그래서 예외 발생시 디비 연결을 다시 한다.
+            try
             {
                 Context.Students.Add(student);
                 // Context.Students.Attach(student);
                 Context.SaveChanges();
+                MessageBox.Show("등록되었습니다.");
             }
             catch (System.Data.Entity.Infrastructure.DbUpdateException ex)
             {
                 MessageBox.Show("이미 등록된 정보입니다.\n등록할 수 없습니다.");
+                Context.Database.Connection.Close();
+                Context = new ApplicationDbContext();
             }
             catch (Exception ex)
             {
                 MessageBox.Show("알 수 없는 오류가 발생했습니다.\n등록할 수 없습니다.");
+                Context.Database.Connection.Close();
+                Context = new ApplicationDbContext();
             }
-            
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -239,7 +277,7 @@ namespace pr3
         {
             if (grade <= 1) return (grade, grade);
 
-            int grade1 = (grade+1) / 2;
+            int grade1 = (grade + 1) / 2;
             int grade2 = (grade % 2 == 1) ? 1 : 2;
 
             return (grade1, grade2);
@@ -253,6 +291,5 @@ namespace pr3
 
             return (grade1 - 1) * 2 + grade2;
         }
-
     }
 }

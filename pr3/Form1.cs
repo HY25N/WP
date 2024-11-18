@@ -47,7 +47,7 @@ namespace pr3
 
             UpdateStudentGridView();
 
-            if (context.Students.ToList().Count == 0) repo.CreateStudentsDummy();
+            if (context.Students.ToList().Count == 0) repo.CreateStudentsDummy(30);
         }
 
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
@@ -96,7 +96,7 @@ namespace pr3
 
         private void scorebutton_Click(object sender, EventArgs e)
         {
-            score lc = new score();
+            scoreControl lc = new scoreControl();
             viewPanel.Controls.Clear();
             viewPanel.Controls.Add(lc);
         }

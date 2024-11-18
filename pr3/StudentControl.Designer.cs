@@ -38,12 +38,8 @@
             this.StudentID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.departmentColum = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameColum = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateOfBirthDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gradeColum = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.phoneNumberColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.addressColum = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.studentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.studentInfoGroupBox = new System.Windows.Forms.GroupBox();
             this.resetButton = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -73,11 +69,15 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.modeLabel = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.dateOfBirthDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.phoneNumberColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.studentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.studentDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).BeginInit();
             this.studentInfoGroupBox.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // deleteButton
@@ -191,16 +191,6 @@
             this.nameColum.ReadOnly = true;
             this.nameColum.Width = 120;
             // 
-            // dateOfBirthDataGridViewTextBoxColumn
-            // 
-            this.dateOfBirthDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dateOfBirthDataGridViewTextBoxColumn.DataPropertyName = "DateOfBirth";
-            this.dateOfBirthDataGridViewTextBoxColumn.HeaderText = "생년월일";
-            this.dateOfBirthDataGridViewTextBoxColumn.MinimumWidth = 60;
-            this.dateOfBirthDataGridViewTextBoxColumn.Name = "dateOfBirthDataGridViewTextBoxColumn";
-            this.dateOfBirthDataGridViewTextBoxColumn.ReadOnly = true;
-            this.dateOfBirthDataGridViewTextBoxColumn.Width = 135;
-            // 
             // gradeColum
             // 
             this.gradeColum.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
@@ -212,28 +202,6 @@
             this.gradeColum.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.gradeColum.Width = 70;
             // 
-            // phoneNumberColumn
-            // 
-            this.phoneNumberColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.phoneNumberColumn.DataPropertyName = "PhoneNumber";
-            this.phoneNumberColumn.HeaderText = "전화번호";
-            this.phoneNumberColumn.MinimumWidth = 60;
-            this.phoneNumberColumn.Name = "phoneNumberColumn";
-            this.phoneNumberColumn.ReadOnly = true;
-            this.phoneNumberColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.phoneNumberColumn.Width = 165;
-            // 
-            // emailDataGridViewTextBoxColumn
-            // 
-            this.emailDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
-            this.emailDataGridViewTextBoxColumn.HeaderText = "이메일";
-            this.emailDataGridViewTextBoxColumn.MinimumWidth = 60;
-            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
-            this.emailDataGridViewTextBoxColumn.ReadOnly = true;
-            this.emailDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.emailDataGridViewTextBoxColumn.Width = 180;
-            // 
             // addressColum
             // 
             this.addressColum.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -243,10 +211,6 @@
             this.addressColum.Name = "addressColum";
             this.addressColum.ReadOnly = true;
             this.addressColum.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // studentBindingSource
-            // 
-            this.studentBindingSource.DataSource = typeof(pr3.Student);
             // 
             // studentInfoGroupBox
             // 
@@ -576,27 +540,62 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.modeLabel);
             this.groupBox1.Controls.Add(this.deleteButton);
             this.groupBox1.Controls.Add(this.editButton);
             this.groupBox1.Controls.Add(this.createButton);
-            this.groupBox1.Location = new System.Drawing.Point(1490, 3);
+            this.groupBox1.Location = new System.Drawing.Point(1043, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(250, 297);
+            this.groupBox1.Size = new System.Drawing.Size(172, 297);
             this.groupBox1.TabIndex = 59;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
+            this.groupBox1.Text = "제어기";
             // 
             // modeLabel
             // 
             this.modeLabel.AutoSize = true;
             this.modeLabel.Font = new System.Drawing.Font("굴림", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.modeLabel.Location = new System.Drawing.Point(22, 24);
+            this.modeLabel.Location = new System.Drawing.Point(0, 24);
             this.modeLabel.Name = "modeLabel";
-            this.modeLabel.Size = new System.Drawing.Size(147, 54);
+            this.modeLabel.Size = new System.Drawing.Size(175, 64);
             this.modeLabel.TabIndex = 68;
             this.modeLabel.Text = "현재 모드: \r\n읽기";
+            // 
+            // dateOfBirthDataGridViewTextBoxColumn
+            // 
+            this.dateOfBirthDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dateOfBirthDataGridViewTextBoxColumn.DataPropertyName = "DateOfBirth";
+            this.dateOfBirthDataGridViewTextBoxColumn.HeaderText = "생년월일";
+            this.dateOfBirthDataGridViewTextBoxColumn.MinimumWidth = 60;
+            this.dateOfBirthDataGridViewTextBoxColumn.Name = "dateOfBirthDataGridViewTextBoxColumn";
+            this.dateOfBirthDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dateOfBirthDataGridViewTextBoxColumn.Width = 135;
+            // 
+            // phoneNumberColumn
+            // 
+            this.phoneNumberColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.phoneNumberColumn.DataPropertyName = "PhoneNumber";
+            this.phoneNumberColumn.HeaderText = "전화번호";
+            this.phoneNumberColumn.MinimumWidth = 60;
+            this.phoneNumberColumn.Name = "phoneNumberColumn";
+            this.phoneNumberColumn.ReadOnly = true;
+            this.phoneNumberColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.phoneNumberColumn.Width = 165;
+            // 
+            // emailDataGridViewTextBoxColumn
+            // 
+            this.emailDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
+            this.emailDataGridViewTextBoxColumn.HeaderText = "이메일";
+            this.emailDataGridViewTextBoxColumn.MinimumWidth = 60;
+            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
+            this.emailDataGridViewTextBoxColumn.ReadOnly = true;
+            this.emailDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.emailDataGridViewTextBoxColumn.Width = 180;
+            // 
+            // studentBindingSource
+            // 
+            this.studentBindingSource.DataSource = typeof(pr3.Student);
             // 
             // StudentControl
             // 
@@ -610,13 +609,13 @@
             this.Load += new System.EventHandler(this.StudentControl_Load);
             this.Resize += new System.EventHandler(this.StudentControl_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.studentDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).EndInit();
             this.studentInfoGroupBox.ResumeLayout(false);
             this.studentInfoGroupBox.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

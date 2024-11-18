@@ -94,10 +94,6 @@
       <DependentUpon>scoreControl.cs</DependentUpon>
     </Compile>
     <Compile Include="StudentControl.cs">
-    <Compile Include="score.Designer.cs">
-      <DependentUpon>score.cs</DependentUpon>
-    </Compile>
-    <Compile Include="StudentControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Statistics.cs">
@@ -118,24 +114,17 @@
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="score.resx">
-      <DependentUpon>score.cs</DependentUpon>
+    <EmbeddedResource Include="scoreControl.resx">
+      <DependentUpon>scoreControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Statistics.resx">
       <DependentUpon>Statistics.cs</DependentUpon>
-    </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <EmbeddedResource Include="scoreControl.resx">
-      <DependentUpon>scoreControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StudentControl.resx">
       <DependentUpon>StudentControl.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\Lecture1.datasource" />
     <None Include="Properties\DataSources\Student.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
