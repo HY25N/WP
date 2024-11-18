@@ -161,6 +161,7 @@ namespace pr3
                     if (removeTarget == null) { MessageBox.Show("존재하지 않는 학생입니다."); return; }
 
 
+
                     DialogResult result1 = MessageBox.Show($"{removeTarget.StudentID} {removeTarget.Name}\n정말 삭제하시겠습니까?", "진짜로?", MessageBoxButtons.YesNo);
                     if (result1 == DialogResult.No) { MessageBox.Show("취소되었습니다."); return; }
 

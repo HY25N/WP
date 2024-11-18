@@ -546,7 +546,7 @@
             this.groupBox1.Controls.Add(this.createButton);
             this.groupBox1.Location = new System.Drawing.Point(1043, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(172, 297);
+            this.groupBox1.Size = new System.Drawing.Size(160, 297);
             this.groupBox1.TabIndex = 59;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "제어기";
@@ -555,7 +555,7 @@
             // 
             this.modeLabel.AutoSize = true;
             this.modeLabel.Font = new System.Drawing.Font("굴림", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.modeLabel.Location = new System.Drawing.Point(0, 24);
+            this.modeLabel.Location = new System.Drawing.Point(8, 24);
             this.modeLabel.Name = "modeLabel";
             this.modeLabel.Size = new System.Drawing.Size(175, 64);
             this.modeLabel.TabIndex = 68;

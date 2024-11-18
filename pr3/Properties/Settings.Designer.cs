@@ -23,21 +23,27 @@ namespace pr3.Properties {
             }
         }
         
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("qw")]
         public string loginUsername {
             get {
                 return ((string)(this["loginUsername"]));
             }
+            set {
+                this["loginUsername"] = value;
+            }
         }
         
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("qw")]
         public string loginPassword {
             get {
                 return ((string)(this["loginPassword"]));
+            }
+            set {
+                this["loginPassword"] = value;
             }
         }
         

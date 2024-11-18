@@ -1,6 +1,6 @@
 ﻿namespace pr3
 {
-    partial class Form1
+    partial class MainForm
     {
         /// <summary>
         /// 필수 디자이너 변수입니다.
@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.sidebar = new System.Windows.Forms.Panel();
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.scorebutton = new System.Windows.Forms.Label();
@@ -65,9 +66,8 @@
             this.sidebar.Name = "sidebar";
             this.sidebar.Size = new System.Drawing.Size(188, 529);
             this.sidebar.TabIndex = 52;
-            // 
             // splitter1
-            // 
+            // lecturelabel
             this.splitter1.Location = new System.Drawing.Point(0, 0);
             this.splitter1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.splitter1.Name = "splitter1";
@@ -100,9 +100,9 @@
             // 
             // studentButton
             // 
-            this.studentButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.studentButton.Font = new System.Drawing.Font("돋움체", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.studentButton.Location = new System.Drawing.Point(11, 22);
+            this.studentButton.Location = new System.Drawing.Point(39, 44);
             this.studentButton.Name = "studentButton";
             this.studentButton.Size = new System.Drawing.Size(165, 37);
             this.studentButton.TabIndex = 0;
@@ -114,14 +114,15 @@
             this.viewPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.viewPanel.AutoScroll = true;
             this.viewPanel.AutoSize = true;
             this.viewPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.viewPanel.BackColor = System.Drawing.Color.DarkGray;
-            this.viewPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.viewPanel.Location = new System.Drawing.Point(202, 8);
             this.viewPanel.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
-            this.viewPanel.Name = "viewPanel";
+            this.viewPanel.Margin = new System.Windows.Forms.Padding(9);
             this.viewPanel.Size = new System.Drawing.Size(1298, 519);
+            this.viewPanel.Size = new System.Drawing.Size(1900, 942);
             this.viewPanel.TabIndex = 0;
             // 
             // menuStrip1
@@ -167,7 +168,7 @@
             this.계정수정미구현ToolStripMenuItem,
             this.데이터백업ToolStripMenuItem});
             this.rToolStripMenuItem.Name = "rToolStripMenuItem";
-            this.rToolStripMenuItem.Size = new System.Drawing.Size(91, 29);
+            this.rToolStripMenuItem.Size = new System.Drawing.Size(104, 34);
             this.rToolStripMenuItem.Text = "관리(&M)";
             // 
             // 계정수정미구현ToolStripMenuItem
@@ -235,7 +236,6 @@
             this.satisticsLabel.Size = new System.Drawing.Size(283, 38);
             this.satisticsLabel.TabIndex = 2;
             this.satisticsLabel.Text = "통계(테스트)";
-            this.satisticsLabel.Click += new System.EventHandler(this.satisticsLabel_Click);
             // 
             // Form1
             // 
@@ -244,12 +244,12 @@
             this.ClientSize = new System.Drawing.Size(1508, 568);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.MinimumSize = new System.Drawing.Size(1183, 604);
-            this.Name = "Form1";
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "시스템";
+            this.Text = "원광학생관리 v1.0.0";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.sidebar.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
@@ -269,7 +269,6 @@
         private System.Windows.Forms.Label studentButton;
         private System.Windows.Forms.ToolStripMenuItem rToolStripMenuItem;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Label lecturelabel;
         private System.Windows.Forms.ToolStripMenuItem rToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem rToolStripMenuItem1;
         private System.Windows.Forms.Label lectureButton;
