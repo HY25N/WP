@@ -2,10 +2,10 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="pr3.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
-    <Setting Name="loginUsername" Type="System.String" Scope="Application">
+    <Setting Name="loginUsername" Type="System.String" Scope="User">
       <Value Profile="(Default)">qw</Value>
     </Setting>
-    <Setting Name="loginPassword" Type="System.String" Scope="Application">
+    <Setting Name="loginPassword" Type="System.String" Scope="User">
       <Value Profile="(Default)">qw</Value>
     </Setting>
     <Setting Name="usernameInputPlaceholder" Type="System.String" Scope="Application">

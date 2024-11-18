@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.professortextBox = new System.Windows.Forms.TextBox();
             this.professorlabel = new System.Windows.Forms.Label();
             this.choicecomboBox = new System.Windows.Forms.ComboBox();
@@ -39,6 +40,7 @@
             this.searchbutton = new System.Windows.Forms.Button();
             this.searhgroupBox = new System.Windows.Forms.GroupBox();
             this.lectureGridView = new System.Windows.Forms.DataGridView();
+            this.lectureBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -50,12 +52,13 @@
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.searhgroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lectureGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lectureBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // professortextBox
             // 
             this.professortextBox.Location = new System.Drawing.Point(1070, 69);
-            this.professortextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.professortextBox.Margin = new System.Windows.Forms.Padding(4);
             this.professortextBox.Name = "professortextBox";
             this.professortextBox.Size = new System.Drawing.Size(170, 28);
             this.professortextBox.TabIndex = 14;
@@ -79,7 +82,7 @@
             "교양 필수",
             "교양 선택"});
             this.choicecomboBox.Location = new System.Drawing.Point(773, 70);
-            this.choicecomboBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.choicecomboBox.Margin = new System.Windows.Forms.Padding(4);
             this.choicecomboBox.Name = "choicecomboBox";
             this.choicecomboBox.Size = new System.Drawing.Size(171, 26);
             this.choicecomboBox.TabIndex = 12;
@@ -97,7 +100,7 @@
             // subjecttextBox
             // 
             this.subjecttextBox.Location = new System.Drawing.Point(459, 69);
-            this.subjecttextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.subjecttextBox.Margin = new System.Windows.Forms.Padding(4);
             this.subjecttextBox.Name = "subjecttextBox";
             this.subjecttextBox.Size = new System.Drawing.Size(170, 28);
             this.subjecttextBox.TabIndex = 10;
@@ -105,7 +108,7 @@
             // numbertextBox
             // 
             this.numbertextBox.Location = new System.Drawing.Point(144, 69);
-            this.numbertextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.numbertextBox.Margin = new System.Windows.Forms.Padding(4);
             this.numbertextBox.Name = "numbertextBox";
             this.numbertextBox.Size = new System.Drawing.Size(170, 28);
             this.numbertextBox.TabIndex = 9;
@@ -133,7 +136,7 @@
             // searchbutton
             // 
             this.searchbutton.Location = new System.Drawing.Point(1720, 50);
-            this.searchbutton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.searchbutton.Margin = new System.Windows.Forms.Padding(4);
             this.searchbutton.Name = "searchbutton";
             this.searchbutton.Size = new System.Drawing.Size(227, 70);
             this.searchbutton.TabIndex = 6;
@@ -152,9 +155,9 @@
             this.searhgroupBox.Controls.Add(this.numberlabel);
             this.searhgroupBox.Controls.Add(this.searchbutton);
             this.searhgroupBox.Location = new System.Drawing.Point(4, 4);
-            this.searhgroupBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.searhgroupBox.Margin = new System.Windows.Forms.Padding(4);
             this.searhgroupBox.Name = "searhgroupBox";
-            this.searhgroupBox.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.searhgroupBox.Padding = new System.Windows.Forms.Padding(4);
             this.searhgroupBox.Size = new System.Drawing.Size(1956, 152);
             this.searhgroupBox.TabIndex = 8;
             this.searhgroupBox.TabStop = false;
@@ -162,6 +165,7 @@
             // 
             // lectureGridView
             // 
+            this.lectureGridView.AutoGenerateColumns = false;
             this.lectureGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.lectureGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedHeaders;
             this.lectureGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -175,28 +179,36 @@
             this.Column7,
             this.Column8,
             this.Column9});
+            this.lectureGridView.DataSource = this.lectureBindingSource;
             this.lectureGridView.Location = new System.Drawing.Point(4, 165);
-            this.lectureGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lectureGridView.Margin = new System.Windows.Forms.Padding(4);
             this.lectureGridView.Name = "lectureGridView";
             this.lectureGridView.RowHeadersWidth = 62;
             this.lectureGridView.RowTemplate.Height = 23;
             this.lectureGridView.Size = new System.Drawing.Size(1956, 1080);
             this.lectureGridView.TabIndex = 9;
             // 
+            // lectureBindingSource
+            // 
+            this.lectureBindingSource.DataSource = typeof(pr3.Lecture);
+            // 
             // Column1
             // 
+            this.Column1.DataPropertyName = "Code";
             this.Column1.HeaderText = "학수번호";
             this.Column1.MinimumWidth = 8;
             this.Column1.Name = "Column1";
             // 
             // Column2
             // 
+            this.Column2.DataPropertyName = "Name";
             this.Column2.HeaderText = "교과목명";
             this.Column2.MinimumWidth = 8;
             this.Column2.Name = "Column2";
             // 
             // Column3
             // 
+            this.Column3.DataPropertyName = "Manager";
             this.Column3.HeaderText = "교수명";
             this.Column3.MinimumWidth = 8;
             this.Column3.Name = "Column3";
@@ -209,6 +221,7 @@
             // 
             // Column5
             // 
+            this.Column5.DataPropertyName = "Credit";
             this.Column5.HeaderText = "학점";
             this.Column5.MinimumWidth = 8;
             this.Column5.Name = "Column5";
@@ -221,12 +234,14 @@
             // 
             // Column7
             // 
+            this.Column7.DataPropertyName = "Place";
             this.Column7.HeaderText = "강의실";
             this.Column7.MinimumWidth = 8;
             this.Column7.Name = "Column7";
             // 
             // Column8
             // 
+            this.Column8.DataPropertyName = "Capacity";
             this.Column8.HeaderText = "수강인원";
             this.Column8.MinimumWidth = 8;
             this.Column8.Name = "Column8";
@@ -243,21 +258,19 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.searhgroupBox);
             this.Controls.Add(this.lectureGridView);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "lectureControl";
             this.Size = new System.Drawing.Size(2021, 1287);
             this.Load += new System.EventHandler(this.lectureControl_Load);
             this.searhgroupBox.ResumeLayout(false);
             this.searhgroupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lectureGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lectureBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.TextBox professortextBox;
         private System.Windows.Forms.Label professorlabel;
         private System.Windows.Forms.ComboBox choicecomboBox;
@@ -265,16 +278,19 @@
         private System.Windows.Forms.TextBox subjecttextBox;
         private System.Windows.Forms.TextBox numbertextBox;
         private System.Windows.Forms.Label subjectlabel;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.Label numberlabel;
         private System.Windows.Forms.Button searchbutton;
         private System.Windows.Forms.DataGridView lectureGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.GroupBox searhgroupBox;
+        private System.Windows.Forms.BindingSource lectureBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
     }
 }

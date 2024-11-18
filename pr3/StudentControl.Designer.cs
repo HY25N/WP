@@ -35,6 +35,11 @@
             this.editButton = new System.Windows.Forms.Button();
             this.createButton = new System.Windows.Forms.Button();
             this.studentDataGridView = new System.Windows.Forms.DataGridView();
+            this.StudentID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.departmentColum = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameColum = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gradeColum = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.addressColum = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.studentInfoGroupBox = new System.Windows.Forms.GroupBox();
             this.resetButton = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -59,20 +64,13 @@
             this.addressBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.sqLiteCommandBuilder1 = new System.Data.SQLite.SQLiteCommandBuilder();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.modeLabel = new System.Windows.Forms.Label();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.studentBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.StudentID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.departmentColum = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameColum = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateOfBirthDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gradeColum = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.phoneNumberColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.addressColum = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.studentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.studentDataGridView)).BeginInit();
             this.studentInfoGroupBox.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -149,7 +147,7 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.studentDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
             this.studentDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.studentDataGridView.Location = new System.Drawing.Point(4, 313);
+            this.studentDataGridView.Location = new System.Drawing.Point(4, 314);
             this.studentDataGridView.Margin = new System.Windows.Forms.Padding(4);
             this.studentDataGridView.Name = "studentDataGridView";
             this.studentDataGridView.ReadOnly = true;
@@ -157,9 +155,60 @@
             this.studentDataGridView.RowHeadersWidth = 72;
             this.studentDataGridView.RowTemplate.Height = 28;
             this.studentDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.studentDataGridView.Size = new System.Drawing.Size(1735, 812);
+            this.studentDataGridView.Size = new System.Drawing.Size(1735, 811);
             this.studentDataGridView.TabIndex = 53;
             this.studentDataGridView.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.studentDataGridView_RowEnter);
+            // 
+            // StudentID
+            // 
+            this.StudentID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.StudentID.DataPropertyName = "StudentID";
+            this.StudentID.HeaderText = "학번";
+            this.StudentID.MinimumWidth = 100;
+            this.StudentID.Name = "StudentID";
+            this.StudentID.ReadOnly = true;
+            this.StudentID.Width = 125;
+            // 
+            // departmentColum
+            // 
+            this.departmentColum.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.departmentColum.DataPropertyName = "Department";
+            this.departmentColum.HeaderText = "학과";
+            this.departmentColum.MinimumWidth = 150;
+            this.departmentColum.Name = "departmentColum";
+            this.departmentColum.ReadOnly = true;
+            this.departmentColum.Width = 280;
+            // 
+            // nameColum
+            // 
+            this.nameColum.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.nameColum.DataPropertyName = "Name";
+            this.nameColum.HeaderText = "이름";
+            this.nameColum.MinimumWidth = 70;
+            this.nameColum.Name = "nameColum";
+            this.nameColum.ReadOnly = true;
+            this.nameColum.Width = 120;
+            // 
+            // gradeColum
+            // 
+            this.gradeColum.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.gradeColum.DataPropertyName = "Grade";
+            this.gradeColum.HeaderText = "수료학기";
+            this.gradeColum.MinimumWidth = 30;
+            this.gradeColum.Name = "gradeColum";
+            this.gradeColum.ReadOnly = true;
+            this.gradeColum.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.gradeColum.Width = 70;
+            // 
+            // addressColum
+            // 
+            this.addressColum.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.addressColum.DataPropertyName = "Address";
+            this.addressColum.HeaderText = "주소";
+            this.addressColum.MinimumWidth = 60;
+            this.addressColum.Name = "addressColum";
+            this.addressColum.ReadOnly = true;
+            this.addressColum.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // studentInfoGroupBox
             // 
@@ -194,7 +243,7 @@
             this.studentInfoGroupBox.Margin = new System.Windows.Forms.Padding(4);
             this.studentInfoGroupBox.Name = "studentInfoGroupBox";
             this.studentInfoGroupBox.Padding = new System.Windows.Forms.Padding(4);
-            this.studentInfoGroupBox.Size = new System.Drawing.Size(1032, 301);
+            this.studentInfoGroupBox.Size = new System.Drawing.Size(836, 302);
             this.studentInfoGroupBox.TabIndex = 57;
             this.studentInfoGroupBox.TabStop = false;
             this.studentInfoGroupBox.Text = "학생 정보";
@@ -202,7 +251,7 @@
             // resetButton
             // 
             this.resetButton.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.resetButton.Location = new System.Drawing.Point(928, 229);
+            this.resetButton.Location = new System.Drawing.Point(742, 235);
             this.resetButton.Margin = new System.Windows.Forms.Padding(4);
             this.resetButton.Name = "resetButton";
             this.resetButton.Size = new System.Drawing.Size(86, 38);
@@ -214,7 +263,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button1.Location = new System.Drawing.Point(805, 232);
+            this.button1.Location = new System.Drawing.Point(619, 235);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(115, 35);
@@ -236,56 +285,56 @@
             this.filterColum.Location = new System.Drawing.Point(10, 235);
             this.filterColum.Margin = new System.Windows.Forms.Padding(4);
             this.filterColum.Name = "filterColum";
-            this.filterColum.Size = new System.Drawing.Size(114, 36);
+            this.filterColum.Size = new System.Drawing.Size(88, 32);
             this.filterColum.TabIndex = 70;
             // 
             // filterValue
             // 
             this.filterValue.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.filterValue.Location = new System.Drawing.Point(144, 232);
+            this.filterValue.Location = new System.Drawing.Point(115, 235);
             this.filterValue.Margin = new System.Windows.Forms.Padding(4);
             this.filterValue.Name = "filterValue";
-            this.filterValue.Size = new System.Drawing.Size(653, 40);
+            this.filterValue.Size = new System.Drawing.Size(496, 35);
             this.filterValue.TabIndex = 69;
             // 
             // emailBox
             // 
             this.emailBox.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.emailBox.Location = new System.Drawing.Point(665, 152);
+            this.emailBox.Location = new System.Drawing.Point(548, 141);
             this.emailBox.Margin = new System.Windows.Forms.Padding(4);
             this.emailBox.Name = "emailBox";
-            this.emailBox.Size = new System.Drawing.Size(287, 40);
+            this.emailBox.Size = new System.Drawing.Size(275, 35);
             this.emailBox.TabIndex = 66;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label8.Location = new System.Drawing.Point(567, 152);
+            this.label8.Location = new System.Drawing.Point(462, 144);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(105, 28);
+            this.label8.Size = new System.Drawing.Size(90, 24);
             this.label8.TabIndex = 65;
             this.label8.Text = " 이메일";
             // 
             // phoneNumberBox
             // 
             this.phoneNumberBox.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.phoneNumberBox.Location = new System.Drawing.Point(374, 95);
+            this.phoneNumberBox.Location = new System.Drawing.Point(277, 92);
             this.phoneNumberBox.Margin = new System.Windows.Forms.Padding(4);
             this.phoneNumberBox.Mask = "000-9000-0000";
             this.phoneNumberBox.Name = "phoneNumberBox";
-            this.phoneNumberBox.Size = new System.Drawing.Size(183, 40);
+            this.phoneNumberBox.Size = new System.Drawing.Size(139, 35);
             this.phoneNumberBox.TabIndex = 64;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label7.Location = new System.Drawing.Point(276, 98);
+            this.label7.Location = new System.Drawing.Point(189, 95);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(105, 28);
+            this.label7.Size = new System.Drawing.Size(90, 24);
             this.label7.TabIndex = 63;
             this.label7.Text = " 연락처";
             // 
@@ -293,21 +342,21 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label6.Location = new System.Drawing.Point(576, 106);
+            this.label6.Location = new System.Drawing.Point(430, 99);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(124, 28);
+            this.label6.Size = new System.Drawing.Size(106, 24);
             this.label6.TabIndex = 62;
             this.label6.Text = "생년월일";
             // 
             // birthdayDateTimePicker
             // 
             this.birthdayDateTimePicker.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.birthdayDateTimePicker.Location = new System.Drawing.Point(690, 99);
+            this.birthdayDateTimePicker.Location = new System.Drawing.Point(530, 95);
             this.birthdayDateTimePicker.Margin = new System.Windows.Forms.Padding(4);
             this.birthdayDateTimePicker.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             this.birthdayDateTimePicker.Name = "birthdayDateTimePicker";
-            this.birthdayDateTimePicker.Size = new System.Drawing.Size(293, 40);
+            this.birthdayDateTimePicker.Size = new System.Drawing.Size(293, 35);
             this.birthdayDateTimePicker.TabIndex = 61;
             this.birthdayDateTimePicker.Value = new System.DateTime(2024, 11, 10, 21, 45, 29, 0);
             // 
@@ -318,20 +367,20 @@
             this.grade2Box.Items.AddRange(new object[] {
             " 1",
             " 2"});
-            this.grade2Box.Location = new System.Drawing.Point(786, 42);
+            this.grade2Box.Location = new System.Drawing.Point(678, 36);
             this.grade2Box.Margin = new System.Windows.Forms.Padding(4);
             this.grade2Box.Name = "grade2Box";
-            this.grade2Box.Size = new System.Drawing.Size(93, 36);
+            this.grade2Box.Size = new System.Drawing.Size(54, 32);
             this.grade2Box.TabIndex = 60;
             // 
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
             this.radioButton1.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.radioButton1.Location = new System.Drawing.Point(900, 23);
+            this.radioButton1.Location = new System.Drawing.Point(740, 59);
             this.radioButton1.Margin = new System.Windows.Forms.Padding(4);
             this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(93, 32);
+            this.radioButton1.Size = new System.Drawing.Size(83, 28);
             this.radioButton1.TabIndex = 58;
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "재학";
@@ -343,17 +392,17 @@
             this.departmentBox.Location = new System.Drawing.Point(72, 36);
             this.departmentBox.Margin = new System.Windows.Forms.Padding(4);
             this.departmentBox.Name = "departmentBox";
-            this.departmentBox.Size = new System.Drawing.Size(321, 40);
+            this.departmentBox.Size = new System.Drawing.Size(282, 35);
             this.departmentBox.TabIndex = 54;
             // 
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
             this.radioButton2.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.radioButton2.Location = new System.Drawing.Point(900, 59);
+            this.radioButton2.Location = new System.Drawing.Point(740, 23);
             this.radioButton2.Margin = new System.Windows.Forms.Padding(4);
             this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(93, 32);
+            this.radioButton2.Size = new System.Drawing.Size(83, 28);
             this.radioButton2.TabIndex = 59;
             this.radioButton2.TabStop = true;
             this.radioButton2.Text = "휴학";
@@ -365,7 +414,7 @@
             this.nameBox.Location = new System.Drawing.Point(72, 87);
             this.nameBox.Margin = new System.Windows.Forms.Padding(4);
             this.nameBox.Name = "nameBox";
-            this.nameBox.Size = new System.Drawing.Size(186, 40);
+            this.nameBox.Size = new System.Drawing.Size(98, 35);
             this.nameBox.TabIndex = 52;
             // 
             // grade1Box
@@ -383,19 +432,19 @@
             "7",
             "8",
             "9"});
-            this.grade1Box.Location = new System.Drawing.Point(690, 44);
+            this.grade1Box.Location = new System.Drawing.Point(607, 36);
             this.grade1Box.Margin = new System.Windows.Forms.Padding(4);
             this.grade1Box.Name = "grade1Box";
-            this.grade1Box.Size = new System.Drawing.Size(88, 36);
+            this.grade1Box.Size = new System.Drawing.Size(63, 32);
             this.grade1Box.TabIndex = 57;
             // 
             // studentIDBox
             // 
             this.studentIDBox.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.studentIDBox.Location = new System.Drawing.Point(492, 39);
+            this.studentIDBox.Location = new System.Drawing.Point(439, 36);
             this.studentIDBox.Margin = new System.Windows.Forms.Padding(4);
             this.studentIDBox.Name = "studentIDBox";
-            this.studentIDBox.Size = new System.Drawing.Size(87, 40);
+            this.studentIDBox.Size = new System.Drawing.Size(87, 35);
             this.studentIDBox.TabIndex = 51;
             // 
             // label4
@@ -405,7 +454,7 @@
             this.label4.Location = new System.Drawing.Point(6, 141);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(68, 28);
+            this.label4.Size = new System.Drawing.Size(58, 24);
             this.label4.TabIndex = 50;
             this.label4.Text = "주소";
             // 
@@ -413,10 +462,10 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label5.Location = new System.Drawing.Point(613, 50);
+            this.label5.Location = new System.Drawing.Point(553, 39);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(68, 28);
+            this.label5.Size = new System.Drawing.Size(58, 24);
             this.label5.TabIndex = 55;
             this.label5.Text = "학년";
             this.label5.Click += new System.EventHandler(this.label5_Click);
@@ -428,7 +477,7 @@
             this.label3.Location = new System.Drawing.Point(6, 39);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(68, 28);
+            this.label3.Size = new System.Drawing.Size(58, 24);
             this.label3.TabIndex = 49;
             this.label3.Text = "학과";
             // 
@@ -438,7 +487,7 @@
             this.addressBox.Location = new System.Drawing.Point(72, 141);
             this.addressBox.Margin = new System.Windows.Forms.Padding(4);
             this.addressBox.Name = "addressBox";
-            this.addressBox.Size = new System.Drawing.Size(464, 40);
+            this.addressBox.Size = new System.Drawing.Size(382, 35);
             this.addressBox.TabIndex = 53;
             // 
             // label2
@@ -448,7 +497,7 @@
             this.label2.Location = new System.Drawing.Point(6, 87);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(68, 28);
+            this.label2.Size = new System.Drawing.Size(58, 24);
             this.label2.TabIndex = 48;
             this.label2.Text = "이름";
             // 
@@ -456,23 +505,19 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label1.Location = new System.Drawing.Point(426, 47);
+            this.label1.Location = new System.Drawing.Point(383, 42);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(68, 28);
+            this.label1.Size = new System.Drawing.Size(58, 24);
             this.label1.TabIndex = 47;
             this.label1.Text = "학번";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // sqLiteCommandBuilder1
-            // 
-            this.sqLiteCommandBuilder1.DataAdapter = null;
-            this.sqLiteCommandBuilder1.QuoteSuffix = "]";
-            // 
             // tableLayoutPanel1
             // 
+            this.tableLayoutPanel1.AutoScroll = true;
             this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 1040F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Controls.Add(this.studentDataGridView, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.studentInfoGroupBox, 0, 0);
@@ -489,61 +534,26 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.modeLabel);
             this.groupBox1.Controls.Add(this.deleteButton);
             this.groupBox1.Controls.Add(this.editButton);
             this.groupBox1.Controls.Add(this.createButton);
-            this.groupBox1.Location = new System.Drawing.Point(1490, 3);
+            this.groupBox1.Location = new System.Drawing.Point(847, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(250, 297);
+            this.groupBox1.Size = new System.Drawing.Size(155, 297);
             this.groupBox1.TabIndex = 59;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
+            this.groupBox1.Text = "조작판";
             // 
             // modeLabel
             // 
             this.modeLabel.AutoSize = true;
             this.modeLabel.Font = new System.Drawing.Font("굴림", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.modeLabel.Location = new System.Drawing.Point(22, 24);
+            this.modeLabel.Location = new System.Drawing.Point(11, 24);
             this.modeLabel.Name = "modeLabel";
-            this.modeLabel.Size = new System.Drawing.Size(208, 76);
+            this.modeLabel.Size = new System.Drawing.Size(175, 64);
             this.modeLabel.TabIndex = 68;
             this.modeLabel.Text = "현재 모드: \r\n읽기";
-            // 
-            // studentBindingSource
-            // 
-            this.studentBindingSource.DataSource = typeof(pr3.Student);
-            // 
-            // StudentID
-            // 
-            this.StudentID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.StudentID.DataPropertyName = "StudentID";
-            this.StudentID.HeaderText = "학번";
-            this.StudentID.MinimumWidth = 100;
-            this.StudentID.Name = "StudentID";
-            this.StudentID.ReadOnly = true;
-            this.StudentID.Width = 125;
-            // 
-            // departmentColum
-            // 
-            this.departmentColum.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.departmentColum.DataPropertyName = "Department";
-            this.departmentColum.HeaderText = "학과";
-            this.departmentColum.MinimumWidth = 150;
-            this.departmentColum.Name = "departmentColum";
-            this.departmentColum.ReadOnly = true;
-            this.departmentColum.Width = 280;
-            // 
-            // nameColum
-            // 
-            this.nameColum.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.nameColum.DataPropertyName = "Name";
-            this.nameColum.HeaderText = "이름";
-            this.nameColum.MinimumWidth = 70;
-            this.nameColum.Name = "nameColum";
-            this.nameColum.ReadOnly = true;
-            this.nameColum.Width = 120;
             // 
             // dateOfBirthDataGridViewTextBoxColumn
             // 
@@ -554,17 +564,6 @@
             this.dateOfBirthDataGridViewTextBoxColumn.Name = "dateOfBirthDataGridViewTextBoxColumn";
             this.dateOfBirthDataGridViewTextBoxColumn.ReadOnly = true;
             this.dateOfBirthDataGridViewTextBoxColumn.Width = 135;
-            // 
-            // gradeColum
-            // 
-            this.gradeColum.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.gradeColum.DataPropertyName = "Grade";
-            this.gradeColum.HeaderText = "수료학기";
-            this.gradeColum.MinimumWidth = 30;
-            this.gradeColum.Name = "gradeColum";
-            this.gradeColum.ReadOnly = true;
-            this.gradeColum.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.gradeColum.Width = 70;
             // 
             // phoneNumberColumn
             // 
@@ -588,19 +587,15 @@
             this.emailDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.emailDataGridViewTextBoxColumn.Width = 180;
             // 
-            // addressColum
+            // studentBindingSource
             // 
-            this.addressColum.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.addressColum.DataPropertyName = "Address";
-            this.addressColum.HeaderText = "주소";
-            this.addressColum.MinimumWidth = 60;
-            this.addressColum.Name = "addressColum";
-            this.addressColum.ReadOnly = true;
-            this.addressColum.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.studentBindingSource.DataSource = typeof(pr3.Student);
+            this.studentBindingSource.CurrentChanged += new System.EventHandler(this.studentBindingSource_CurrentChanged);
             // 
             // StudentControl
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
+            this.AutoScroll = true;
             this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.Info;
             this.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -648,10 +643,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.BindingSource studentBindingSource;
-        private System.Data.SQLite.SQLiteCommandBuilder sqLiteCommandBuilder1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.Label modeLabel;
         private System.Windows.Forms.TextBox filterValue;
         private System.Windows.Forms.Button button1;

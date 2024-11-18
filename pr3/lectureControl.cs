@@ -24,18 +24,47 @@ namespace pr3
         private void lectureControl_Load(object sender, EventArgs e)
         {
             Lecture lec = new Lecture();
-            lec.Name = "즐거운 게임 만들기";
-            lec.Code = 12344;
-            lec.Manager = "박교수";
-            lec.Capacity = 30;
-            lec.Place = "운동장";
-            lec.Credit = 3;
+            // lec.Name = "즐거운 게임 만들기";
+            // lec.Code = 12344;
+            // lec.Manager = "박교수";
+            // lec.Capacity = 30;
+            // lec.Place = "운동장";
+            // lec.Credit = 3;
 
-            context.Lectures.Add(lec);
-            context.SaveChanges();
+            // context.Lectures.Add(lec);
+            // context.SaveChanges();
+
+            var dataTable = new DataTable();
+            dataTable.Columns.Add("Id", typeof(int));
+            dataTable.Columns.Add("Name", typeof(string));
+            dataTable.Columns.Add("Code", typeof(int));
+            dataTable.Columns.Add("Manager", typeof(string));
+            dataTable.Columns.Add("Capacity", typeof(int));
+            dataTable.Columns.Add("Place", typeof(string));
+            dataTable.Columns.Add("Credit", typeof(int));
+
 
             List<Lecture> lectures = context.Lectures.ToList();
-            Debug.WriteLine(lectures[0].Name);
+
+            lectureGridView.DataSource = lectures;
+
+            foreach (var lecture in lectures)
+            {
+
+                // if (filterFunc != null && !filterFunc(student)) continue;
+
+                dataTable.Rows.Add(
+                    lecture.Id,
+                    lecture.Name,
+                    lecture.Code,
+                    lecture.Manager,
+                    lecture.Capacity,
+                    lecture.Place,
+                    lecture.Credit
+                );
+            }
+
+            lectureGridView.DataSource = dataTable;
         }
     }
 }

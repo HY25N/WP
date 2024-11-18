@@ -16,13 +16,13 @@ using System.Windows.Forms.DataVisualization.Charting;
 namespace pr3
 {
 
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
         public ApplicationDbContext context;
         private StudentControl studentListViewControl;
 
 
-        public Form1()
+        public MainForm()
         {
             // LoginForm logInForm = new LoginForm();
             // logInForm.ShowDialog();
@@ -47,7 +47,7 @@ namespace pr3
 
             UpdateStudentGridView();
 
-            if (context.Students.ToList().Count == 0) repo.CreateStudentsDummy();
+            if (context.Students.ToList().Count == 0) repo.CreateStudentsDummy(10);
         }
 
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
@@ -78,6 +78,7 @@ namespace pr3
         {
             lectureView();
         }
+
         private void lectureView()
         {
             lectureControl lectureViewControl = new lectureControl(context);
@@ -88,7 +89,7 @@ namespace pr3
             viewPanel.Controls.Add(lectureViewControl);
         }
 
-        private void satisticsLabel_Click(object sender, EventArgs e)
+        private void StatisticsLabel_Click(object sender, EventArgs e)
         {
             Statistics s = new Statistics(context);
 

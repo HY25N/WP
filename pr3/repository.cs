@@ -50,7 +50,6 @@ namespace pr3
             // );");
 
 
-            // todo 클래스 생성 순서 때문인지 아래 쿼리보다 더미데이터가 먼저 생성되는 듯.
             // 학번은 pk로 쓸 것이기 때문에 숫자타입으로 정의한다.
             // context.Database.ExecuteSqlCommand(@"
             //     UPDATE sqlite_sequence 
@@ -58,7 +57,8 @@ namespace pr3
             //     WHERE name ='Students'
             //     ");
 
-
+            // 클래스 생성 순서 때문인지 아래 쿼리보다 더미데이터가 먼저 생성되는 듯.
+            // 그래서 하나의 트랜젝션으로 쿼리한다.
             // Student 테이블 생성
             context.Database.ExecuteSqlCommand(@"
                 CREATE TABLE IF NOT EXISTS Student (
@@ -74,7 +74,7 @@ namespace pr3
 
                 -- Student 테이블에 데이터가 없으면 기본값 삽입
                 INSERT INTO Student (Name, Department, Grade) 
-                SELECT 'Placeholder', 'Default', 1
+                SELECT 'temp', 'Default', 1
                 WHERE NOT EXISTS (SELECT 1 FROM Student);
 
                 -- 시퀀스 값 업데이트 (학번 초기값 설정)
@@ -82,8 +82,8 @@ namespace pr3
                 SET seq = 20240000
                 WHERE name = 'Student';
 
-                -- Placeholder 데이터 삭제
-                DELETE FROM Student WHERE Name = 'Placeholder';
+                -- temp 데이터 삭제
+                DELETE FROM Student WHERE Name = 'temp';
             ");
 
             // Lecture 테이블 생성
@@ -124,19 +124,19 @@ namespace pr3
 
         }
 
-        public void CreateStudentsDummy()
+        // 더미 데이터 생성
+        public void CreateStudentsDummy(int size)
         {
-            // 더미 데이터 생성
             Random rand = new Random();
 
             List<Student> studentsList = new List<Student>();
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < size; i++)
             {
                 studentsList.Add(new Student
                 {
                     Name = "김" + rand.Next(0, 999),
                     DateOfBirth = new DateTime(rand.Next(1955, 2026), rand.Next(1, 13), rand.Next(1, 29)),
-                    Department = "제 " + rand.Next(1, 53) + "번 째 통합된 학과명",
+                    Department = "제 " + rand.Next(1, 20) + "번 째 통합된 학과명",
                     Grade = rand.Next(0, 15),
                     Address = "한국 집주소 " + rand.Next(-999999, 999999) + " 번지 아파트",
                     Email = "fake" + rand.Next(0, 212121212) + "@domain.com",
@@ -151,11 +151,15 @@ namespace pr3
     }
 
 
+
     // db와 연결하는 콘텍스트 겍체
     public class ApplicationDbContext : DbContext
     {
         public DbSet<Student> Students { get; set; }
         public DbSet<Lecture> Lectures { get; set; }
+        public DbSet<Enrollment> Enrollments { get; set; }
+        public DbSet<Registration> Registrations { get; set; }
+
 
         public ApplicationDbContext() : base("DefaultConnection")
         {
@@ -200,8 +204,6 @@ namespace pr3
         public string Address { get; set; }  // 주소
     }
 
-
-
     [Table("Lecture")]
     public class Lecture
     {
@@ -244,7 +246,7 @@ namespace pr3
         [ForeignKey("StudentId")]
         public Student Student { get; set; }  // Student와의 네비게이션 속성
 
-        [Range(2000, 2100)]
+        [Range(1880, 2200)]
         public int Year { get; set; }  // 학년도
 
         [Range(1, 2)]
