@@ -14,7 +14,7 @@ namespace pr3
     {
         private List<Score> scores = new List<Score>();
 
-        public Form1()
+        public score()
         {
             InitializeComponent();
         }
