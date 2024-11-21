@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.professortextBox = new System.Windows.Forms.TextBox();
             this.professorlabel = new System.Windows.Forms.Label();
             this.choicecomboBox = new System.Windows.Forms.ComboBox();
@@ -39,34 +40,32 @@
             this.searchbutton = new System.Windows.Forms.Button();
             this.searhgroupBox = new System.Windows.Forms.GroupBox();
             this.lectureGridView = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lectureBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.codeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Object = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.managerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.creditDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.placeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.capacityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.searhgroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lectureGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lectureBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // professortextBox
             // 
-            this.professortextBox.Location = new System.Drawing.Point(1070, 69);
-            this.professortextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.professortextBox.Location = new System.Drawing.Point(749, 46);
             this.professortextBox.Name = "professortextBox";
-            this.professortextBox.Size = new System.Drawing.Size(170, 28);
+            this.professortextBox.Size = new System.Drawing.Size(120, 21);
             this.professortextBox.TabIndex = 14;
             // 
             // professorlabel
             // 
             this.professorlabel.AutoSize = true;
-            this.professorlabel.Location = new System.Drawing.Point(986, 75);
-            this.professorlabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.professorlabel.Location = new System.Drawing.Point(690, 50);
             this.professorlabel.Name = "professorlabel";
-            this.professorlabel.Size = new System.Drawing.Size(80, 18);
+            this.professorlabel.Size = new System.Drawing.Size(53, 12);
             this.professorlabel.TabIndex = 13;
             this.professorlabel.Text = "교수명 : ";
             // 
@@ -78,64 +77,57 @@
             "전공 선택",
             "교양 필수",
             "교양 선택"});
-            this.choicecomboBox.Location = new System.Drawing.Point(773, 70);
-            this.choicecomboBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.choicecomboBox.Location = new System.Drawing.Point(541, 47);
             this.choicecomboBox.Name = "choicecomboBox";
-            this.choicecomboBox.Size = new System.Drawing.Size(171, 26);
+            this.choicecomboBox.Size = new System.Drawing.Size(121, 20);
             this.choicecomboBox.TabIndex = 12;
             // 
             // Completionlabel
             // 
             this.Completionlabel.AutoSize = true;
-            this.Completionlabel.Location = new System.Drawing.Point(671, 75);
-            this.Completionlabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Completionlabel.Location = new System.Drawing.Point(470, 50);
             this.Completionlabel.Name = "Completionlabel";
-            this.Completionlabel.Size = new System.Drawing.Size(98, 18);
+            this.Completionlabel.Size = new System.Drawing.Size(65, 12);
             this.Completionlabel.TabIndex = 11;
             this.Completionlabel.Text = "이수구분 : ";
             // 
             // subjecttextBox
             // 
-            this.subjecttextBox.Location = new System.Drawing.Point(459, 69);
-            this.subjecttextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.subjecttextBox.Location = new System.Drawing.Point(321, 46);
             this.subjecttextBox.Name = "subjecttextBox";
-            this.subjecttextBox.Size = new System.Drawing.Size(170, 28);
+            this.subjecttextBox.Size = new System.Drawing.Size(120, 21);
             this.subjecttextBox.TabIndex = 10;
             // 
             // numbertextBox
             // 
-            this.numbertextBox.Location = new System.Drawing.Point(144, 69);
-            this.numbertextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.numbertextBox.Location = new System.Drawing.Point(101, 46);
             this.numbertextBox.Name = "numbertextBox";
-            this.numbertextBox.Size = new System.Drawing.Size(170, 28);
+            this.numbertextBox.Size = new System.Drawing.Size(120, 21);
             this.numbertextBox.TabIndex = 9;
             // 
             // subjectlabel
             // 
             this.subjectlabel.AutoSize = true;
-            this.subjectlabel.Location = new System.Drawing.Point(357, 75);
-            this.subjectlabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.subjectlabel.Location = new System.Drawing.Point(250, 50);
             this.subjectlabel.Name = "subjectlabel";
-            this.subjectlabel.Size = new System.Drawing.Size(98, 18);
+            this.subjectlabel.Size = new System.Drawing.Size(65, 12);
             this.subjectlabel.TabIndex = 8;
             this.subjectlabel.Text = "교과목명 : ";
             // 
             // numberlabel
             // 
             this.numberlabel.AutoSize = true;
-            this.numberlabel.Location = new System.Drawing.Point(43, 75);
-            this.numberlabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.numberlabel.Location = new System.Drawing.Point(30, 50);
             this.numberlabel.Name = "numberlabel";
-            this.numberlabel.Size = new System.Drawing.Size(98, 18);
+            this.numberlabel.Size = new System.Drawing.Size(65, 12);
             this.numberlabel.TabIndex = 7;
             this.numberlabel.Text = "학수번호 : ";
             // 
             // searchbutton
             // 
-            this.searchbutton.Location = new System.Drawing.Point(1720, 50);
-            this.searchbutton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.searchbutton.Location = new System.Drawing.Point(1204, 33);
             this.searchbutton.Name = "searchbutton";
-            this.searchbutton.Size = new System.Drawing.Size(227, 70);
+            this.searchbutton.Size = new System.Drawing.Size(159, 47);
             this.searchbutton.TabIndex = 6;
             this.searchbutton.Text = "검색";
             this.searchbutton.UseVisualStyleBackColor = true;
@@ -151,113 +143,99 @@
             this.searhgroupBox.Controls.Add(this.subjectlabel);
             this.searhgroupBox.Controls.Add(this.numberlabel);
             this.searhgroupBox.Controls.Add(this.searchbutton);
-            this.searhgroupBox.Location = new System.Drawing.Point(4, 4);
-            this.searhgroupBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.searhgroupBox.Location = new System.Drawing.Point(3, 3);
             this.searhgroupBox.Name = "searhgroupBox";
-            this.searhgroupBox.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.searhgroupBox.Size = new System.Drawing.Size(1956, 152);
+            this.searhgroupBox.Size = new System.Drawing.Size(1409, 101);
             this.searhgroupBox.TabIndex = 8;
             this.searhgroupBox.TabStop = false;
             this.searhgroupBox.Text = "강의 검색";
             // 
             // lectureGridView
             // 
+            this.lectureGridView.AutoGenerateColumns = false;
             this.lectureGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.lectureGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedHeaders;
             this.lectureGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.lectureGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column5,
-            this.Column6,
-            this.Column7,
-            this.Column8,
-            this.Column9});
-            this.lectureGridView.Location = new System.Drawing.Point(4, 165);
-            this.lectureGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.codeDataGridViewTextBoxColumn,
+            this.nameDataGridViewTextBoxColumn,
+            this.Object,
+            this.managerDataGridViewTextBoxColumn,
+            this.creditDataGridViewTextBoxColumn,
+            this.placeDataGridViewTextBoxColumn,
+            this.capacityDataGridViewTextBoxColumn});
+            this.lectureGridView.DataSource = this.lectureBindingSource;
+            this.lectureGridView.Location = new System.Drawing.Point(3, 110);
             this.lectureGridView.Name = "lectureGridView";
             this.lectureGridView.RowHeadersWidth = 62;
             this.lectureGridView.RowTemplate.Height = 23;
-            this.lectureGridView.Size = new System.Drawing.Size(1956, 1080);
+            this.lectureGridView.Size = new System.Drawing.Size(1409, 745);
             this.lectureGridView.TabIndex = 9;
             // 
-            // Column1
+            // lectureBindingSource
             // 
-            this.Column1.HeaderText = "학수번호";
-            this.Column1.MinimumWidth = 8;
-            this.Column1.Name = "Column1";
+            this.lectureBindingSource.DataSource = typeof(pr3.Lecture);
             // 
-            // Column2
+            // codeDataGridViewTextBoxColumn
             // 
-            this.Column2.HeaderText = "교과목명";
-            this.Column2.MinimumWidth = 8;
-            this.Column2.Name = "Column2";
+            this.codeDataGridViewTextBoxColumn.DataPropertyName = "Code";
+            this.codeDataGridViewTextBoxColumn.HeaderText = "학수번호";
+            this.codeDataGridViewTextBoxColumn.Name = "codeDataGridViewTextBoxColumn";
             // 
-            // Column3
+            // nameDataGridViewTextBoxColumn
             // 
-            this.Column3.HeaderText = "교수명";
-            this.Column3.MinimumWidth = 8;
-            this.Column3.Name = "Column3";
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "교과목명";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
             // 
-            // Column4
+            // Object
             // 
-            this.Column4.HeaderText = "이수구분";
-            this.Column4.MinimumWidth = 8;
-            this.Column4.Name = "Column4";
+            this.Object.DataPropertyName = "Object";
+            this.Object.HeaderText = "이수구분";
+            this.Object.Name = "Object";
             // 
-            // Column5
+            // managerDataGridViewTextBoxColumn
             // 
-            this.Column5.HeaderText = "학점";
-            this.Column5.MinimumWidth = 8;
-            this.Column5.Name = "Column5";
+            this.managerDataGridViewTextBoxColumn.DataPropertyName = "Manager";
+            this.managerDataGridViewTextBoxColumn.HeaderText = "교수명";
+            this.managerDataGridViewTextBoxColumn.Name = "managerDataGridViewTextBoxColumn";
             // 
-            // Column6
+            // creditDataGridViewTextBoxColumn
             // 
-            this.Column6.HeaderText = "강의요일 / 시간";
-            this.Column6.MinimumWidth = 8;
-            this.Column6.Name = "Column6";
+            this.creditDataGridViewTextBoxColumn.DataPropertyName = "Credit";
+            this.creditDataGridViewTextBoxColumn.HeaderText = "학점";
+            this.creditDataGridViewTextBoxColumn.Name = "creditDataGridViewTextBoxColumn";
             // 
-            // Column7
+            // placeDataGridViewTextBoxColumn
             // 
-            this.Column7.HeaderText = "강의실";
-            this.Column7.MinimumWidth = 8;
-            this.Column7.Name = "Column7";
+            this.placeDataGridViewTextBoxColumn.DataPropertyName = "Place";
+            this.placeDataGridViewTextBoxColumn.HeaderText = "강의 요일 / 시간";
+            this.placeDataGridViewTextBoxColumn.Name = "placeDataGridViewTextBoxColumn";
             // 
-            // Column8
+            // capacityDataGridViewTextBoxColumn
             // 
-            this.Column8.HeaderText = "수강인원";
-            this.Column8.MinimumWidth = 8;
-            this.Column8.Name = "Column8";
-            // 
-            // Column9
-            // 
-            this.Column9.HeaderText = "분반";
-            this.Column9.MinimumWidth = 8;
-            this.Column9.Name = "Column9";
+            this.capacityDataGridViewTextBoxColumn.DataPropertyName = "Capacity";
+            this.capacityDataGridViewTextBoxColumn.HeaderText = "수강인원";
+            this.capacityDataGridViewTextBoxColumn.Name = "capacityDataGridViewTextBoxColumn";
             // 
             // lectureControl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.searhgroupBox);
             this.Controls.Add(this.lectureGridView);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "lectureControl";
-            this.Size = new System.Drawing.Size(2021, 1287);
+            this.Size = new System.Drawing.Size(1415, 858);
             this.Load += new System.EventHandler(this.lectureControl_Load);
             this.searhgroupBox.ResumeLayout(false);
             this.searhgroupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lectureGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lectureBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.TextBox professortextBox;
         private System.Windows.Forms.Label professorlabel;
         private System.Windows.Forms.ComboBox choicecomboBox;
@@ -265,16 +243,17 @@
         private System.Windows.Forms.TextBox subjecttextBox;
         private System.Windows.Forms.TextBox numbertextBox;
         private System.Windows.Forms.Label subjectlabel;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.Label numberlabel;
         private System.Windows.Forms.Button searchbutton;
         private System.Windows.Forms.DataGridView lectureGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.GroupBox searhgroupBox;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.BindingSource lectureBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Object;
+        private System.Windows.Forms.DataGridViewTextBoxColumn managerDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn creditDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn placeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn capacityDataGridViewTextBoxColumn;
     }
 }

@@ -24,12 +24,13 @@ namespace pr3
         private void lectureControl_Load(object sender, EventArgs e)
         {
             Lecture lec = new Lecture();
-            lec.Name = "즐거운 게임 만들기";
-            lec.Code = 12344;
-            lec.Manager = "박교수";
-            lec.Capacity = 30;
-            lec.Place = "운동장";
+            lec.Name = "교과목명";
+            lec.Code = 1234;
+            lec.Manager = "교수";
+            lec.Capacity = 40;
+            lec.Place = "강의실";
             lec.Credit = 3;
+            lec.Object = "전공 선택";
 
             context.Lectures.Add(lec);
             context.SaveChanges();

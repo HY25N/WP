@@ -211,24 +211,28 @@ namespace pr3
 
         [Required]
         [StringLength(200)]
-        public string Name { get; set; }  
+        public string Name { get; set; }  // 교과목
 
         [Required]
-        public int Code { get; set; }  
+        public int Code { get; set; }  // 학수 번호
 
         [Required]
         [StringLength(100)]
-        public string Manager { get; set; } 
+        public string Manager { get; set; }  // 교수명
+
+        [Required]
+        [StringLength(100)]
+        public string Object { get; set; }  // 이수구분
 
         [Required]
         [Range(0, 10)]
-        public int Credit { get; set; } 
+        public int Credit { get; set; }  // 학점
 
         [StringLength(250)]
-        public string Place { get; set; } 
+        public string Place { get; set; }  // 강의실/시간
 
         [Required]
-        public int Capacity { get; set; } 
+        public int Capacity { get; set; }  // 수강인원
     }
 
     [Table("Enrollment")]
