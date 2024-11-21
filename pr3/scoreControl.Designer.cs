@@ -58,6 +58,7 @@
             this.btnCalculateAverage.TabIndex = 31;
             this.btnCalculateAverage.Text = "평균계산";
             this.btnCalculateAverage.UseVisualStyleBackColor = true;
+            this.btnCalculateAverage.Click += new System.EventHandler(this.btnCalculateAverage_Click);
             // 
             // txtAverage
             // 
@@ -94,6 +95,7 @@
             this.btnDeleteScore.TabIndex = 26;
             this.btnDeleteScore.Text = "삭제";
             this.btnDeleteScore.UseVisualStyleBackColor = true;
+            this.btnDeleteScore.Click += new System.EventHandler(this.btnDeleteScore_Click);
             // 
             // btnUpdateScore
             // 
@@ -103,6 +105,7 @@
             this.btnUpdateScore.TabIndex = 25;
             this.btnUpdateScore.Text = "수정";
             this.btnUpdateScore.UseVisualStyleBackColor = true;
+            this.btnUpdateScore.Click += new System.EventHandler(this.btnUpdateScore_Click);
             // 
             // btnAddScore
             // 
@@ -112,6 +115,7 @@
             this.btnAddScore.TabIndex = 24;
             this.btnAddScore.Text = "추가";
             this.btnAddScore.UseVisualStyleBackColor = true;
+            this.btnAddScore.Click += new System.EventHandler(this.btnAddScore_Click);
             // 
             // txtScore
             // 
@@ -185,6 +189,10 @@
             this.lblStudentId.Size = new System.Drawing.Size(72, 15);
             this.lblStudentId.TabIndex = 16;
             this.lblStudentId.Text = "학번 (ID):";
+            // 
+            // bindingSource1
+            // 
+            this.bindingSource1.CurrentChanged += new System.EventHandler(this.bindingSource1_CurrentChanged);
             // 
             // scoreControl
             // 
