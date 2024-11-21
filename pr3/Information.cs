@@ -15,6 +15,7 @@ namespace pr3
         public Information()
         {
             InitializeComponent();
+            this.Text = "원광학생관리 정보";
         }
     }
 }

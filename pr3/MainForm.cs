@@ -24,15 +24,15 @@ namespace pr3
 
         public MainForm()
         {
-            // LoginForm logInForm = new LoginForm();
-            // logInForm.ShowDialog();
-            //
-            // if (!logInForm.isAuthenticated)
-            // {
-            //     // 로그인 실패 시 애플리케이션 종료
-            //     Application.Exit();
-            //     return;
-            // }
+            LoginForm logInForm = new LoginForm();
+            logInForm.ShowDialog();
+
+            if (!logInForm.isAuthenticated)
+            {
+                // 로그인 실패 시 애플리케이션 종료
+                Application.Exit();
+                return;
+            }
 
             InitializeComponent();
         }
@@ -104,6 +104,18 @@ namespace pr3
         private void lectureButton_Click(object sender, EventArgs e)
         {
             lectureView();
+        }
+
+        private void 도움말보기VToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Help helpForm = new Help();
+            helpForm.ShowDialog(); // 모달로 열기
+        }
+
+        private void 프로그램정보ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Information InformationForm = new Information();
+            InformationForm.ShowDialog(); // 모달로 열기
         }
     }
 }
