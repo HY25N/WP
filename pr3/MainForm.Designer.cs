@@ -48,6 +48,7 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.rToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.satisticsLabel = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.sidebar.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -58,6 +59,7 @@
             this.sidebar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.sidebar.BackColor = System.Drawing.Color.White;
+            this.sidebar.Controls.Add(this.button1);
             this.sidebar.Controls.Add(this.splitter1);
             this.sidebar.Controls.Add(this.scorebutton);
             this.sidebar.Controls.Add(this.lectureButton);
@@ -66,10 +68,11 @@
             this.sidebar.Name = "sidebar";
             this.sidebar.Size = new System.Drawing.Size(188, 529);
             this.sidebar.TabIndex = 52;
+            // 
             // splitter1
-            // lecturelabel
+            // 
             this.splitter1.Location = new System.Drawing.Point(0, 0);
-            this.splitter1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.splitter1.Margin = new System.Windows.Forms.Padding(2);
             this.splitter1.Name = "splitter1";
             this.splitter1.Size = new System.Drawing.Size(2, 529);
             this.splitter1.TabIndex = 3;
@@ -101,7 +104,6 @@
             // studentButton
             // 
             this.studentButton.Font = new System.Drawing.Font("돋움체", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.studentButton.Location = new System.Drawing.Point(11, 22);
             this.studentButton.Location = new System.Drawing.Point(39, 44);
             this.studentButton.Name = "studentButton";
             this.studentButton.Size = new System.Drawing.Size(165, 37);
@@ -118,11 +120,10 @@
             this.viewPanel.AutoSize = true;
             this.viewPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.viewPanel.BackColor = System.Drawing.Color.DarkGray;
-            this.viewPanel.Location = new System.Drawing.Point(202, 8);
-            this.viewPanel.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.viewPanel.Location = new System.Drawing.Point(203, 9);
             this.viewPanel.Margin = new System.Windows.Forms.Padding(9);
-            this.viewPanel.Size = new System.Drawing.Size(1298, 519);
-            this.viewPanel.Size = new System.Drawing.Size(1900, 942);
+            this.viewPanel.Name = "viewPanel";
+            this.viewPanel.Size = new System.Drawing.Size(1296, 517);
             this.viewPanel.TabIndex = 0;
             // 
             // menuStrip1
@@ -135,7 +136,6 @@
             this.rToolStripMenuItem2});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(6, 2, 0, 2);
             this.menuStrip1.Size = new System.Drawing.Size(1508, 33);
             this.menuStrip1.TabIndex = 54;
             this.menuStrip1.Text = "menuStrip1";
@@ -168,7 +168,7 @@
             this.계정수정미구현ToolStripMenuItem,
             this.데이터백업ToolStripMenuItem});
             this.rToolStripMenuItem.Name = "rToolStripMenuItem";
-            this.rToolStripMenuItem.Size = new System.Drawing.Size(104, 34);
+            this.rToolStripMenuItem.Size = new System.Drawing.Size(91, 29);
             this.rToolStripMenuItem.Text = "관리(&M)";
             // 
             // 계정수정미구현ToolStripMenuItem
@@ -237,7 +237,17 @@
             this.satisticsLabel.TabIndex = 2;
             this.satisticsLabel.Text = "통계(테스트)";
             // 
-            // Form1
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(45, 280);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 56;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -281,6 +291,7 @@
         private System.Windows.Forms.Label scorebutton;
         private System.Windows.Forms.Splitter splitter1;
         private System.Windows.Forms.Label satisticsLabel;
+        private System.Windows.Forms.Button button1;
     }
 }
 

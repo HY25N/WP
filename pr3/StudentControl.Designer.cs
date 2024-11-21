@@ -470,7 +470,6 @@
             this.label5.Size = new System.Drawing.Size(58, 24);
             this.label5.TabIndex = 55;
             this.label5.Text = "학년";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // label3
             // 
@@ -513,7 +512,6 @@
             this.label1.Size = new System.Drawing.Size(58, 24);
             this.label1.TabIndex = 47;
             this.label1.Text = "학번";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // sqLiteCommandBuilder1
             // 
@@ -536,7 +534,6 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1743, 1129);
             this.tableLayoutPanel1.TabIndex = 2;
-            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
             // groupBox1
             // 
@@ -607,7 +604,6 @@
             this.Name = "StudentControl";
             this.Size = new System.Drawing.Size(1743, 1129);
             this.Load += new System.EventHandler(this.StudentControl_Load);
-            this.Resize += new System.EventHandler(this.StudentControl_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.studentDataGridView)).EndInit();
             this.studentInfoGroupBox.ResumeLayout(false);
             this.studentInfoGroupBox.PerformLayout();

@@ -105,5 +105,13 @@ namespace pr3
         {
             lectureView();
         }
+
+        // 테스트용
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Statistics st = new Statistics(context);
+            viewPanel.Controls.Clear();
+            viewPanel.Controls.Add(st);
+        }
     }
 }
