@@ -90,12 +90,13 @@ namespace pr3
             context.Database.ExecuteSqlCommand(@"
                 CREATE TABLE IF NOT EXISTS Lecture (
                     Id INTEGER PRIMARY KEY AUTOINCREMENT,
-                    Name VARCHAR(200) NOT NULL,            
-                    Code INTEGER NULL,
-                    Manager VARCHAR(100) NOT NULL,
-                    Credit INTEGER CHECK(Credit BETWEEN 0 AND 10),
-                    Place VARCHAR(100) NULL,
-                    Capacity INTEGER NOT NULL
+                    Name VARCHAR(200) NOT NULL,                     -- 교과목
+                    Code INTEGER NULL,                              -- 학수번호
+                    Manager VARCHAR(100) NOT NULL,                  -- 교수명
+                    Object VARCHAR(100) NOT NULL,                   -- 이수구분
+                    Credit INTEGER CHECK(Credit BETWEEN 0 AND 10),  -- 학점
+                    Place VARCHAR(100) NULL,                        -- 강의실/시간
+                    Capacity INTEGER NOT NULL                       -- 수강인원
                 );
             ");
 
