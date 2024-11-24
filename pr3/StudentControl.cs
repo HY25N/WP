@@ -76,16 +76,6 @@ namespace pr3
             studentDataGridView.DataSource = dataTable;
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void editButton_Click(object sender, EventArgs e)
         {
             modeLabel.Text = "현재 모드:\n수정";
@@ -232,12 +222,6 @@ namespace pr3
             }
         }
 
-        private void StudentControl_Resize(object sender, EventArgs e)
-        {
-            Debug.WriteLine(this.Width);
-            // tableLayoutPanel1.ColumnStyles[0] = new ColumnStyle(SizeType.Absolute, this.Width - groupBox1.Width);
-        }
-
         private Student CreateStudentByUserInterface()
         {
             Student student = new Student
@@ -259,11 +243,6 @@ namespace pr3
         {
             // this.Dock = DockStyle.Fill;
             filterColum.SelectedIndex = 0;
-        }
-
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         private void resetButton_Click(object sender, EventArgs e)
