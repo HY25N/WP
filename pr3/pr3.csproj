@@ -161,6 +161,7 @@
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Lecture1.datasource" />
+    <None Include="Properties\DataSources\Registration.datasource" />
     <None Include="Properties\DataSources\Student.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
