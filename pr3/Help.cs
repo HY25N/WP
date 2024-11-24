@@ -15,6 +15,7 @@ namespace pr3
         public Help()
         {
             InitializeComponent();
+            this.Text = "도움말";
         }
     }
 }

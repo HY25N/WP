@@ -126,5 +126,16 @@ namespace pr3
         {
 
         }
+
+        private void LoginForm_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            PasswordChange PasswordChangeForm = new PasswordChange();
+            PasswordChangeForm.ShowDialog(); // 모달로 열기
+        }
     }
 }
