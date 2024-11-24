@@ -44,7 +44,7 @@ namespace pr3
             context = repo.context;
 
 
-            studentListViewControl = new StudentControl(context);
+            studentListViewControl = new StudentControl(context, viewPanel);
 
             UpdateStudentGridView();
 

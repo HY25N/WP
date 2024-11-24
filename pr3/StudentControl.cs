@@ -17,11 +17,13 @@ namespace pr3
     public partial class StudentControl : UserControl
     {
         public ApplicationDbContext Context;
+        public Panel ViewPanel;
 
-        public StudentControl(ApplicationDbContext context)
+        public StudentControl(ApplicationDbContext context, Panel viewPanel)
         {
             InitializeComponent();
             Context = context;
+            ViewPanel = viewPanel;
         }
 
         public void UpdateView(Func<DataRow, Boolean> filterFunc)
@@ -270,6 +272,12 @@ namespace pr3
             if (grade1 == 1) return grade2;
 
             return (grade1 - 1) * 2 + grade2;
+        }
+
+        private void studentDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            ViewPanel.Controls.Clear();
+            ViewPanel.Controls.Add(new ScoreControl());
         }
     }
 }
