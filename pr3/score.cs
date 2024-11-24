@@ -14,6 +14,15 @@ namespace pr3
     {
         private List<Score> scores = new List<Score>();
 
+        public score()
+        {
+            InitializeComponent();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
         // 성적 추가 버튼 클릭 이벤트
         private void btnAddScore_Click(object sender, EventArgs e)
         {

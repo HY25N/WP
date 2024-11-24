@@ -126,17 +126,5 @@ namespace pr3
         {
 
         }
-
-        private void LoginForm_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            PasswordChange PasswordChangeForm = new PasswordChange();
-            PasswordChangeForm.StartPosition = FormStartPosition.CenterScreen; // 화면 가운데 위치
-            PasswordChangeForm.ShowDialog(); // 모달로 열기
-        }
     }
 }

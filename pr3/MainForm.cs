@@ -119,5 +119,65 @@ namespace pr3
             InformationForm.StartPosition = FormStartPosition.CenterScreen; // 화면 가운데 위치
             InformationForm.ShowDialog(); // 모달로 열기
         }
+
+
+        private void 파일저장하기ToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            // SaveFileDialog 설정
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "텍스트 파일 (*.txt)|*.txt|모든 파일 (*.*)|*.*"; // 파일 형식 필터
+            saveFileDialog.Title = "파일 저장";
+
+            // 저장 대화상자 열기
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                // 파일 경로 가져오기
+                string filePath = saveFileDialog.FileName;
+
+                // 파일에 저장할 내용 (예시로 텍스트)
+                string content = "저장할 내용입니다.";
+
+                // 파일 저장
+                try
+                {
+                    File.WriteAllText(filePath, content);
+                    MessageBox.Show("파일이 성공적으로 저장되었습니다.", "저장 성공", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("파일 저장 중 오류가 발생했습니다: " + ex.Message, "저장 오류", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void 파일저장하기ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // OpenFileDialog 설정
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "텍스트 파일 (*.txt)|*.txt|모든 파일 (*.*)|*.*"; // 파일 형식 필터
+            openFileDialog.Title = "파일 열기";
+
+            // 파일 열기 대화상자 열기
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                // 선택한 파일 경로 가져오기
+                string filePath = openFileDialog.FileName;
+
+                // 선택한 파일 내용 읽기
+                try
+                {
+                    string fileContent = File.ReadAllText(filePath);
+
+                    // 파일 내용 화면에 표시 (예시로 MessageBox 사용)
+                    MessageBox.Show(fileContent, "파일 내용", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("파일을 읽는 중 오류가 발생했습니다: " + ex.Message, "오류", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
     }
 }
+        
+
