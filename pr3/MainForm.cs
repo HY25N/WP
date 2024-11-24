@@ -109,12 +109,14 @@ namespace pr3
         private void 도움말보기VToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Help helpForm = new Help();
+            helpForm.StartPosition = FormStartPosition.CenterScreen; // 화면 가운데 위치
             helpForm.ShowDialog(); // 모달로 열기
         }
 
         private void 프로그램정보ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Information InformationForm = new Information();
+            InformationForm.StartPosition = FormStartPosition.CenterScreen; // 화면 가운데 위치
             InformationForm.ShowDialog(); // 모달로 열기
         }
     }
