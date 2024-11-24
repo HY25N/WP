@@ -23,15 +23,15 @@ namespace pr3
 
         public Form1()
         {
-            // LoginForm logInForm = new LoginForm();
-            // logInForm.ShowDialog();
-            //
-            // if (!logInForm.isAuthenticated)
-            // {
-            //     // 로그인 실패 시 애플리케이션 종료
-            //     Application.Exit();
-            //     return;
-            // }
+            LoginForm logInForm = new LoginForm();
+            logInForm.ShowDialog();
+
+            if (!logInForm.isAuthenticated)
+            {
+                // 로그인 실패 시 애플리케이션 종료
+                Application.Exit();
+                return;
+            }
 
             InitializeComponent();
         }
