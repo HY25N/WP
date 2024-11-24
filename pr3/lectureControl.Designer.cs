@@ -39,7 +39,9 @@
             this.numberlabel = new System.Windows.Forms.Label();
             this.searchbutton = new System.Windows.Forms.Button();
             this.searchgroupBox = new System.Windows.Forms.GroupBox();
+            this.resetbutton = new System.Windows.Forms.Button();
             this.lectureGridView = new System.Windows.Forms.DataGridView();
+            this.lectureBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.codeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ObjectDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,13 +49,9 @@
             this.creditDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.placeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.capacityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lectureBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.lectureBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.resetbutton = new System.Windows.Forms.Button();
             this.searchgroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lectureGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lectureBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lectureBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // professortextBox
@@ -155,6 +153,16 @@
             this.searchgroupBox.TabStop = false;
             this.searchgroupBox.Text = "강의 검색";
             // 
+            // resetbutton
+            // 
+            this.resetbutton.Location = new System.Drawing.Point(1281, 32);
+            this.resetbutton.Name = "resetbutton";
+            this.resetbutton.Size = new System.Drawing.Size(104, 47);
+            this.resetbutton.TabIndex = 15;
+            this.resetbutton.Text = "초기화";
+            this.resetbutton.UseVisualStyleBackColor = true;
+            this.resetbutton.Click += new System.EventHandler(this.resetButton_Click);
+            // 
             // lectureGridView
             // 
             this.lectureGridView.AutoGenerateColumns = false;
@@ -177,6 +185,10 @@
             this.lectureGridView.Size = new System.Drawing.Size(1409, 745);
             this.lectureGridView.TabIndex = 9;
             // 
+            // lectureBindingSource
+            // 
+            this.lectureBindingSource.DataSource = typeof(pr3.Lecture);
+            // 
             // codeDataGridViewTextBoxColumn
             // 
             this.codeDataGridViewTextBoxColumn.DataPropertyName = "Code";
@@ -191,7 +203,7 @@
             // 
             // ObjectDataGridViewTextBoxColumn
             // 
-            this.ObjectDataGridViewTextBoxColumn.DataPropertyName = "Object";
+            this.ObjectDataGridViewTextBoxColumn.DataPropertyName = "Divison";
             this.ObjectDataGridViewTextBoxColumn.HeaderText = "이수구분";
             this.ObjectDataGridViewTextBoxColumn.Name = "ObjectDataGridViewTextBoxColumn";
             // 
@@ -219,24 +231,6 @@
             this.capacityDataGridViewTextBoxColumn.HeaderText = "수강인원";
             this.capacityDataGridViewTextBoxColumn.Name = "capacityDataGridViewTextBoxColumn";
             // 
-            // lectureBindingSource
-            // 
-            this.lectureBindingSource.DataSource = typeof(pr3.Lecture);
-            // 
-            // lectureBindingSource1
-            // 
-            this.lectureBindingSource1.DataSource = typeof(pr3.Lecture);
-            // 
-            // resetbutton
-            // 
-            this.resetbutton.Location = new System.Drawing.Point(1281, 32);
-            this.resetbutton.Name = "resetbutton";
-            this.resetbutton.Size = new System.Drawing.Size(104, 47);
-            this.resetbutton.TabIndex = 15;
-            this.resetbutton.Text = "초기화";
-            this.resetbutton.UseVisualStyleBackColor = true;
-            this.resetbutton.Click += new System.EventHandler(this.resetButton_Click);
-            // 
             // lectureControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -249,7 +243,6 @@
             this.searchgroupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lectureGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lectureBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lectureBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -267,7 +260,7 @@
         private System.Windows.Forms.DataGridView lectureGridView;
         private System.Windows.Forms.GroupBox searchgroupBox;
         private System.Windows.Forms.BindingSource lectureBindingSource;
-        private System.Windows.Forms.BindingSource lectureBindingSource1;
+        private System.Windows.Forms.Button resetbutton;
         private System.Windows.Forms.DataGridViewTextBoxColumn codeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn ObjectDataGridViewTextBoxColumn;
@@ -275,6 +268,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn creditDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn placeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn capacityDataGridViewTextBoxColumn;
-        private System.Windows.Forms.Button resetbutton;
     }
 }

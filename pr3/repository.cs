@@ -93,7 +93,7 @@ namespace pr3
                     Name VARCHAR(200) NOT NULL,                     -- 교과목
                     Code INTEGER NULL,                              -- 학수번호
                     Manager VARCHAR(100) NOT NULL,                  -- 교수명
-                    Object VARCHAR(100) NOT NULL,                   -- 이수구분
+                    Division VARCHAR(100) NOT NULL,                 -- 이수구분
                     Credit INTEGER CHECK(Credit BETWEEN 0 AND 10),  -- 학점
                     Place VARCHAR(100) NULL,                        -- 강의실/시간
                     Capacity INTEGER NOT NULL                       -- 수강인원
@@ -223,7 +223,7 @@ namespace pr3
 
         [Required]
         [StringLength(100)]
-        public string Object { get; set; }  // 이수구분
+        public string Divison { get; set; }  // 이수구분
 
         [Required]
         [Range(0, 10)]

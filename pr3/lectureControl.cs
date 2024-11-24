@@ -31,7 +31,7 @@ namespace pr3
             lectureDataTable = new DataTable();
             lectureDataTable.Columns.Add("Code", typeof(string));    // 학수번호
             lectureDataTable.Columns.Add("Name", typeof(string));    // 교과목명
-            lectureDataTable.Columns.Add("Object", typeof(string));  // 이수구분
+            lectureDataTable.Columns.Add("Divison", typeof(string)); // 이수구분
             lectureDataTable.Columns.Add("Manager", typeof(string)); // 교수명
             lectureDataTable.Columns.Add("Credit", typeof(int));     // 학점
             lectureDataTable.Columns.Add("Place", typeof(string));   // 강의 요일/시간
@@ -89,7 +89,7 @@ namespace pr3
             string Code = numbertextBox.Text;
             string Name = subjecttextBox.Text;
             string Manager = professortextBox.Text;
-            string objectType = choicecomboBox.SelectedItem?.ToString();
+            string Divison = choicecomboBox.SelectedItem?.ToString();
 
             string filterExpression = "";
 
@@ -100,8 +100,8 @@ namespace pr3
                 filterExpression += (filterExpression.Length > 0 ? " AND " : "") + $"Name LIKE '%{Name}%'";
             if (!string.IsNullOrEmpty(Manager))
                 filterExpression += (filterExpression.Length > 0 ? " AND " : "") + $"Manager LIKE '%{Manager}%'";
-            if (!string.IsNullOrEmpty(objectType))
-                filterExpression += (filterExpression.Length > 0 ? " AND " : "") + $"Object LIKE '%{objectType}%'";
+            if (!string.IsNullOrEmpty(Divison))
+                filterExpression += (filterExpression.Length > 0 ? " AND " : "") + $"Divison LIKE '%{Divison}%'";
 
             try
             {
