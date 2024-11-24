@@ -121,10 +121,5 @@ namespace pr3
         {
             if (e.KeyData == Keys.Enter) e.SuppressKeyPress = true;
         }
-
-        private void loginTitle_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

@@ -149,7 +149,7 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.studentDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
             this.studentDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.studentDataGridView.Location = new System.Drawing.Point(4, 308);
+            this.studentDataGridView.Location = new System.Drawing.Point(4, 324);
             this.studentDataGridView.Margin = new System.Windows.Forms.Padding(4);
             this.studentDataGridView.Name = "studentDataGridView";
             this.studentDataGridView.ReadOnly = true;
@@ -157,7 +157,7 @@
             this.studentDataGridView.RowHeadersWidth = 72;
             this.studentDataGridView.RowTemplate.Height = 28;
             this.studentDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.studentDataGridView.Size = new System.Drawing.Size(1735, 817);
+            this.studentDataGridView.Size = new System.Drawing.Size(1735, 801);
             this.studentDataGridView.TabIndex = 53;
             this.studentDataGridView.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.studentDataGridView_RowEnter);
             // 
@@ -245,7 +245,7 @@
             this.studentInfoGroupBox.Margin = new System.Windows.Forms.Padding(4);
             this.studentInfoGroupBox.Name = "studentInfoGroupBox";
             this.studentInfoGroupBox.Padding = new System.Windows.Forms.Padding(4);
-            this.studentInfoGroupBox.Size = new System.Drawing.Size(1032, 296);
+            this.studentInfoGroupBox.Size = new System.Drawing.Size(1032, 312);
             this.studentInfoGroupBox.TabIndex = 57;
             this.studentInfoGroupBox.TabStop = false;
             this.studentInfoGroupBox.Text = "학생 정보";
@@ -287,7 +287,7 @@
             this.filterColum.Location = new System.Drawing.Point(10, 235);
             this.filterColum.Margin = new System.Windows.Forms.Padding(4);
             this.filterColum.Name = "filterColum";
-            this.filterColum.Size = new System.Drawing.Size(114, 32);
+            this.filterColum.Size = new System.Drawing.Size(114, 40);
             this.filterColum.TabIndex = 70;
             // 
             // filterValue
@@ -296,7 +296,7 @@
             this.filterValue.Location = new System.Drawing.Point(144, 232);
             this.filterValue.Margin = new System.Windows.Forms.Padding(4);
             this.filterValue.Name = "filterValue";
-            this.filterValue.Size = new System.Drawing.Size(653, 35);
+            this.filterValue.Size = new System.Drawing.Size(653, 44);
             this.filterValue.TabIndex = 69;
             // 
             // emailBox
@@ -305,7 +305,7 @@
             this.emailBox.Location = new System.Drawing.Point(665, 152);
             this.emailBox.Margin = new System.Windows.Forms.Padding(4);
             this.emailBox.Name = "emailBox";
-            this.emailBox.Size = new System.Drawing.Size(287, 35);
+            this.emailBox.Size = new System.Drawing.Size(287, 44);
             this.emailBox.TabIndex = 66;
             // 
             // label8
@@ -315,7 +315,7 @@
             this.label8.Location = new System.Drawing.Point(567, 152);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(90, 24);
+            this.label8.Size = new System.Drawing.Size(121, 32);
             this.label8.TabIndex = 65;
             this.label8.Text = " 이메일";
             // 
@@ -326,7 +326,7 @@
             this.phoneNumberBox.Margin = new System.Windows.Forms.Padding(4);
             this.phoneNumberBox.Mask = "000-9000-0000";
             this.phoneNumberBox.Name = "phoneNumberBox";
-            this.phoneNumberBox.Size = new System.Drawing.Size(183, 35);
+            this.phoneNumberBox.Size = new System.Drawing.Size(183, 44);
             this.phoneNumberBox.TabIndex = 64;
             // 
             // label7
@@ -336,7 +336,7 @@
             this.label7.Location = new System.Drawing.Point(276, 98);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(90, 24);
+            this.label7.Size = new System.Drawing.Size(121, 32);
             this.label7.TabIndex = 63;
             this.label7.Text = " 연락처";
             // 
@@ -347,7 +347,7 @@
             this.label6.Location = new System.Drawing.Point(576, 106);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(106, 24);
+            this.label6.Size = new System.Drawing.Size(142, 32);
             this.label6.TabIndex = 62;
             this.label6.Text = "생년월일";
             // 
@@ -358,7 +358,7 @@
             this.birthdayDateTimePicker.Margin = new System.Windows.Forms.Padding(4);
             this.birthdayDateTimePicker.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             this.birthdayDateTimePicker.Name = "birthdayDateTimePicker";
-            this.birthdayDateTimePicker.Size = new System.Drawing.Size(293, 35);
+            this.birthdayDateTimePicker.Size = new System.Drawing.Size(293, 44);
             this.birthdayDateTimePicker.TabIndex = 61;
             this.birthdayDateTimePicker.Value = new System.DateTime(2024, 11, 10, 21, 45, 29, 0);
             // 
@@ -372,7 +372,7 @@
             this.grade2Box.Location = new System.Drawing.Point(786, 42);
             this.grade2Box.Margin = new System.Windows.Forms.Padding(4);
             this.grade2Box.Name = "grade2Box";
-            this.grade2Box.Size = new System.Drawing.Size(93, 32);
+            this.grade2Box.Size = new System.Drawing.Size(93, 40);
             this.grade2Box.TabIndex = 60;
             // 
             // radioButton1
@@ -382,7 +382,7 @@
             this.radioButton1.Location = new System.Drawing.Point(900, 23);
             this.radioButton1.Margin = new System.Windows.Forms.Padding(4);
             this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(83, 28);
+            this.radioButton1.Size = new System.Drawing.Size(109, 36);
             this.radioButton1.TabIndex = 58;
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "재학";
@@ -394,7 +394,7 @@
             this.departmentBox.Location = new System.Drawing.Point(72, 36);
             this.departmentBox.Margin = new System.Windows.Forms.Padding(4);
             this.departmentBox.Name = "departmentBox";
-            this.departmentBox.Size = new System.Drawing.Size(321, 35);
+            this.departmentBox.Size = new System.Drawing.Size(321, 44);
             this.departmentBox.TabIndex = 54;
             // 
             // radioButton2
@@ -404,7 +404,7 @@
             this.radioButton2.Location = new System.Drawing.Point(900, 59);
             this.radioButton2.Margin = new System.Windows.Forms.Padding(4);
             this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(83, 28);
+            this.radioButton2.Size = new System.Drawing.Size(109, 36);
             this.radioButton2.TabIndex = 59;
             this.radioButton2.TabStop = true;
             this.radioButton2.Text = "휴학";
@@ -416,7 +416,7 @@
             this.nameBox.Location = new System.Drawing.Point(72, 87);
             this.nameBox.Margin = new System.Windows.Forms.Padding(4);
             this.nameBox.Name = "nameBox";
-            this.nameBox.Size = new System.Drawing.Size(186, 35);
+            this.nameBox.Size = new System.Drawing.Size(186, 44);
             this.nameBox.TabIndex = 52;
             // 
             // grade1Box
@@ -437,7 +437,7 @@
             this.grade1Box.Location = new System.Drawing.Point(690, 44);
             this.grade1Box.Margin = new System.Windows.Forms.Padding(4);
             this.grade1Box.Name = "grade1Box";
-            this.grade1Box.Size = new System.Drawing.Size(88, 32);
+            this.grade1Box.Size = new System.Drawing.Size(88, 40);
             this.grade1Box.TabIndex = 57;
             // 
             // studentIDBox
@@ -446,7 +446,7 @@
             this.studentIDBox.Location = new System.Drawing.Point(492, 39);
             this.studentIDBox.Margin = new System.Windows.Forms.Padding(4);
             this.studentIDBox.Name = "studentIDBox";
-            this.studentIDBox.Size = new System.Drawing.Size(87, 35);
+            this.studentIDBox.Size = new System.Drawing.Size(87, 44);
             this.studentIDBox.TabIndex = 51;
             // 
             // label4
@@ -456,7 +456,7 @@
             this.label4.Location = new System.Drawing.Point(6, 141);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(58, 24);
+            this.label4.Size = new System.Drawing.Size(78, 32);
             this.label4.TabIndex = 50;
             this.label4.Text = "주소";
             // 
@@ -467,7 +467,7 @@
             this.label5.Location = new System.Drawing.Point(613, 50);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(58, 24);
+            this.label5.Size = new System.Drawing.Size(78, 32);
             this.label5.TabIndex = 55;
             this.label5.Text = "학년";
             // 
@@ -478,7 +478,7 @@
             this.label3.Location = new System.Drawing.Point(6, 39);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(58, 24);
+            this.label3.Size = new System.Drawing.Size(78, 32);
             this.label3.TabIndex = 49;
             this.label3.Text = "학과";
             // 
@@ -488,7 +488,7 @@
             this.addressBox.Location = new System.Drawing.Point(72, 141);
             this.addressBox.Margin = new System.Windows.Forms.Padding(4);
             this.addressBox.Name = "addressBox";
-            this.addressBox.Size = new System.Drawing.Size(464, 35);
+            this.addressBox.Size = new System.Drawing.Size(464, 44);
             this.addressBox.TabIndex = 53;
             // 
             // label2
@@ -498,7 +498,7 @@
             this.label2.Location = new System.Drawing.Point(6, 87);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(58, 24);
+            this.label2.Size = new System.Drawing.Size(78, 32);
             this.label2.TabIndex = 48;
             this.label2.Text = "이름";
             // 
@@ -509,7 +509,7 @@
             this.label1.Location = new System.Drawing.Point(426, 47);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(58, 24);
+            this.label1.Size = new System.Drawing.Size(78, 32);
             this.label1.TabIndex = 47;
             this.label1.Text = "학번";
             // 
@@ -554,7 +554,7 @@
             this.modeLabel.Font = new System.Drawing.Font("굴림", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.modeLabel.Location = new System.Drawing.Point(8, 24);
             this.modeLabel.Name = "modeLabel";
-            this.modeLabel.Size = new System.Drawing.Size(175, 64);
+            this.modeLabel.Size = new System.Drawing.Size(233, 86);
             this.modeLabel.TabIndex = 68;
             this.modeLabel.Text = "현재 모드: \r\n읽기";
             // 

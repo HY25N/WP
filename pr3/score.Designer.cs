@@ -77,7 +77,7 @@
             this.dgvScores.Name = "dgvScores";
             this.dgvScores.RowHeadersWidth = 51;
             this.dgvScores.RowTemplate.Height = 24;
-            this.dgvScores.Size = new System.Drawing.Size(488, 480);
+            this.dgvScores.Size = new System.Drawing.Size(1736, 605);
             this.dgvScores.TabIndex = 30;
             // 
             // lstScores
@@ -206,6 +206,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Info;
             this.Controls.Add(this.btnCalculateAverage);
             this.Controls.Add(this.txtAverage);
             this.Controls.Add(this.dgvScores);
@@ -223,7 +224,7 @@
             this.Controls.Add(this.lblStudentName);
             this.Controls.Add(this.lblStudentId);
             this.Name = "score";
-            this.Size = new System.Drawing.Size(1719, 814);
+            this.Size = new System.Drawing.Size(2249, 1278);
             ((System.ComponentModel.ISupportInitialize)(this.dgvScores)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
