@@ -66,17 +66,17 @@
             this.sidebar.Controls.Add(this.scorebutton);
             this.sidebar.Controls.Add(this.lectureButton);
             this.sidebar.Controls.Add(this.studentButton);
-            this.sidebar.Location = new System.Drawing.Point(4, 4);
-            this.sidebar.Margin = new System.Windows.Forms.Padding(4);
+            this.sidebar.Location = new System.Drawing.Point(3, 4);
+            this.sidebar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.sidebar.Name = "sidebar";
-            this.sidebar.Size = new System.Drawing.Size(244, 705);
+            this.sidebar.Size = new System.Drawing.Size(206, 614);
             this.sidebar.TabIndex = 52;
             // 
             // splitter1
             // 
             this.splitter1.Location = new System.Drawing.Point(0, 0);
             this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(3, 705);
+            this.splitter1.Size = new System.Drawing.Size(3, 614);
             this.splitter1.TabIndex = 3;
             this.splitter1.TabStop = false;
             // 
@@ -84,9 +84,9 @@
             // 
             this.scorebutton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.scorebutton.Font = new System.Drawing.Font("돋움체", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.scorebutton.Location = new System.Drawing.Point(14, 210);
+            this.scorebutton.Location = new System.Drawing.Point(12, 184);
             this.scorebutton.Name = "scorebutton";
-            this.scorebutton.Size = new System.Drawing.Size(215, 49);
+            this.scorebutton.Size = new System.Drawing.Size(182, 43);
             this.scorebutton.TabIndex = 2;
             this.scorebutton.Text = "성적관리";
             this.scorebutton.Click += new System.EventHandler(this.scorebutton_Click);
@@ -95,10 +95,9 @@
             // 
             this.lectureButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lectureButton.Font = new System.Drawing.Font("돋움체", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lectureButton.Location = new System.Drawing.Point(14, 120);
-            this.lectureButton.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lectureButton.Location = new System.Drawing.Point(12, 105);
             this.lectureButton.Name = "lectureButton";
-            this.lectureButton.Size = new System.Drawing.Size(215, 49);
+            this.lectureButton.Size = new System.Drawing.Size(182, 43);
             this.lectureButton.TabIndex = 1;
             this.lectureButton.Text = "강의관리";
             this.lectureButton.Click += new System.EventHandler(this.lectureButton_Click);
@@ -107,10 +106,9 @@
             // 
             this.studentButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.studentButton.Font = new System.Drawing.Font("돋움체", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.studentButton.Location = new System.Drawing.Point(14, 30);
-            this.studentButton.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.studentButton.Location = new System.Drawing.Point(12, 26);
             this.studentButton.Name = "studentButton";
-            this.studentButton.Size = new System.Drawing.Size(215, 49);
+            this.studentButton.Size = new System.Drawing.Size(182, 43);
             this.studentButton.TabIndex = 0;
             this.studentButton.Text = "학생관리";
             this.studentButton.Click += new System.EventHandler(this.label1_Click);
@@ -125,10 +123,10 @@
             this.viewPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.viewPanel.BackColor = System.Drawing.Color.DarkGray;
             this.viewPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.viewPanel.Location = new System.Drawing.Point(262, 11);
-            this.viewPanel.Margin = new System.Windows.Forms.Padding(10, 11, 10, 11);
+            this.viewPanel.Location = new System.Drawing.Point(220, 10);
+            this.viewPanel.Margin = new System.Windows.Forms.Padding(8, 10, 8, 10);
             this.viewPanel.Name = "viewPanel";
-            this.viewPanel.Size = new System.Drawing.Size(1688, 691);
+            this.viewPanel.Size = new System.Drawing.Size(1430, 602);
             this.viewPanel.TabIndex = 0;
             // 
             // menuStrip1
@@ -141,8 +139,8 @@
             this.도움말ToolStripMenuItem2});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(8, 3, 0, 3);
-            this.menuStrip1.Size = new System.Drawing.Size(1960, 44);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(7, 3, 0, 3);
+            this.menuStrip1.Size = new System.Drawing.Size(1658, 40);
             this.menuStrip1.TabIndex = 54;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -155,36 +153,37 @@
             this.toolStripMenuItem2,
             this.파일불러오기ToolStripMenuItem});
             this.파일FToolStripMenuItem.Name = "파일FToolStripMenuItem";
-            this.파일FToolStripMenuItem.Size = new System.Drawing.Size(108, 38);
+            this.파일FToolStripMenuItem.Size = new System.Drawing.Size(95, 34);
             this.파일FToolStripMenuItem.Text = "파일(&F)";
             // 
             // 끝내기XToolStripMenuItem
             // 
             this.끝내기XToolStripMenuItem.Name = "끝내기XToolStripMenuItem";
-            this.끝내기XToolStripMenuItem.Size = new System.Drawing.Size(326, 44);
+            this.끝내기XToolStripMenuItem.Size = new System.Drawing.Size(315, 40);
             this.끝내기XToolStripMenuItem.Text = "끝내기(&X)";
+            this.끝내기XToolStripMenuItem.Click += new System.EventHandler(this.끝내기XToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(323, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(312, 6);
             // 
             // 데이터불러오기ToolStripMenuItem
             // 
             this.데이터불러오기ToolStripMenuItem.Name = "데이터불러오기ToolStripMenuItem";
-            this.데이터불러오기ToolStripMenuItem.Size = new System.Drawing.Size(326, 44);
+            this.데이터불러오기ToolStripMenuItem.Size = new System.Drawing.Size(315, 40);
             this.데이터불러오기ToolStripMenuItem.Text = "데이터 불러오기";
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(323, 6);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(312, 6);
             // 
             // 파일불러오기ToolStripMenuItem
             // 
             this.파일불러오기ToolStripMenuItem.Name = "파일불러오기ToolStripMenuItem";
-            this.파일불러오기ToolStripMenuItem.Size = new System.Drawing.Size(326, 44);
-            this.파일불러오기ToolStripMenuItem.Text = "파일 불러오기&(0)";
+            this.파일불러오기ToolStripMenuItem.Size = new System.Drawing.Size(315, 40);
+            this.파일불러오기ToolStripMenuItem.Text = "파일 불러오기(&O)";
             this.파일불러오기ToolStripMenuItem.Click += new System.EventHandler(this.파일불러오기ToolStripMenuItem_Click);
             // 
             // 관리ToolStripMenuItem
@@ -194,24 +193,25 @@
             this.toolStripMenuItem3,
             this.데이터백업ToolStripMenuItem});
             this.관리ToolStripMenuItem.Name = "관리ToolStripMenuItem";
-            this.관리ToolStripMenuItem.Size = new System.Drawing.Size(118, 38);
+            this.관리ToolStripMenuItem.Size = new System.Drawing.Size(104, 34);
             this.관리ToolStripMenuItem.Text = "관리(&M)";
             // 
             // 계정수정미구현ToolStripMenuItem
             // 
             this.계정수정미구현ToolStripMenuItem.Name = "계정수정미구현ToolStripMenuItem";
-            this.계정수정미구현ToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
-            this.계정수정미구현ToolStripMenuItem.Text = "계정 수정(미구현)";
+            this.계정수정미구현ToolStripMenuItem.Size = new System.Drawing.Size(315, 40);
+            this.계정수정미구현ToolStripMenuItem.Text = "비밀번호 변경";
+            this.계정수정미구현ToolStripMenuItem.Click += new System.EventHandler(this.비밀번호변경ToolStripMenuItem_Click);
             // 
             // toolStripMenuItem3
             // 
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(356, 6);
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(312, 6);
             // 
             // 데이터백업ToolStripMenuItem
             // 
             this.데이터백업ToolStripMenuItem.Name = "데이터백업ToolStripMenuItem";
-            this.데이터백업ToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
+            this.데이터백업ToolStripMenuItem.Size = new System.Drawing.Size(315, 40);
             this.데이터백업ToolStripMenuItem.Text = "데이터 백업&(S)";
             this.데이터백업ToolStripMenuItem.Click += new System.EventHandler(this.데이터백업ToolStripMenuItem_Click);
             // 
@@ -222,25 +222,26 @@
             this.toolStripMenuItem4,
             this.프로그램정보ToolStripMenuItem});
             this.도움말ToolStripMenuItem2.Name = "도움말ToolStripMenuItem2";
-            this.도움말ToolStripMenuItem2.Size = new System.Drawing.Size(137, 38);
+            this.도움말ToolStripMenuItem2.Size = new System.Drawing.Size(121, 34);
             this.도움말ToolStripMenuItem2.Text = "도움말(&H)";
             // 
             // 도움말보기ToolStripMenuItem
             // 
             this.도움말보기ToolStripMenuItem.Name = "도움말보기ToolStripMenuItem";
-            this.도움말보기ToolStripMenuItem.Size = new System.Drawing.Size(328, 44);
+            this.도움말보기ToolStripMenuItem.Size = new System.Drawing.Size(315, 40);
             this.도움말보기ToolStripMenuItem.Text = "도움말 보기(&V)";
+            this.도움말보기ToolStripMenuItem.Click += new System.EventHandler(this.도움말보기ToolStripMenuItem_Click);
             // 
             // toolStripMenuItem4
             // 
             this.toolStripMenuItem4.Name = "toolStripMenuItem4";
-            this.toolStripMenuItem4.Size = new System.Drawing.Size(325, 6);
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(312, 6);
             // 
             // 프로그램정보ToolStripMenuItem
             // 
             this.프로그램정보ToolStripMenuItem.Name = "프로그램정보ToolStripMenuItem";
-            this.프로그램정보ToolStripMenuItem.Size = new System.Drawing.Size(328, 44);
-            this.프로그램정보ToolStripMenuItem.Text = "프로그램 정보(&V)";
+            this.프로그램정보ToolStripMenuItem.Size = new System.Drawing.Size(315, 40);
+            this.프로그램정보ToolStripMenuItem.Text = "프로그램 정보(&A)";
             this.프로그램정보ToolStripMenuItem.Click += new System.EventHandler(this.프로그램정보ToolStripMenuItem_Click);
             // 
             // tableLayoutPanel1
@@ -254,12 +255,12 @@
             this.tableLayoutPanel1.Controls.Add(this.viewPanel, 1, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.FixedSize;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 44);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 40);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1960, 713);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1658, 622);
             this.tableLayoutPanel1.TabIndex = 55;
             // 
             // rToolStripMenuItem1
@@ -268,18 +269,18 @@
             this.rToolStripMenuItem1.Size = new System.Drawing.Size(32, 19);
             this.rToolStripMenuItem1.Text = "r";
             // 
-            // Form1
+            // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 24F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1960, 757);
+            this.ClientSize = new System.Drawing.Size(1658, 662);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(5);
-            this.MinimumSize = new System.Drawing.Size(1531, 787);
-            this.Name = "Form1";
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.MinimumSize = new System.Drawing.Size(1299, 697);
+            this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Information";
             this.Load += new System.EventHandler(this.Form1_Load);

@@ -10,6 +10,9 @@ using System.IO;
 using System.Runtime.Remoting.Contexts;
 using System.Windows.Forms;
 using System.Xml.Linq;
+using System.Data.SQLite;
+using System.Diagnostics;
+
 
 namespace pr3
 {
@@ -148,6 +151,21 @@ namespace pr3
             // 데이터 추가
             context.Students.AddRange(studentsList);
             context.SaveChanges();
+        }
+
+        public Boolean BackupDb(string backupPath)
+        {
+            string sourcePath = AppDomain.CurrentDomain.BaseDirectory;
+            Debug.WriteLine("소스는" + sourcePath);
+
+            var sourceFile = new SQLiteConnection($"Data Source={sourcePath + "\\db"}.sqlite;");
+            var backupFile = new SQLiteConnection($"Data Source={backupPath}");
+
+            sourceFile.Open();
+            backupFile.Open();
+            sourceFile.BackupDatabase(backupFile, "main", "main", -1, null, 0);
+
+            return true;
         }
     }
 

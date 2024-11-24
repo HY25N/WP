@@ -20,26 +20,27 @@ namespace pr3
     {
         public ApplicationDbContext context;
         private StudentControl studentListViewControl;
+        private Repository repo;
 
 
         public MainForm()
         {
-            LoginForm logInForm = new LoginForm();
-            logInForm.ShowDialog();
-
-            if (!logInForm.isAuthenticated)
-            {
-                // 로그인 실패 시 애플리케이션 종료
-                Application.Exit();
-                return;
-            }
+            // LoginForm logInForm = new LoginForm();
+            // logInForm.ShowDialog();
+            //
+            // if (!logInForm.isAuthenticated)
+            // {
+            //     // 로그인 실패 시 애플리케이션 종료
+            //     Application.Exit();
+            //     return;
+            // }
 
             InitializeComponent();
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            Repository repo = new Repository("db");
+            repo = new Repository("db");
             context = repo.context;
 
 
@@ -122,7 +123,7 @@ namespace pr3
         {
             // SaveFileDialog 객체 생성
             SaveFileDialog saveFileDialog = new SaveFileDialog();
-            saveFileDialog.Filter = "텍스트 파일 (*.txt)|*.txt|모든 파일 (*.*)|*.*"; // 파일 형식 설정
+            saveFileDialog.Filter = "SQLite 파일 (*.sqlite)|*.sqlite|모든 파일 (*.*)|*.*"; // 파일 형식 설정
             saveFileDialog.Title = "데이터 백업";
 
             // 사용자가 파일을 선택했을 경우
@@ -132,7 +133,8 @@ namespace pr3
                 {
                     // 선택한 파일 경로에 파일 저장
                     string filePath = saveFileDialog.FileName;
-                    File.WriteAllText(filePath, "저장할 텍스트 내용"); // 파일에 텍스트 저장
+                    // File.WriteAllText(filePath, "저장할 텍스트 내용"); // 파일에 텍스트 저장
+                    repo.BackupDb(filePath);
                     MessageBox.Show("데이터가 백업되었습니다.", "성공", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch (Exception ex)
@@ -172,6 +174,25 @@ namespace pr3
                 }
             }
         
+        }
+
+        private void 도움말보기ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Help help = new Help();
+            help.StartPosition = FormStartPosition.CenterScreen; // 화면 가운데 위치
+            help.ShowDialog(); // 모달로 열기
+        }
+
+        private void 비밀번호변경ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PasswordChange pwChange = new PasswordChange();
+            pwChange.StartPosition = FormStartPosition.CenterScreen; // 화면 가운데 위치
+            pwChange.ShowDialog(); // 모달로 열기
+        }
+
+        private void 끝내기XToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
