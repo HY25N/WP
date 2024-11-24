@@ -54,6 +54,7 @@
             // 
             // searhgroupBox
             // 
+            this.searhgroupBox.BackColor = System.Drawing.SystemColors.Info;
             this.searhgroupBox.Controls.Add(this.professortextBox);
             this.searhgroupBox.Controls.Add(this.professorlabel);
             this.searhgroupBox.Controls.Add(this.choicecomboBox);
@@ -64,9 +65,9 @@
             this.searhgroupBox.Controls.Add(this.numberlabel);
             this.searhgroupBox.Controls.Add(this.searchbutton);
             this.searhgroupBox.Location = new System.Drawing.Point(6, 6);
-            this.searhgroupBox.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.searhgroupBox.Margin = new System.Windows.Forms.Padding(6);
             this.searhgroupBox.Name = "searhgroupBox";
-            this.searhgroupBox.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.searhgroupBox.Padding = new System.Windows.Forms.Padding(6);
             this.searhgroupBox.Size = new System.Drawing.Size(2249, 202);
             this.searhgroupBox.TabIndex = 6;
             this.searhgroupBox.TabStop = false;
@@ -75,7 +76,7 @@
             // professortextBox
             // 
             this.professortextBox.Location = new System.Drawing.Point(1391, 92);
-            this.professortextBox.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.professortextBox.Margin = new System.Windows.Forms.Padding(6);
             this.professortextBox.Name = "professortextBox";
             this.professortextBox.Size = new System.Drawing.Size(219, 35);
             this.professortextBox.TabIndex = 14;
@@ -99,7 +100,7 @@
             "교양 필수",
             "교양 선택"});
             this.choicecomboBox.Location = new System.Drawing.Point(1005, 94);
-            this.choicecomboBox.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.choicecomboBox.Margin = new System.Windows.Forms.Padding(6);
             this.choicecomboBox.Name = "choicecomboBox";
             this.choicecomboBox.Size = new System.Drawing.Size(221, 32);
             this.choicecomboBox.TabIndex = 12;
@@ -117,7 +118,7 @@
             // subjecttextBox
             // 
             this.subjecttextBox.Location = new System.Drawing.Point(596, 92);
-            this.subjecttextBox.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.subjecttextBox.Margin = new System.Windows.Forms.Padding(6);
             this.subjecttextBox.Name = "subjecttextBox";
             this.subjecttextBox.Size = new System.Drawing.Size(219, 35);
             this.subjecttextBox.TabIndex = 10;
@@ -125,7 +126,7 @@
             // numbertextBox
             // 
             this.numbertextBox.Location = new System.Drawing.Point(188, 92);
-            this.numbertextBox.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.numbertextBox.Margin = new System.Windows.Forms.Padding(6);
             this.numbertextBox.Name = "numbertextBox";
             this.numbertextBox.Size = new System.Drawing.Size(219, 35);
             this.numbertextBox.TabIndex = 9;
@@ -153,7 +154,7 @@
             // searchbutton
             // 
             this.searchbutton.Location = new System.Drawing.Point(1909, 64);
-            this.searchbutton.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.searchbutton.Margin = new System.Windows.Forms.Padding(6);
             this.searchbutton.Name = "searchbutton";
             this.searchbutton.Size = new System.Drawing.Size(295, 94);
             this.searchbutton.TabIndex = 6;
@@ -176,7 +177,7 @@
             this.Column8,
             this.Column9});
             this.lectureGridView.Location = new System.Drawing.Point(-9, 329);
-            this.lectureGridView.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.lectureGridView.Margin = new System.Windows.Forms.Padding(6);
             this.lectureGridView.Name = "lectureGridView";
             this.lectureGridView.RowHeadersWidth = 82;
             this.lectureGridView.RowTemplate.Height = 23;
@@ -241,9 +242,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
+            this.BackColor = System.Drawing.SystemColors.Info;
             this.Controls.Add(this.lectureGridView);
             this.Controls.Add(this.searhgroupBox);
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "lectureControl";
             this.Size = new System.Drawing.Size(2260, 1504);
             this.Load += new System.EventHandler(this.UserControl1_Load);

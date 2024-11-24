@@ -45,14 +45,13 @@
             this.loginTitle.Font = new System.Drawing.Font("바탕", 19.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.loginTitle.ForeColor = System.Drawing.SystemColors.ControlText;
             this.loginTitle.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.loginTitle.Location = new System.Drawing.Point(95, 49);
+            this.loginTitle.Location = new System.Drawing.Point(86, 54);
             this.loginTitle.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.loginTitle.Name = "loginTitle";
             this.loginTitle.Size = new System.Drawing.Size(412, 53);
             this.loginTitle.TabIndex = 0;
             this.loginTitle.Text = "원광대 학적관리";
             this.loginTitle.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.loginTitle.Click += new System.EventHandler(this.loginTitle_Click);
             // 
             // usernameInput
             // 
@@ -105,7 +104,7 @@
             this.groupBox1.Controls.Add(this.loginTitle);
             this.groupBox1.Controls.Add(this.passwordInput);
             this.groupBox1.Controls.Add(this.usernameInput);
-            this.groupBox1.Location = new System.Drawing.Point(30, 99);
+            this.groupBox1.Location = new System.Drawing.Point(36, 99);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(590, 430);
             this.groupBox1.TabIndex = 4;
@@ -114,6 +113,7 @@
             // groupBox2
             // 
             this.groupBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("groupBox2.BackgroundImage")));
+            this.groupBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.groupBox2.Location = new System.Drawing.Point(644, 99);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(590, 430);
@@ -124,7 +124,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1266, 652);
             this.Controls.Add(this.groupBox2);
