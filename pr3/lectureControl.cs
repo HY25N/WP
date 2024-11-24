@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity;
+using System.Data.Entity.Migrations;
 using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
@@ -11,24 +13,27 @@ using System.Windows.Forms;
 
 namespace pr3
 {
-    public partial class lectureControl : UserControl
+    public partial class LectureControl : UserControl
     {
         public ApplicationDbContext context;
+        private DataTable lectureDataTable;
+        private Repository repo;
 
-        public lectureControl(ApplicationDbContext context)
+        public LectureControl(ApplicationDbContext context, Repository repo)
         {
             InitializeComponent();
-            InitializeDataTable();
-            AddSampleData();
-            lectureGridView.DataSource = lectureDataTable;
             this.context = context;
+            this.repo = repo;
+            InitializeDataTable();
+            
+            // lectureGridView.DataSource = lectureDataTable;
         }
-                
-        private DataTable lectureDataTable;
+        
                 
         private void InitializeDataTable()
         {
             lectureDataTable = new DataTable();
+            lectureDataTable.Columns.Add("Id", typeof(int));    // 학수번호
             lectureDataTable.Columns.Add("Code", typeof(string));    // 학수번호
             lectureDataTable.Columns.Add("Name", typeof(string));    // 교과목명
             lectureDataTable.Columns.Add("Completion", typeof(string)); // 이수구분
@@ -36,51 +41,28 @@ namespace pr3
             lectureDataTable.Columns.Add("Credit", typeof(int));     // 학점
             lectureDataTable.Columns.Add("Place", typeof(string));   // 강의 요일/시간
             lectureDataTable.Columns.Add("Capacity", typeof(int));   // 수강인원
-        }
 
-        private void AddSampleData()
-        {
-            // 기존 샘플 데이터
-            lectureDataTable.Rows.Add("CS101", "프로그래밍 기초", "전공 필수", "홍길동", 3, "월/수 10:00-12:00", 40);
-            lectureDataTable.Rows.Add("CS102", "자료구조", "전공 선택", "김철수", 3, "화/목 14:00-16:00", 35);
-            lectureDataTable.Rows.Add("GE201", "기초영어", "교양 선택", "박영희", 2, "월/수 09:00-10:30", 50);
-            lectureDataTable.Rows.Add("GE202", "논리학", "교양 필수", "이상훈", 2, "화/목 11:00-12:30", 30);
+            if (!context.Lectures.Any()) repo.AddLectureSampleData(lectureDataTable);
+            
 
-            // 추가된 샘플 데이터
-            lectureDataTable.Rows.Add("CS201", "컴퓨터 네트워크", "전공 필수", "김민수", 3, "월/금 13:00-15:00", 40);
-            lectureDataTable.Rows.Add("CS202", "운영체제", "전공 선택", "이성민", 3, "화/목 10:00-12:00", 45);
-            lectureDataTable.Rows.Add("CS203", "알고리즘", "전공 필수", "최윤희", 3, "수/금 10:00-12:00", 50);
-            lectureDataTable.Rows.Add("CS204", "디지털 논리 회로", "전공 선택", "박재현", 3, "월/수 15:00-17:00", 30);
+            // lectureGridView.DataSource = context.Lectures.ToList();
+            // db를 읽어오고, 렉처그리드뷰의 데이터소스에 렉쳐테이블을 대입한다.
+            foreach (var lecture in context.Lectures.ToList())
+            {
+                DataRow row = lectureDataTable.NewRow();
+                row["Id"] = lecture.Id;
+                row["Name"] = lecture.Name;
+                row["Code"] = lecture.Code;
+                row["Manager"] = lecture.Manager;
+                row["Completion"] = lecture.Completion;
+                row["Credit"] = lecture.Credit;
+                row["Place"] = lecture.Place;
+                row["Capacity"] = lecture.Capacity;
+                lectureDataTable.Rows.Add(row);
+            }
 
-            // 교양과목 샘플 추가
-            lectureDataTable.Rows.Add("GE301", "심리학", "교양 선택", "김동수", 2, "월/목 10:00-12:00", 60);
-            lectureDataTable.Rows.Add("GE302", "경제학 원론", "교양 필수", "황민지", 3, "화/금 14:00-16:00", 40);
-            lectureDataTable.Rows.Add("GE303", "영어회화", "교양 선택", "이상민", 2, "월/수 11:00-12:30", 45);
-            lectureDataTable.Rows.Add("GE304", "철학 개론", "교양 필수", "전지현", 2, "화/목 13:00-14:30", 50);
-
-            // 다양한 학수번호, 교수명, 시간대 조합 추가
-            lectureDataTable.Rows.Add("CS301", "인공지능", "전공 필수", "김세훈", 3, "월/금 14:00-16:00", 35);
-            lectureDataTable.Rows.Add("CS302", "컴퓨터 그래픽스", "전공 선택", "조수미", 3, "수/금 13:00-15:00", 25);
-            lectureDataTable.Rows.Add("CS303", "데이터베이스 시스템", "전공 필수", "홍수정", 3, "월/수 09:00-11:00", 40);
-            lectureDataTable.Rows.Add("CS304", "소프트웨어 공학", "전공 선택", "이상철", 3, "화/목 09:00-11:00", 30);
-
-            // 교양과목 추가 (교양 선택과 필수 포함)
-            lectureDataTable.Rows.Add("GE401", "통계학", "교양 필수", "정명훈", 3, "월/금 13:00-15:00", 50);
-            lectureDataTable.Rows.Add("GE402", "기후변화", "교양 선택", "박주희", 2, "화/목 11:00-12:30", 45);
-            lectureDataTable.Rows.Add("GE403", "인문학의 이해", "교양 필수", "한예슬", 3, "수/금 10:00-12:00", 55);
-            lectureDataTable.Rows.Add("GE404", "문화학 개론", "교양 선택", "최성훈", 2, "월/수 14:00-16:00", 50);
-
-            // 추가적인 전공 필수와 선택 과목
-            lectureDataTable.Rows.Add("CS401", "컴퓨터 비전", "전공 선택", "김유진", 3, "화/목 15:00-17:00", 40);
-            lectureDataTable.Rows.Add("CS402", "기계학습", "전공 필수", "이하늘", 3, "월/금 11:00-13:00", 60);
-            lectureDataTable.Rows.Add("CS403", "패턴 인식", "전공 선택", "오민수", 3, "수/목 10:00-12:00", 35);
-            lectureDataTable.Rows.Add("CS404", "클라우드 컴퓨팅", "전공 필수", "정다운", 3, "월/수 16:00-18:00", 50);
-
-            // 교양과목 추가
-            lectureDataTable.Rows.Add("GE501", "세계 문화의 이해", "교양 선택", "이주은", 2, "화/목 13:00-14:30", 30);
-            lectureDataTable.Rows.Add("GE502", "글쓰기", "교양 필수", "김동희", 2, "월/수 09:00-10:30", 45);
-            lectureDataTable.Rows.Add("GE503", "사회학 개론", "교양 선택", "유지윤", 3, "화/금 15:00-17:00", 40);
-            lectureDataTable.Rows.Add("GE504", "예술과 창의성", "교양 선택", "정유진", 2, "월/금 14:00-16:00", 50);
+            lectureGridView.DataSource = lectureDataTable;
+            if (lectureGridView.Columns.Contains("Id")) lectureGridView.Columns["Id"].Visible = false;
         }
 
 
@@ -125,6 +107,7 @@ namespace pr3
                 MessageBox.Show($"필터링 오류: {ex.Message}");
             }
         }
+
         private void resetButton_Click(object sender, EventArgs e)
         {
             // 검색 텍스트 초기화
@@ -134,7 +117,60 @@ namespace pr3
             choicecomboBox.SelectedIndex = -1; // 선택된 항목을 없애기
 
             // 원본 데이터로 DataGridView의 데이터를 초기화
-            lectureGridView.DataSource = lectureDataTable.Copy();
+            lectureGridView.DataSource = context.Lectures.ToList();
+        }
+
+        // 데이터그리드뷰에서 선택한 값 텍스트 박스에 띄우기
+        private void lectureGridView_CellEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            numbertextBox.Text = lectureGridView.Rows[e.RowIndex].Cells["CodeColumn"].Value.ToString() ?? "";
+            professortextBox.Text = lectureGridView.Rows[e.RowIndex].Cells["managerColumn"].Value.ToString() ?? "";
+            // todo 이하 작성 필요
+        }
+
+        private void modifybutton_Click(object sender, EventArgs e)
+        {
+            int lectureId = int.Parse(lectureGridView.SelectedRows[0].Cells["Id"].Value.ToString());
+            Lecture lec = context.Lectures.SingleOrDefault(v => v.Id == lectureId);
+
+
+            // todo 지금은 강좌명만 바꾸고 있다. 다른 값도 다 바꿔야 한다.
+            lec.Name = subjecttextBox.Text;
+
+            try
+            {
+                // 없는 것은 새로, 있는 것은 수정하는 메서드
+                context.Lectures.AddOrUpdate(lec);
+                context.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("알 수 없는 문제\n나중에 다시 시도해주세요." + ex.Message);
+            }
+        }
+
+        private void deletebutton_Click(object sender, EventArgs e)
+        {
+            int lectureId = int.Parse(lectureGridView.SelectedRows[0].Cells["Id"].Value.ToString());
+
+            try
+            {
+                Lecture lec = context.Lectures.SingleOrDefault(v => v.Id == lectureId);
+                context.Lectures.Remove(lec);
+                context.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("알 수 없는 문제\n나중에 다시 시도해주세요." + ex.Message);
+                return;
+            }
+
+            DataRow[] dr = ((DataTable)lectureGridView.DataSource).Select($"Id = {lectureId}");
+            foreach (DataRow dr2 in dr)
+            {
+                ((DataTable)lectureGridView.DataSource).Rows.Remove(dr2);
+            }
+            ((DataTable)lectureGridView.DataSource).AcceptChanges();
         }
     }
 }

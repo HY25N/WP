@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace pr3
 {
-    public partial class scoreControl : UserControl
+    public partial class ScoreControl : UserControl
     {
-        public scoreControl()
+        public ScoreControl()
         {
             InitializeComponent();
         }

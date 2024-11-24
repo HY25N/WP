@@ -159,30 +159,30 @@
             // 끝내기XToolStripMenuItem
             // 
             this.끝내기XToolStripMenuItem.Name = "끝내기XToolStripMenuItem";
-            this.끝내기XToolStripMenuItem.Size = new System.Drawing.Size(315, 40);
+            this.끝내기XToolStripMenuItem.Size = new System.Drawing.Size(292, 40);
             this.끝내기XToolStripMenuItem.Text = "끝내기(&X)";
             this.끝내기XToolStripMenuItem.Click += new System.EventHandler(this.끝내기XToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(312, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(289, 6);
             // 
             // 데이터불러오기ToolStripMenuItem
             // 
             this.데이터불러오기ToolStripMenuItem.Name = "데이터불러오기ToolStripMenuItem";
-            this.데이터불러오기ToolStripMenuItem.Size = new System.Drawing.Size(315, 40);
+            this.데이터불러오기ToolStripMenuItem.Size = new System.Drawing.Size(292, 40);
             this.데이터불러오기ToolStripMenuItem.Text = "데이터 불러오기";
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(312, 6);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(289, 6);
             // 
             // 파일불러오기ToolStripMenuItem
             // 
             this.파일불러오기ToolStripMenuItem.Name = "파일불러오기ToolStripMenuItem";
-            this.파일불러오기ToolStripMenuItem.Size = new System.Drawing.Size(315, 40);
+            this.파일불러오기ToolStripMenuItem.Size = new System.Drawing.Size(292, 40);
             this.파일불러오기ToolStripMenuItem.Text = "파일 불러오기(&O)";
             this.파일불러오기ToolStripMenuItem.Click += new System.EventHandler(this.파일불러오기ToolStripMenuItem_Click);
             // 
@@ -199,19 +199,19 @@
             // 계정수정미구현ToolStripMenuItem
             // 
             this.계정수정미구현ToolStripMenuItem.Name = "계정수정미구현ToolStripMenuItem";
-            this.계정수정미구현ToolStripMenuItem.Size = new System.Drawing.Size(315, 40);
+            this.계정수정미구현ToolStripMenuItem.Size = new System.Drawing.Size(266, 40);
             this.계정수정미구현ToolStripMenuItem.Text = "비밀번호 변경";
             this.계정수정미구현ToolStripMenuItem.Click += new System.EventHandler(this.비밀번호변경ToolStripMenuItem_Click);
             // 
             // toolStripMenuItem3
             // 
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(312, 6);
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(263, 6);
             // 
             // 데이터백업ToolStripMenuItem
             // 
             this.데이터백업ToolStripMenuItem.Name = "데이터백업ToolStripMenuItem";
-            this.데이터백업ToolStripMenuItem.Size = new System.Drawing.Size(315, 40);
+            this.데이터백업ToolStripMenuItem.Size = new System.Drawing.Size(266, 40);
             this.데이터백업ToolStripMenuItem.Text = "데이터 백업&(S)";
             this.데이터백업ToolStripMenuItem.Click += new System.EventHandler(this.데이터백업ToolStripMenuItem_Click);
             // 
@@ -282,7 +282,7 @@
             this.MinimumSize = new System.Drawing.Size(1299, 697);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Information";
+            this.Text = "원광학사관리v1.0.0";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.sidebar.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);

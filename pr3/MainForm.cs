@@ -73,7 +73,7 @@ namespace pr3
 
         private void lectureView()
         {
-            lectureControl lectureViewControl = new lectureControl(context);
+            LectureControl lectureViewControl = new LectureControl(context, repo);
 
             lectureViewControl.Dock = DockStyle.Fill;
 
@@ -93,7 +93,7 @@ namespace pr3
 
         private void scorebutton_Click(object sender, EventArgs e)
         {
-            scoreControl lc = new scoreControl();
+            ScoreControl lc = new ScoreControl();
             viewPanel.Controls.Clear();
             viewPanel.Controls.Add(lc);
         }
@@ -150,7 +150,7 @@ namespace pr3
         {
             // OpenFileDialog 객체 생성
             OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Filter = "텍스트 파일 (*.txt)|*.txt|모든 파일 (*.*)|*.*"; // 파일 형식 필터
+            openFileDialog.Filter = "SQLite 파일 (*.sqlite)|*.sqlite|모든 파일 (*.*)|*.*"; // 파일 형식 필터
             openFileDialog.Title = "파일 불러오기";
 
             // 사용자가 파일을 선택했을 경우
@@ -161,11 +161,13 @@ namespace pr3
                     // 선택한 파일 경로
                     string filePath = openFileDialog.FileName;
 
+                    repo.overwriteDb(filePath);
+
                     // 파일 읽기
-                    string fileContent = File.ReadAllText(filePath);
+                    // string fileContent = File.ReadAllText(filePath);
 
                     // 파일 내용을 텍스트박스나 다른 UI에 표시
-                    MessageBox.Show("파일 내용:\n" + fileContent, "파일 내용", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    // MessageBox.Show("파일 내용:\n" + fileContent, "파일 내용", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch (Exception ex)
                 {
@@ -196,7 +198,3 @@ namespace pr3
         }
     }
 }
-    
-
-        
-    

@@ -12,6 +12,7 @@ using System.Windows.Forms;
 using System.Xml.Linq;
 using System.Data.SQLite;
 using System.Diagnostics;
+using System.Data;
 
 
 namespace pr3
@@ -94,7 +95,7 @@ namespace pr3
                 CREATE TABLE IF NOT EXISTS Lecture (
                     Id INTEGER PRIMARY KEY AUTOINCREMENT,
                     Name VARCHAR(200) NOT NULL,                     -- 교과목
-                    Code INTEGER NULL,                              -- 학수번호
+                    Code VARCHAR(100) NULL,                            -- 학수번호
                     Manager VARCHAR(100) NOT NULL,                  -- 교수명
                     Completion VARCHAR(100) NOT NULL,               -- 이수구분
                     Credit INTEGER CHECK(Credit BETWEEN 0 AND 10),  -- 학점
@@ -153,12 +154,63 @@ namespace pr3
             context.SaveChanges();
         }
 
+        public List<Lecture> AddLectureSampleData(DataTable targetDataTable)
+        {
+            List<Lecture> lectureList = new List<Lecture> {
+            new Lecture("CS101", "프로그래밍 기초", "전공 필수", "홍길동", 3, "월/수 10:00-12:00", 40),
+            new Lecture("CS102", "자료구조", "전공 선택", "김철수", 3, "화/목 14:00-16:00", 35),
+            new Lecture("GE201", "기초영어", "교양 선택", "박영희", 2, "월/수 09:00-10:30", 50),
+            new Lecture("GE202", "논리학", "교양 필수", "이상훈", 2, "화/목 11:00-12:30", 30),
+
+            new Lecture("CS201", "컴퓨터 네트워크", "전공 필수", "김민수", 3, "월/금 13:00-15:00", 40),
+            new Lecture("CS202", "운영체제", "전공 선택", "이성민", 3, "화/목 10:00-12:00", 45),
+            new Lecture("CS203", "알고리즘", "전공 필수", "최윤희", 3, "수/금 10:00-12:00", 50),
+            new Lecture("CS204", "디지털 논리 회로", "전공 선택", "박재현", 3, "월/수 15:00-17:00", 30),
+
+            new Lecture("GE301", "심리학", "교양 선택", "김동수", 2, "월/목 10:00-12:00", 60),
+            new Lecture("GE302", "경제학 원론", "교양 필수", "황민지", 3, "화/금 14:00-16:00", 40),
+            new Lecture("GE303", "영어회화", "교양 선택", "이상민", 2, "월/수 11:00-12:30", 45),
+            new Lecture("GE304", "철학 개론", "교양 필수", "전지현", 2, "화/목 13:00-14:30", 50),
+
+            new Lecture("CS301", "인공지능", "전공 필수", "김세훈", 3, "월/금 14:00-16:00", 35),
+            new Lecture("CS302", "컴퓨터 그래픽스", "전공 선택", "조수미", 3, "수/금 13:00-15:00", 25),
+            new Lecture("CS303", "데이터베이스 시스템", "전공 필수", "홍수정", 3, "월/수 09:00-11:00", 40),
+            new Lecture("CS304", "소프트웨어 공학", "전공 선택", "이상철", 3, "화/목 09:00-11:00", 30),
+
+            new Lecture("GE401", "통계학", "교양 필수", "정명훈", 3, "월/금 13:00-15:00", 50),
+            new Lecture("GE402", "기후변화", "교양 선택", "박주희", 2, "화/목 11:00-12:30", 45),
+            new Lecture("GE403", "인문학의 이해", "교양 필수", "한예슬", 3, "수/금 10:00-12:00", 55),
+            new Lecture("GE404", "문화학 개론", "교양 선택", "최성훈", 2, "월/수 14:00-16:00", 50),
+
+            new Lecture("CS401", "컴퓨터 비전", "전공 선택", "김유진", 3, "화/목 15:00-17:00", 40),
+            new Lecture("CS402", "기계학습", "전공 필수", "이하늘", 3, "월/금 11:00-13:00", 60),
+            new Lecture("CS403", "패턴 인식", "전공 선택", "오민수", 3, "수/목 10:00-12:00", 35),
+            new Lecture("CS404", "클라우드 컴퓨팅", "전공 필수", "정다운", 3, "월/수 16:00-18:00", 50),
+
+            new Lecture("GE501", "세계 문화의 이해", "교양 선택", "이주은", 2, "화/목 13:00-14:30", 30),
+            new Lecture("GE502", "글쓰기", "교양 필수", "김동희", 2, "월/수 09:00-10:30", 45),
+            new Lecture("GE503", "사회학 개론", "교양 선택", "유지윤", 3, "화/금 15:00-17:00", 40),
+            new Lecture("GE504", "예술과 창의성", "교양 선택", "정유진", 2, "월/금 14:00-16:00", 50)
+            };
+
+            // 영속성 컨텍스트의 렉쳐스 새로 만든 렉처 리스트를 새로 생성한다. 
+            context.Lectures.AddRange(lectureList);
+            // 변동된 영속성 컨텍스트의 렉처스를 db에 실제로 기록한다.
+            context.SaveChanges();
+
+            return lectureList;
+        }
+
+
+
+
         public Boolean BackupDb(string backupPath)
         {
             string sourcePath = AppDomain.CurrentDomain.BaseDirectory;
             Debug.WriteLine("소스는" + sourcePath);
+            sourcePath = Path.Combine(sourcePath, "db.sqlite");
 
-            var sourceFile = new SQLiteConnection($"Data Source={sourcePath + "\\db"}.sqlite;");
+            var sourceFile = new SQLiteConnection($"Data Source={sourcePath}");
             var backupFile = new SQLiteConnection($"Data Source={backupPath}");
 
             sourceFile.Open();
@@ -166,6 +218,15 @@ namespace pr3
             sourceFile.BackupDatabase(backupFile, "main", "main", -1, null, 0);
 
             return true;
+        }
+
+        public void overwriteDb(string sourcePath)
+        {
+            string targetPath = AppDomain.CurrentDomain.BaseDirectory;
+            string destinationPath = Path.Combine(targetPath, "db.sqlite");
+
+            // 파일 복사 (덮어쓰기)
+            File.Copy(sourcePath, destinationPath, overwrite: true);
         }
     }
 
@@ -235,7 +296,8 @@ namespace pr3
         public string Name { get; set; }  // 교과목
 
         [Required]
-        public int Code { get; set; }  // 학수 번호
+        [StringLength(100)]
+        public string Code { get; set; }  // 학수 번호
 
         [Required]
         [StringLength(100)]
@@ -254,6 +316,21 @@ namespace pr3
 
         [Required]
         public int Capacity { get; set; }  // 수강인원
+
+
+        public Lecture() { }
+
+        // CS101", "프로그래밍 기초", "전공 필수", "홍길동", 3, "월/수 10:00-12:00", 40);
+        public Lecture(string code, string name, string completion, string manager, int credit, string place, int capacity)
+        {
+            Name = name;
+            Code = code;
+            Manager = manager;
+            Completion = completion;
+            Credit = credit;
+            Place = place;
+            Capacity = capacity;
+        }
     }
 
     [Table("Enrollment")]
