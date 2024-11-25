@@ -32,12 +32,20 @@
             this.btnCalculateAverage = new System.Windows.Forms.Button();
             this.txtAverage = new System.Windows.Forms.TextBox();
             this.dgvScores = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.enrollmentIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.enrollmentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lectureIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lectureDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.midTermDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.finalTermDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.attendanceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.registrationBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lstScores = new System.Windows.Forms.ListBox();
             this.btnDeleteScore = new System.Windows.Forms.Button();
             this.btnUpdateScore = new System.Windows.Forms.Button();
             this.btnAddScore = new System.Windows.Forms.Button();
             this.txtAttendance = new System.Windows.Forms.TextBox();
-            this.txtSubject = new System.Windows.Forms.TextBox();
             this.txtStudentName = new System.Windows.Forms.TextBox();
             this.txtStudentId = new System.Windows.Forms.TextBox();
             this.lblAverage = new System.Windows.Forms.Label();
@@ -51,23 +59,19 @@
             this.lblFinalTerm = new System.Windows.Forms.Label();
             this.lblMidTerm = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.enrollmentIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.enrollmentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lectureIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lectureDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.midTermDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.finalTermDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.attendanceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.registrationBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.IbltxtYear = new System.Windows.Forms.Label();
+            this.IbltxtSemester = new System.Windows.Forms.Label();
+            this.txtYear = new System.Windows.Forms.TextBox();
+            this.txtsemester = new System.Windows.Forms.TextBox();
+            this.lectureComboBox = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvScores)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.registrationBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCalculateAverage
             // 
-            this.btnCalculateAverage.Location = new System.Drawing.Point(219, 573);
+            this.btnCalculateAverage.Location = new System.Drawing.Point(219, 617);
             this.btnCalculateAverage.Name = "btnCalculateAverage";
             this.btnCalculateAverage.Size = new System.Drawing.Size(103, 42);
             this.btnCalculateAverage.TabIndex = 31;
@@ -77,7 +81,7 @@
             // 
             // txtAverage
             // 
-            this.txtAverage.Location = new System.Drawing.Point(117, 516);
+            this.txtAverage.Location = new System.Drawing.Point(117, 556);
             this.txtAverage.Name = "txtAverage";
             this.txtAverage.ReadOnly = true;
             this.txtAverage.Size = new System.Drawing.Size(205, 32);
@@ -103,167 +107,6 @@
             this.dgvScores.RowTemplate.Height = 24;
             this.dgvScores.Size = new System.Drawing.Size(883, 300);
             this.dgvScores.TabIndex = 30;
-            // 
-            // lstScores
-            // 
-            this.lstScores.FormattingEnabled = true;
-            this.lstScores.ItemHeight = 21;
-            this.lstScores.Location = new System.Drawing.Point(19, 325);
-            this.lstScores.Name = "lstScores";
-            this.lstScores.Size = new System.Drawing.Size(328, 172);
-            this.lstScores.TabIndex = 27;
-            // 
-            // btnDeleteScore
-            // 
-            this.btnDeleteScore.Location = new System.Drawing.Point(248, 255);
-            this.btnDeleteScore.Name = "btnDeleteScore";
-            this.btnDeleteScore.Size = new System.Drawing.Size(103, 42);
-            this.btnDeleteScore.TabIndex = 26;
-            this.btnDeleteScore.Text = "삭제";
-            this.btnDeleteScore.UseVisualStyleBackColor = true;
-            this.btnDeleteScore.Click += new System.EventHandler(this.btnDeleteScore_Click);
-            // 
-            // btnUpdateScore
-            // 
-            this.btnUpdateScore.Location = new System.Drawing.Point(135, 255);
-            this.btnUpdateScore.Name = "btnUpdateScore";
-            this.btnUpdateScore.Size = new System.Drawing.Size(103, 42);
-            this.btnUpdateScore.TabIndex = 25;
-            this.btnUpdateScore.Text = "수정";
-            this.btnUpdateScore.UseVisualStyleBackColor = true;
-            this.btnUpdateScore.Click += new System.EventHandler(this.btnUpdateScore_Click);
-            // 
-            // btnAddScore
-            // 
-            this.btnAddScore.Location = new System.Drawing.Point(3, 255);
-            this.btnAddScore.Name = "btnAddScore";
-            this.btnAddScore.Size = new System.Drawing.Size(103, 42);
-            this.btnAddScore.TabIndex = 24;
-            this.btnAddScore.Text = "추가";
-            this.btnAddScore.UseVisualStyleBackColor = true;
-            this.btnAddScore.Click += new System.EventHandler(this.btnAddScore_Click);
-            // 
-            // txtAttendance
-            // 
-            this.txtAttendance.Location = new System.Drawing.Point(146, 224);
-            this.txtAttendance.Name = "txtAttendance";
-            this.txtAttendance.Size = new System.Drawing.Size(150, 32);
-            this.txtAttendance.TabIndex = 23;
-            // 
-            // txtSubject
-            // 
-            this.txtSubject.Location = new System.Drawing.Point(146, 111);
-            this.txtSubject.Margin = new System.Windows.Forms.Padding(4);
-            this.txtSubject.Name = "txtSubject";
-            this.txtSubject.Size = new System.Drawing.Size(205, 32);
-            this.txtSubject.TabIndex = 21;
-            // 
-            // txtStudentName
-            // 
-            this.txtStudentName.Location = new System.Drawing.Point(146, 66);
-            this.txtStudentName.Margin = new System.Windows.Forms.Padding(4);
-            this.txtStudentName.Name = "txtStudentName";
-            this.txtStudentName.Size = new System.Drawing.Size(205, 32);
-            this.txtStudentName.TabIndex = 19;
-            // 
-            // txtStudentId
-            // 
-            this.txtStudentId.Location = new System.Drawing.Point(146, 21);
-            this.txtStudentId.Margin = new System.Windows.Forms.Padding(4);
-            this.txtStudentId.Name = "txtStudentId";
-            this.txtStudentId.Size = new System.Drawing.Size(205, 32);
-            this.txtStudentId.TabIndex = 17;
-            // 
-            // lblAverage
-            // 
-            this.lblAverage.AutoSize = true;
-            this.lblAverage.Location = new System.Drawing.Point(15, 527);
-            this.lblAverage.Name = "lblAverage";
-            this.lblAverage.Size = new System.Drawing.Size(52, 21);
-            this.lblAverage.TabIndex = 28;
-            this.lblAverage.Text = "평균";
-            // 
-            // lblAttendance
-            // 
-            this.lblAttendance.AutoSize = true;
-            this.lblAttendance.Location = new System.Drawing.Point(20, 114);
-            this.lblAttendance.Name = "lblAttendance";
-            this.lblAttendance.Size = new System.Drawing.Size(59, 21);
-            this.lblAttendance.TabIndex = 22;
-            this.lblAttendance.Text = "출석:";
-            // 
-            // lblSubject
-            // 
-            this.lblSubject.AutoSize = true;
-            this.lblSubject.Location = new System.Drawing.Point(28, 115);
-            this.lblSubject.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblSubject.Name = "lblSubject";
-            this.lblSubject.Size = new System.Drawing.Size(59, 21);
-            this.lblSubject.TabIndex = 20;
-            this.lblSubject.Text = "과목:";
-            // 
-            // lblStudentName
-            // 
-            this.lblStudentName.AutoSize = true;
-            this.lblStudentName.Location = new System.Drawing.Point(28, 70);
-            this.lblStudentName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblStudentName.Name = "lblStudentName";
-            this.lblStudentName.Size = new System.Drawing.Size(59, 21);
-            this.lblStudentName.TabIndex = 18;
-            this.lblStudentName.Text = "이름:";
-            // 
-            // lblStudentId
-            // 
-            this.lblStudentId.AutoSize = true;
-            this.lblStudentId.Location = new System.Drawing.Point(28, 25);
-            this.lblStudentId.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblStudentId.Name = "lblStudentId";
-            this.lblStudentId.Size = new System.Drawing.Size(94, 21);
-            this.lblStudentId.TabIndex = 16;
-            this.lblStudentId.Text = "학번 (ID):";
-            // 
-            // bindingSource1
-            // 
-            this.bindingSource1.CurrentChanged += new System.EventHandler(this.bindingSource1_CurrentChanged);
-            // 
-            // txtFinalTerm
-            // 
-            this.txtFinalTerm.Location = new System.Drawing.Point(146, 186);
-            this.txtFinalTerm.Name = "txtFinalTerm";
-            this.txtFinalTerm.Size = new System.Drawing.Size(150, 32);
-            this.txtFinalTerm.TabIndex = 35;
-            // 
-            // txtMidTerm
-            // 
-            this.txtMidTerm.Location = new System.Drawing.Point(146, 148);
-            this.txtMidTerm.Name = "txtMidTerm";
-            this.txtMidTerm.Size = new System.Drawing.Size(150, 32);
-            this.txtMidTerm.TabIndex = 33;
-            // 
-            // lblFinalTerm
-            // 
-            this.lblFinalTerm.AutoSize = true;
-            this.lblFinalTerm.Location = new System.Drawing.Point(20, 180);
-            this.lblFinalTerm.Name = "lblFinalTerm";
-            this.lblFinalTerm.Size = new System.Drawing.Size(108, 21);
-            this.lblFinalTerm.TabIndex = 34;
-            this.lblFinalTerm.Text = "기말 고사:";
-            // 
-            // lblMidTerm
-            // 
-            this.lblMidTerm.AutoSize = true;
-            this.lblMidTerm.Location = new System.Drawing.Point(20, 149);
-            this.lblMidTerm.Name = "lblMidTerm";
-            this.lblMidTerm.Size = new System.Drawing.Size(108, 21);
-            this.lblMidTerm.TabIndex = 32;
-            this.lblMidTerm.Text = "중간 고사:";
-            // 
-            // panel1
-            // 
-            this.panel1.Location = new System.Drawing.Point(1157, 353);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(420, 379);
-            this.panel1.TabIndex = 32;
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -333,10 +176,214 @@
             // 
             this.registrationBindingSource.DataSource = typeof(pr3.Registration);
             // 
+            // lstScores
+            // 
+            this.lstScores.FormattingEnabled = true;
+            this.lstScores.ItemHeight = 21;
+            this.lstScores.Location = new System.Drawing.Point(19, 392);
+            this.lstScores.Name = "lstScores";
+            this.lstScores.Size = new System.Drawing.Size(328, 172);
+            this.lstScores.TabIndex = 27;
+            // 
+            // btnDeleteScore
+            // 
+            this.btnDeleteScore.Location = new System.Drawing.Point(248, 344);
+            this.btnDeleteScore.Name = "btnDeleteScore";
+            this.btnDeleteScore.Size = new System.Drawing.Size(103, 42);
+            this.btnDeleteScore.TabIndex = 26;
+            this.btnDeleteScore.Text = "삭제";
+            this.btnDeleteScore.UseVisualStyleBackColor = true;
+            this.btnDeleteScore.Click += new System.EventHandler(this.btnDeleteScore_Click);
+            // 
+            // btnUpdateScore
+            // 
+            this.btnUpdateScore.Location = new System.Drawing.Point(128, 344);
+            this.btnUpdateScore.Name = "btnUpdateScore";
+            this.btnUpdateScore.Size = new System.Drawing.Size(103, 42);
+            this.btnUpdateScore.TabIndex = 25;
+            this.btnUpdateScore.Text = "수정";
+            this.btnUpdateScore.UseVisualStyleBackColor = true;
+            this.btnUpdateScore.Click += new System.EventHandler(this.btnUpdateScore_Click);
+            // 
+            // btnAddScore
+            // 
+            this.btnAddScore.Location = new System.Drawing.Point(19, 344);
+            this.btnAddScore.Name = "btnAddScore";
+            this.btnAddScore.Size = new System.Drawing.Size(103, 42);
+            this.btnAddScore.TabIndex = 24;
+            this.btnAddScore.Text = "추가";
+            this.btnAddScore.UseVisualStyleBackColor = true;
+            this.btnAddScore.Click += new System.EventHandler(this.btnAddScore_Click);
+            // 
+            // txtAttendance
+            // 
+            this.txtAttendance.Location = new System.Drawing.Point(128, 300);
+            this.txtAttendance.Name = "txtAttendance";
+            this.txtAttendance.Size = new System.Drawing.Size(150, 32);
+            this.txtAttendance.TabIndex = 23;
+            // 
+            // txtStudentName
+            // 
+            this.txtStudentName.Location = new System.Drawing.Point(146, 66);
+            this.txtStudentName.Margin = new System.Windows.Forms.Padding(4);
+            this.txtStudentName.Name = "txtStudentName";
+            this.txtStudentName.Size = new System.Drawing.Size(205, 32);
+            this.txtStudentName.TabIndex = 19;
+            // 
+            // txtStudentId
+            // 
+            this.txtStudentId.Location = new System.Drawing.Point(146, 21);
+            this.txtStudentId.Margin = new System.Windows.Forms.Padding(4);
+            this.txtStudentId.Name = "txtStudentId";
+            this.txtStudentId.Size = new System.Drawing.Size(205, 32);
+            this.txtStudentId.TabIndex = 17;
+            // 
+            // lblAverage
+            // 
+            this.lblAverage.AutoSize = true;
+            this.lblAverage.Location = new System.Drawing.Point(15, 567);
+            this.lblAverage.Name = "lblAverage";
+            this.lblAverage.Size = new System.Drawing.Size(52, 21);
+            this.lblAverage.TabIndex = 28;
+            this.lblAverage.Text = "평균";
+            // 
+            // lblAttendance
+            // 
+            this.lblAttendance.AutoSize = true;
+            this.lblAttendance.Location = new System.Drawing.Point(28, 300);
+            this.lblAttendance.Name = "lblAttendance";
+            this.lblAttendance.Size = new System.Drawing.Size(59, 21);
+            this.lblAttendance.TabIndex = 22;
+            this.lblAttendance.Text = "출석:";
+            // 
+            // lblSubject
+            // 
+            this.lblSubject.AutoSize = true;
+            this.lblSubject.Location = new System.Drawing.Point(28, 189);
+            this.lblSubject.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblSubject.Name = "lblSubject";
+            this.lblSubject.Size = new System.Drawing.Size(59, 21);
+            this.lblSubject.TabIndex = 20;
+            this.lblSubject.Text = "과목:";
+            // 
+            // lblStudentName
+            // 
+            this.lblStudentName.AutoSize = true;
+            this.lblStudentName.Location = new System.Drawing.Point(28, 69);
+            this.lblStudentName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblStudentName.Name = "lblStudentName";
+            this.lblStudentName.Size = new System.Drawing.Size(59, 21);
+            this.lblStudentName.TabIndex = 18;
+            this.lblStudentName.Text = "이름:";
+            // 
+            // lblStudentId
+            // 
+            this.lblStudentId.AutoSize = true;
+            this.lblStudentId.Location = new System.Drawing.Point(28, 25);
+            this.lblStudentId.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblStudentId.Name = "lblStudentId";
+            this.lblStudentId.Size = new System.Drawing.Size(94, 21);
+            this.lblStudentId.TabIndex = 16;
+            this.lblStudentId.Text = "학번 (ID):";
+            // 
+            // bindingSource1
+            // 
+            this.bindingSource1.CurrentChanged += new System.EventHandler(this.bindingSource1_CurrentChanged);
+            // 
+            // txtFinalTerm
+            // 
+            this.txtFinalTerm.Location = new System.Drawing.Point(134, 253);
+            this.txtFinalTerm.Name = "txtFinalTerm";
+            this.txtFinalTerm.Size = new System.Drawing.Size(150, 32);
+            this.txtFinalTerm.TabIndex = 35;
+            // 
+            // txtMidTerm
+            // 
+            this.txtMidTerm.Location = new System.Drawing.Point(146, 215);
+            this.txtMidTerm.Name = "txtMidTerm";
+            this.txtMidTerm.Size = new System.Drawing.Size(150, 32);
+            this.txtMidTerm.TabIndex = 33;
+            // 
+            // lblFinalTerm
+            // 
+            this.lblFinalTerm.AutoSize = true;
+            this.lblFinalTerm.Location = new System.Drawing.Point(20, 256);
+            this.lblFinalTerm.Name = "lblFinalTerm";
+            this.lblFinalTerm.Size = new System.Drawing.Size(108, 21);
+            this.lblFinalTerm.TabIndex = 34;
+            this.lblFinalTerm.Text = "기말 고사:";
+            // 
+            // lblMidTerm
+            // 
+            this.lblMidTerm.AutoSize = true;
+            this.lblMidTerm.Location = new System.Drawing.Point(14, 235);
+            this.lblMidTerm.Name = "lblMidTerm";
+            this.lblMidTerm.Size = new System.Drawing.Size(108, 21);
+            this.lblMidTerm.TabIndex = 32;
+            this.lblMidTerm.Text = "중간 고사:";
+            // 
+            // panel1
+            // 
+            this.panel1.Location = new System.Drawing.Point(1157, 353);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(420, 379);
+            this.panel1.TabIndex = 32;
+            // 
+            // IbltxtYear
+            // 
+            this.IbltxtYear.AutoSize = true;
+            this.IbltxtYear.Location = new System.Drawing.Point(28, 116);
+            this.IbltxtYear.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.IbltxtYear.Name = "IbltxtYear";
+            this.IbltxtYear.Size = new System.Drawing.Size(80, 21);
+            this.IbltxtYear.TabIndex = 36;
+            this.IbltxtYear.Text = "학년도:";
+            // 
+            // IbltxtSemester
+            // 
+            this.IbltxtSemester.AutoSize = true;
+            this.IbltxtSemester.Location = new System.Drawing.Point(28, 150);
+            this.IbltxtSemester.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.IbltxtSemester.Name = "IbltxtSemester";
+            this.IbltxtSemester.Size = new System.Drawing.Size(59, 21);
+            this.IbltxtSemester.TabIndex = 37;
+            this.IbltxtSemester.Text = "학기:";
+            // 
+            // txtYear
+            // 
+            this.txtYear.Location = new System.Drawing.Point(142, 113);
+            this.txtYear.Margin = new System.Windows.Forms.Padding(4);
+            this.txtYear.Name = "txtYear";
+            this.txtYear.Size = new System.Drawing.Size(205, 32);
+            this.txtYear.TabIndex = 38;
+            // 
+            // txtsemester
+            // 
+            this.txtsemester.Location = new System.Drawing.Point(128, 147);
+            this.txtsemester.Margin = new System.Windows.Forms.Padding(4);
+            this.txtsemester.Name = "txtsemester";
+            this.txtsemester.Size = new System.Drawing.Size(205, 32);
+            this.txtsemester.TabIndex = 39;
+            // 
+            // lectureComboBox
+            // 
+            this.lectureComboBox.FormattingEnabled = true;
+            this.lectureComboBox.ItemHeight = 21;
+            this.lectureComboBox.Location = new System.Drawing.Point(134, 181);
+            this.lectureComboBox.MaxDropDownItems = 12;
+            this.lectureComboBox.Name = "lectureComboBox";
+            this.lectureComboBox.Size = new System.Drawing.Size(188, 29);
+            this.lectureComboBox.TabIndex = 40;
+            // 
             // ScoreControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.lectureComboBox);
+            this.Controls.Add(this.txtsemester);
+            this.Controls.Add(this.txtYear);
+            this.Controls.Add(this.IbltxtSemester);
+            this.Controls.Add(this.IbltxtYear);
             this.Controls.Add(this.txtFinalTerm);
             this.Controls.Add(this.txtMidTerm);
             this.Controls.Add(this.lblFinalTerm);
@@ -350,7 +397,6 @@
             this.Controls.Add(this.btnUpdateScore);
             this.Controls.Add(this.btnAddScore);
             this.Controls.Add(this.txtAttendance);
-            this.Controls.Add(this.txtSubject);
             this.Controls.Add(this.txtStudentName);
             this.Controls.Add(this.txtStudentId);
             this.Controls.Add(this.lblAverage);
@@ -362,8 +408,8 @@
             this.Name = "ScoreControl";
             this.Size = new System.Drawing.Size(1605, 771);
             ((System.ComponentModel.ISupportInitialize)(this.dgvScores)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.registrationBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -380,7 +426,6 @@
         private System.Windows.Forms.Button btnAddScore;
         private System.Windows.Forms.BindingSource bindingSource1;
         private System.Windows.Forms.TextBox txtAttendance;
-        private System.Windows.Forms.TextBox txtSubject;
         private System.Windows.Forms.TextBox txtStudentName;
         private System.Windows.Forms.TextBox txtStudentId;
         private System.Windows.Forms.Label lblAverage;
@@ -402,5 +447,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn attendanceDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource registrationBindingSource;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label IbltxtYear;
+        private System.Windows.Forms.Label IbltxtSemester;
+        private System.Windows.Forms.TextBox txtYear;
+        private System.Windows.Forms.TextBox txtsemester;
+        private System.Windows.Forms.ComboBox lectureComboBox;
     }
 }

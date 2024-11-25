@@ -280,15 +280,15 @@ namespace pr3
         {
             List<Enrollment> enrooEnrollmentstList = new List<Enrollment>
             {
-                new Enrollment(20240001, context.Students.SingleOrDefault(v => v.StudentID == 20240001), 2024, 1),
-                new Enrollment(20240002, context.Students.SingleOrDefault(v => v.StudentID == 20240001), 2024, 1),
-                new Enrollment(20240003, context.Students.SingleOrDefault(v => v.StudentID == 20240001), 2024, 1),
-                new Enrollment(20240004, context.Students.SingleOrDefault(v => v.StudentID == 20240001), 2024, 1),
+                new Enrollment(20240001,2024, 1),
+                new Enrollment(20240002,2024, 1),
+                new Enrollment(20240003,2024, 1),
+                new Enrollment(20240004,2024, 1),
 
-                new Enrollment(20240001, context.Students.SingleOrDefault(v => v.StudentID == 20240001), 2024, 2),
-                new Enrollment(20240002, context.Students.SingleOrDefault(v => v.StudentID == 20240001), 2024, 2),
-                new Enrollment(20240003, context.Students.SingleOrDefault(v => v.StudentID == 20240001), 2024, 2),
-                new Enrollment(20240004, context.Students.SingleOrDefault(v => v.StudentID == 20240001), 2024, 2),
+                new Enrollment(20240001,2024, 2),
+                new Enrollment(20240002,2024, 2),
+                new Enrollment(20240003,2024, 2),
+                new Enrollment(20240004,2024, 2),
             };
 
             // 데이터 추가
@@ -466,10 +466,9 @@ namespace pr3
         [Range(1, 2)]
         public int Semester { get; set; }  // 학기 (1: 1학기, 2: 2학기)
 
-        public Enrollment(int studentId, Student student, int year, int semester)
+        public Enrollment(int studentId, int year, int semester)
         {
             StudentId = studentId;
-            Student = student;
             Year = year;
             Semester = semester;
         }
@@ -511,6 +510,7 @@ namespace pr3
             MidTerm = midTerm;
             FinalTerm = finalTerm;
             Attendance = attendance;
+            Lecture = pr3.Repository.GetContext().Lectures.SingleOrDefault(v => v.Id == lectureId);
         }
 
         public Registration() {}
