@@ -30,7 +30,7 @@ namespace pr3
         private void Statistics_Load(object sender, EventArgs e)
         {
 
-            GetRegistrationsByStudentid(20240004);
+            // GetRegistrationsByStudentid(20240004);
 
             //
             // ChartArea chartArea2 = new ChartArea("DepartmentChartArea");
@@ -82,7 +82,7 @@ namespace pr3
             return departmentStats;
         }
 
-        void GetRegistrationsByStudentid(int studentId)
+        public void GetRegistrationsByStudentid(int studentId)
         {
 
             // 데이터 가져오기
@@ -93,7 +93,8 @@ namespace pr3
 
             foreach (var e in enrollments)
             {
-                registrations.AddRange(Context.Registrations.Where(v => v.EnrollmentId == e.Id).Include(r => r.Lecture));
+                // registrations.AddRange(Context.Registrations.Where(v => v.EnrollmentId == e.Id).Include(r => r.Lecture));
+                registrations.AddRange(Context.Registrations.Where(v => v.EnrollmentId == e.Id).Include(r => r.Lecture).ToList());
             }
 
 

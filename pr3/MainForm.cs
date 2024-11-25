@@ -41,7 +41,7 @@ namespace pr3
         private void Form1_Load(object sender, EventArgs e)
         {
             repo = new Repository("db");
-            context = repo.context;
+            context = Repository.GetContext();
 
 
             studentListViewControl = new StudentControl(context, viewPanel);

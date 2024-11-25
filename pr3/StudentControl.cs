@@ -96,7 +96,7 @@ namespace pr3
             student.DateOfBirth = birthdayDateTimePicker.Value;
             student.Email = emailBox.Text;
             student.PhoneNumber = phoneNumberBox.Text;
-            student.Grade = int.Parse(grade1Box.Text) + int.Parse(grade2Box.Text);
+            student.Grade = CalculateGrade(int.Parse(grade1Box.Text), int.Parse(grade2Box.Text));
 
 
             try
@@ -277,7 +277,9 @@ namespace pr3
         private void studentDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             ViewPanel.Controls.Clear();
-            ViewPanel.Controls.Add(new ScoreControl());
+            // ViewPanel.Controls.Add(new ScoreControl());
+            int studentId = int.Parse(studentDataGridView.Rows[e.RowIndex].Cells["StudentID"].Value.ToString());
+            ViewPanel.Controls.Add(new ScoreControl(studentId));
         }
     }
 }

@@ -19,11 +19,18 @@ namespace pr3
 {
     public class Repository
     {
-        public ApplicationDbContext context;
+        public static ApplicationDbContext context;
 
         public Repository(String dbName)
         {
             InitDB(dbName);
+            if (!context.Enrollments.Any()) CreateEnrollentDummy();
+            if (!context.Registrations.Any()) CreateRegistrationDummy();
+        }
+
+        public static ApplicationDbContext GetContext()
+        {
+            return context;
         }
 
         private void InitDB(String dbName)
@@ -269,6 +276,46 @@ namespace pr3
         }
 
 
+        public void CreateEnrollentDummy()
+        {
+            List<Enrollment> enrooEnrollmentstList = new List<Enrollment>
+            {
+                new Enrollment(20240001, context.Students.SingleOrDefault(v => v.StudentID == 20240001), 2024, 1),
+                new Enrollment(20240002, context.Students.SingleOrDefault(v => v.StudentID == 20240001), 2024, 1),
+                new Enrollment(20240003, context.Students.SingleOrDefault(v => v.StudentID == 20240001), 2024, 1),
+                new Enrollment(20240004, context.Students.SingleOrDefault(v => v.StudentID == 20240001), 2024, 1),
+
+                new Enrollment(20240001, context.Students.SingleOrDefault(v => v.StudentID == 20240001), 2024, 2),
+                new Enrollment(20240002, context.Students.SingleOrDefault(v => v.StudentID == 20240001), 2024, 2),
+                new Enrollment(20240003, context.Students.SingleOrDefault(v => v.StudentID == 20240001), 2024, 2),
+                new Enrollment(20240004, context.Students.SingleOrDefault(v => v.StudentID == 20240001), 2024, 2),
+            };
+
+            // 데이터 추가
+            context.Enrollments.AddRange(enrooEnrollmentstList);
+            context.SaveChanges();
+        }
+
+        public void CreateRegistrationDummy()
+        {
+            List<Registration> RegistrationList = new List<Registration>
+            {
+                new Registration(1, 1, 20, 21, 30),
+                new Registration(1, 2, 10, 26, 31),
+                new Registration(1, 3, 30, 11, 51),
+                new Registration(1, 4, 14, 24, 11),
+                new Registration(5, 1, 11, 14, 34),
+                new Registration(5, 2, 30, 24, 21),
+                new Registration(5, 3, 14, 21, 11),
+                new Registration(5, 4, 21, 29, 41),
+            };
+
+            // 데이터 추가
+            context.Registrations.AddRange(RegistrationList);
+            context.SaveChanges();
+        }
+
+
 
 
         public Boolean BackupDb(string backupPath)
@@ -418,6 +465,16 @@ namespace pr3
 
         [Range(1, 2)]
         public int Semester { get; set; }  // 학기 (1: 1학기, 2: 2학기)
+
+        public Enrollment(int studentId, Student student, int year, int semester)
+        {
+            StudentId = studentId;
+            Student = student;
+            Year = year;
+            Semester = semester;
+        }
+
+        public Enrollment() { }
     }
 
     [Table("Registration")]
@@ -446,6 +503,17 @@ namespace pr3
         public int? FinalTerm { get; set; }  // 기말고사 점수 (0~100)
 
         public int? Attendance { get; set; }
+
+        public Registration(int enrollmentId, int lectureId, int? midTerm, int? finalTerm, int? attendance)
+        {
+            EnrollmentId = enrollmentId;
+            LectureId = lectureId;
+            MidTerm = midTerm;
+            FinalTerm = finalTerm;
+            Attendance = attendance;
+        }
+
+        public Registration() {}
     }
 
 
