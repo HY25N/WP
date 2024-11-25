@@ -132,25 +132,92 @@ namespace pr3
         // 더미 데이터 생성
         public void CreateStudentsDummy(int size)
         {
-            Random rand = new Random();
-
-            List<Student> studentsList = new List<Student>();
-            for (int i = 0; i < size; i++)
-            {
-                studentsList.Add(new Student
-                {
-                    Name = "김" + rand.Next(0, 999),
-                    DateOfBirth = new DateTime(rand.Next(1955, 2026), rand.Next(1, 13), rand.Next(1, 29)),
-                    Department = "제 " + rand.Next(1, 20) + "번 째 통합된 학과명",
-                    Grade = rand.Next(0, 15),
-                    Address = "한국 집주소 " + rand.Next(-999999, 999999) + " 번지 아파트",
-                    Email = "fake" + rand.Next(0, 212121212) + "@domain.com",
-                    PhoneNumber = "010-" + rand.Next(1000, 9999) + "-" + rand.Next(1000, 9999)
-                });
-            }
+            List<Student> studentList = new List<Student>
+    {
+        new Student
+        {
+            Name = "김철수",
+            DateOfBirth = new DateTime(2001, 3, 15),
+            Department = "컴퓨터공학과",
+            Grade = 3,
+            Address = "서울시 강남구 테헤란로 123",
+            Email = "cs.kim@domain.com",
+            PhoneNumber = "010-1234-5678"
+        },
+        new Student
+        {
+            Name = "이영희",
+            DateOfBirth = new DateTime(1999, 5, 22),
+            Department = "전자공학과",
+            Grade = 4,
+            Address = "경기도 성남시 분당구 판교로 456",
+            Email = "yh.lee@domain.com",
+            PhoneNumber = "010-2345-6789"
+        },
+        new Student
+        {
+            Name = "박지훈",
+            DateOfBirth = new DateTime(2002, 11, 3),
+            Department = "소프트웨어학과",
+            Grade = 2,
+            Address = "부산광역시 해운대구 센텀로 789",
+            Email = "jh.park@domain.com",
+            PhoneNumber = "010-3456-7890"
+        },
+        new Student
+        {
+            Name = "정수빈",
+            DateOfBirth = new DateTime(2000, 8, 17),
+            Department = "정보통신공학과",
+            Grade = 3,
+            Address = "대구광역시 수성구 범어로 321",
+            Email = "sb.jung@domain.com",
+            PhoneNumber = "010-4567-8901"
+        },
+        new Student
+        {
+            Name = "최민호",
+            DateOfBirth = new DateTime(2001, 2, 5),
+            Department = "기계공학과",
+            Grade = 1,
+            Address = "대전광역시 유성구 궁동로 654",
+            Email = "mh.choi@domain.com",
+            PhoneNumber = "010-5678-9012"
+        },
+        new Student
+        {
+            Name = "김나영",
+            DateOfBirth = new DateTime(2003, 7, 25),
+            Department = "경영학과",
+            Grade = 2,
+            Address = "광주광역시 북구 양산로 111",
+            Email = "ny.kim@domain.com",
+            PhoneNumber = "010-6789-0123"
+        },
+        new Student
+        {
+            Name = "이준호",
+            DateOfBirth = new DateTime(1998, 4, 12),
+            Department = "건축학과",
+            Grade = 5,
+            Address = "인천광역시 송도동 컨벤시아대로 987",
+            Email = "jh.lee@domain.com",
+            PhoneNumber = "010-7890-1234"
+        },
+        new Student
+        {
+            Name = "한수민",
+            DateOfBirth = new DateTime(2000, 1, 20),
+            Department = "환경공학과",
+            Grade = 4,
+            Address = "울산광역시 남구 삼산로 321",
+            Email = "sm.han@domain.com",
+            PhoneNumber = "010-8901-2345"
+        }
+    };
 
             // 데이터 추가
-            context.Students.AddRange(studentsList);
+            context.Students.AddRange(studentList);
             context.SaveChanges();
         }
 
@@ -220,7 +287,7 @@ namespace pr3
             return true;
         }
 
-        public void overwriteDb(string sourcePath)
+        public void OverwriteDb(string sourcePath)
         {
             string targetPath = AppDomain.CurrentDomain.BaseDirectory;
             string destinationPath = Path.Combine(targetPath, "db.sqlite");

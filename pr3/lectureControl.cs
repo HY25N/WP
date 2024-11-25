@@ -151,26 +151,28 @@ namespace pr3
 
         private void deletebutton_Click(object sender, EventArgs e)
         {
-            int lectureId = int.Parse(lectureGridView.SelectedRows[0].Cells["Id"].Value.ToString());
-
             try
             {
+                int lectureId = int.Parse(lectureGridView.SelectedRows[0].Cells["Id"].Value.ToString());
+                // db 처리
                 Lecture lec = context.Lectures.SingleOrDefault(v => v.Id == lectureId);
                 context.Lectures.Remove(lec);
                 context.SaveChanges();
+
+
+                // 뷰(데이터테이블) 처리
+                DataRow dr = ((DataTable)lectureGridView.DataSource).Select($"Id = {lectureId}")[0];
+                // foreach (DataRow dr2 in dr)
+                // {
+                    ((DataTable)lectureGridView.DataSource).Rows.Remove(dr);
+                    ((DataTable)lectureGridView.DataSource).AcceptChanges();
+                // }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("알 수 없는 문제\n나중에 다시 시도해주세요." + ex.Message);
+                MessageBox.Show("알 수 없는 문제\n페이지를 다시 로드해 주세요." + ex.Message);
                 return;
             }
-
-            DataRow[] dr = ((DataTable)lectureGridView.DataSource).Select($"Id = {lectureId}");
-            foreach (DataRow dr2 in dr)
-            {
-                ((DataTable)lectureGridView.DataSource).Rows.Remove(dr2);
-            }
-            ((DataTable)lectureGridView.DataSource).AcceptChanges();
         }
     }
 }

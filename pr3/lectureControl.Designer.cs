@@ -423,8 +423,6 @@
         private System.Windows.Forms.Button modifybutton;
         private System.Windows.Forms.Button resetbutton;
         private System.Windows.Forms.Button searchbutton;
-        private System.Windows.Forms.DataGridViewTextBoxColumn creditColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CreditColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn CodeColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameColumn;

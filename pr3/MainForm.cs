@@ -48,7 +48,7 @@ namespace pr3
 
             UpdateStudentGridView();
 
-            if (context.Students.ToList().Count == 0) repo.CreateStudentsDummy(30);
+            if (!context.Students.Any()) repo.CreateStudentsDummy(30);
         }
 
 
@@ -161,7 +161,7 @@ namespace pr3
                     // 선택한 파일 경로
                     string filePath = openFileDialog.FileName;
 
-                    repo.overwriteDb(filePath);
+                    repo.OverwriteDb(filePath);
 
                     // 파일 읽기
                     // string fileContent = File.ReadAllText(filePath);
