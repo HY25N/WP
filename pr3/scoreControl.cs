@@ -54,6 +54,8 @@ namespace pr3
             EnrollmentDataGridView.DataSource =
                 Repository.GetContext().Enrollments.Where(v => v.StudentId == student.StudentID).ToList();
 
+            if (((List<Enrollment>)EnrollmentDataGridView.DataSource).Count ==0) return;
+
             txtYear.Text = EnrollmentDataGridView.Rows[rowIndex].Cells["yearDataGridViewTextBoxColumn"].Value.ToString();
             txtsemester.Text = EnrollmentDataGridView.Rows[rowIndex].Cells["semesterDataGridViewTextBoxColumn"].Value.ToString();
 
@@ -65,7 +67,7 @@ namespace pr3
                 .Include(r => r.Lecture)
                 .Select(v => new
                 {
-                    v.Id,                // 기존 필드
+                    Id = v.Lecture.Id,                // 기존 필드
                     v.MidTerm,           // 기존 필드
                     v.FinalTerm,         // 기존 필드
                     v.Attendance,
@@ -173,10 +175,9 @@ namespace pr3
         // 입력 필드 초기화
         private void ClearFields()
         {
-            txtStudentId.Clear();
-            txtStudentName.Clear();
-            // txtSubject.Clear();
-            txtAttendance.Clear();
+            // txtStudentId.Clear();
+            // txtStudentName.Clear();
+            // txtAttendance.Clear();
         }
 
         private void bindingSource1_CurrentChanged(object sender, EventArgs e)
@@ -191,7 +192,7 @@ namespace pr3
 
         private void dgvScores_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            Debug.WriteLine(dgvScores.Rows[e.RowIndex].Cells["LectureId"].Value.ToString());
+            Debug.WriteLine(e.RowIndex + "\n::" +dgvScores.Rows[e.RowIndex].Cells["LectureId"].Value.ToString());
             lectureComboBox.SelectedValue = int.Parse(dgvScores.Rows[e.RowIndex].Cells["LectureId"].Value.ToString());
             txtMidTerm.Text = dgvScores.Rows[e.RowIndex].Cells["midTermDataGridViewTextBoxColumn"].Value.ToString();
             txtFinalTerm.Text = dgvScores.Rows[e.RowIndex].Cells["finalTermDataGridViewTextBoxColumn"].Value.ToString();

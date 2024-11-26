@@ -53,15 +53,15 @@
             this.lectureComboBox = new System.Windows.Forms.ComboBox();
             this.EnrollmentDataGridView = new System.Windows.Forms.DataGridView();
             this.EnrollmentId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LectureId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LectureName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.yearDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.semesterDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.enrollmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.registrationBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.LectureId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LectureName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.midTermDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.finalTermDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.attendanceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.registrationBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvScores)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.EnrollmentDataGridView)).BeginInit();
@@ -304,25 +304,6 @@
             this.EnrollmentId.Visible = false;
             this.EnrollmentId.Width = 175;
             // 
-            // LectureId
-            // 
-            this.LectureId.DataPropertyName = "Id";
-            this.LectureId.HeaderText = "LectureId";
-            this.LectureId.MinimumWidth = 9;
-            this.LectureId.Name = "LectureId";
-            this.LectureId.ReadOnly = true;
-            this.LectureId.Visible = false;
-            this.LectureId.Width = 175;
-            // 
-            // LectureName
-            // 
-            this.LectureName.DataPropertyName = "LectureName";
-            this.LectureName.HeaderText = "교과명";
-            this.LectureName.MinimumWidth = 9;
-            this.LectureName.Name = "LectureName";
-            this.LectureName.ReadOnly = true;
-            this.LectureName.Width = 175;
-            // 
             // yearDataGridViewTextBoxColumn
             // 
             this.yearDataGridViewTextBoxColumn.DataPropertyName = "Year";
@@ -344,6 +325,28 @@
             // enrollmentBindingSource
             // 
             this.enrollmentBindingSource.DataSource = typeof(pr3.Enrollment);
+            // 
+            // registrationBindingSource
+            // 
+            this.registrationBindingSource.DataSource = typeof(pr3.Registration);
+            // 
+            // LectureId
+            // 
+            this.LectureId.DataPropertyName = "Id";
+            this.LectureId.HeaderText = "LectureId";
+            this.LectureId.MinimumWidth = 9;
+            this.LectureId.Name = "LectureId";
+            this.LectureId.ReadOnly = true;
+            this.LectureId.Width = 175;
+            // 
+            // LectureName
+            // 
+            this.LectureName.DataPropertyName = "LectureName";
+            this.LectureName.HeaderText = "교과명";
+            this.LectureName.MinimumWidth = 9;
+            this.LectureName.Name = "LectureName";
+            this.LectureName.ReadOnly = true;
+            this.LectureName.Width = 175;
             // 
             // midTermDataGridViewTextBoxColumn
             // 
@@ -371,10 +374,6 @@
             this.attendanceDataGridViewTextBoxColumn.Name = "attendanceDataGridViewTextBoxColumn";
             this.attendanceDataGridViewTextBoxColumn.ReadOnly = true;
             this.attendanceDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // registrationBindingSource
-            // 
-            this.registrationBindingSource.DataSource = typeof(pr3.Registration);
             // 
             // ScoreControl
             // 
