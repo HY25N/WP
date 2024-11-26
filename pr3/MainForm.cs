@@ -81,16 +81,6 @@ namespace pr3
             viewPanel.Controls.Add(lectureViewControl);
         }
 
-        private void StatisticsLabel_Click(object sender, EventArgs e)
-        {
-            Statistics s = new Statistics(context);
-
-            s.Dock = DockStyle.Fill;
-
-            viewPanel.Controls.Clear();
-            viewPanel.Controls.Add(s);
-        }
-
         private void scorebutton_Click(object sender, EventArgs e)
         {
             ScoreControl lc = new ScoreControl();
@@ -101,13 +91,6 @@ namespace pr3
         private void lectureButton_Click(object sender, EventArgs e)
         {
             lectureView();
-        }
-
-        private void 도움말보기VToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Help helpForm = new Help();
-            helpForm.StartPosition = FormStartPosition.CenterScreen; // 화면 가운데 위치
-            helpForm.ShowDialog(); // 모달로 열기
         }
 
         private void 프로그램정보ToolStripMenuItem_Click(object sender, EventArgs e)
