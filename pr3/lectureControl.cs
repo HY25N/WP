@@ -71,7 +71,7 @@ namespace pr3
             string Code = numbertextBox.Text;
             string Name = subjecttextBox.Text;
             string Manager = professortextBox.Text;
-            string Completion = choicecomboBox.SelectedItem?.ToString();
+            string Completion = completioncomboBox.SelectedItem?.ToString();
 
             string filterExpression = "";
 
@@ -114,7 +114,7 @@ namespace pr3
             numbertextBox.Text = "";
             subjecttextBox.Text = "";
             professortextBox.Text = "";
-            choicecomboBox.SelectedIndex = -1; // 선택된 항목을 없애기
+            completioncomboBox.SelectedIndex = -1; // 선택된 항목을 없애기
 
             // 원본 데이터로 DataGridView의 데이터를 초기화
             lectureGridView.DataSource = context.Lectures.ToList();
