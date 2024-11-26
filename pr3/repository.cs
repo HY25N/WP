@@ -326,6 +326,8 @@ namespace pr3
             sourceFile.Open();
             backupFile.Open();
             sourceFile.BackupDatabase(backupFile, "main", "main", -1, null, 0);
+            sourceFile.Close();
+            backupFile.Close();
 
             return true;
         }
