@@ -52,7 +52,7 @@ namespace pr3
         private void ViewEnrollmentInfo(int rowIndex)
         {
             EnrollmentDataGridView.DataSource =
-                Repository.GetContext().Enrollments.Where(v => v.StudentId == student.StudentID).ToList();
+                Repository.GetContext().Enrollments.Where(v => v.StudentId == student.StudentID).OrderBy(v=>v.Year).ThenBy(v=>v.Semester).ToList();
 
             if (((List<Enrollment>)EnrollmentDataGridView.DataSource).Count ==0) return;
 
@@ -72,6 +72,7 @@ namespace pr3
                     v.FinalTerm,         // 기존 필드
                     v.Attendance,
                     // TotalScore = (v.MidTerm ?? 0) + (v.FinalTerm ?? 0), // 새로운 필드
+                    LectureId = v.Lecture.Id,
                     LectureName = v.Lecture.Name // 관계 데이터 추가
                 })
                 .ToList();
@@ -103,10 +104,7 @@ namespace pr3
                 // 박스 컨드롤들을 기준으로 점수(registration) 를 만든다.
                 Registration newScore = new Registration(enroll.Id, lectureId, midTerm, finalTerm, attendance);
                 // 표 컨트롤에도 추가한다.
-                scores.Add(newScore);
-
-                // 리스트 박스에 추가
-                // lstScores.Items.Add($"{newScore.Lecture.Name} ::: 중간:{newScore.MidTerm} | 기말:{newScore.FinalTerm}");
+                // scores.Add(newScore);
 
                 // 영속성 컨텍스트에 점수 정보를 담는다.
                 Repository.GetContext().Registrations.Add(newScore);
@@ -114,7 +112,8 @@ namespace pr3
                 Repository.GetContext().SaveChanges();
 
                 // DataGridView에 성적 데이터 갱신
-                dgvScores.DataSource = scores.ToList();
+                ViewEnrollmentInfo(0);
+
                 ClearFields();
             }
             catch (FormatException ex)
@@ -130,8 +129,8 @@ namespace pr3
         // 성적 수정 버튼 클릭 이벤트
         private void btnUpdateScore_Click(object sender, EventArgs e)
         {
-            int lecId = int.Parse(dgvScores.SelectedRows[0].Cells["LectureId"].Value.ToString());
-            Registration reg = Repository.GetContext().Registrations.SingleOrDefault(v => v.Id == lecId);
+            int regId = int.Parse(dgvScores.SelectedRows[0].Cells["Id"].Value.ToString());
+            Registration reg = Repository.GetContext().Registrations.SingleOrDefault(v => v.Id == regId);
 
             reg.LectureId = int.Parse(lectureComboBox.SelectedValue.ToString());
             reg.MidTerm = int.Parse(txtMidTerm.Text);
@@ -216,6 +215,7 @@ namespace pr3
         private void dgvScores_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             Debug.WriteLine(e.RowIndex + "\n::" +dgvScores.Rows[e.RowIndex].Cells["LectureId"].Value.ToString());
+
             lectureComboBox.SelectedValue = int.Parse(dgvScores.Rows[e.RowIndex].Cells["LectureId"].Value.ToString());
             txtMidTerm.Text = dgvScores.Rows[e.RowIndex].Cells["midTermDataGridViewTextBoxColumn"].Value.ToString();
             txtFinalTerm.Text = dgvScores.Rows[e.RowIndex].Cells["finalTermDataGridViewTextBoxColumn"].Value.ToString();

@@ -22,6 +22,7 @@ namespace pr3
         public LectureControl(ApplicationDbContext context, Repository repo)
         {
             InitializeComponent();
+            // this.Dock = DockStyle.Fill;
             this.context = context;
             this.repo = repo;
             InitializeDataTable();
