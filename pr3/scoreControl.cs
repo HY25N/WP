@@ -67,7 +67,7 @@ namespace pr3
                 .Include(r => r.Lecture)
                 .Select(v => new
                 {
-                    Id = v.Lecture.Id,                // 기존 필드
+                    Id = v.Id,                // 기존 필드
                     v.MidTerm,           // 기존 필드
                     v.FinalTerm,         // 기존 필드
                     v.Attendance,
@@ -130,6 +130,19 @@ namespace pr3
         // 성적 수정 버튼 클릭 이벤트
         private void btnUpdateScore_Click(object sender, EventArgs e)
         {
+            int lecId = int.Parse(dgvScores.SelectedRows[0].Cells["LectureId"].Value.ToString());
+            Registration reg = Repository.GetContext().Registrations.SingleOrDefault(v => v.Id == lecId);
+
+            reg.LectureId = int.Parse(lectureComboBox.SelectedValue.ToString());
+            reg.MidTerm = int.Parse(txtMidTerm.Text);
+            reg.FinalTerm = int.Parse(txtFinalTerm.Text);
+            reg.Attendance = int.Parse(txtAttendance.Text);
+
+            Repository.GetContext().Registrations.AddOrUpdate(reg);
+            Repository.GetContext().SaveChanges();
+
+            ViewEnrollmentInfo(0);
+
             // if (lstScores.SelectedItem != null)
             // {
             //     // 선택된 성적 항목 수정
@@ -148,6 +161,16 @@ namespace pr3
         // 성적 삭제 버튼 클릭 이벤트
         private void btnDeleteScore_Click(object sender, EventArgs e)
         {
+
+            int regId = int.Parse(dgvScores.SelectedRows[0].Cells["Id"].Value.ToString());
+            Registration reg = Repository.GetContext().Registrations.SingleOrDefault(v => v.Id == regId);
+
+            Repository.GetContext().Registrations.Remove(reg);
+            Repository.GetContext().SaveChanges();
+
+            ViewEnrollmentInfo(0);
+
+
             // if (lstScores.SelectedItem != null)
             // {
             //     // 선택된 항목 삭제
@@ -197,6 +220,11 @@ namespace pr3
             txtMidTerm.Text = dgvScores.Rows[e.RowIndex].Cells["midTermDataGridViewTextBoxColumn"].Value.ToString();
             txtFinalTerm.Text = dgvScores.Rows[e.RowIndex].Cells["finalTermDataGridViewTextBoxColumn"].Value.ToString();
             txtAttendance.Text = dgvScores.Rows[e.RowIndex].Cells["attendanceDataGridViewTextBoxColumn"].Value.ToString();
+        }
+
+        private void ScoreControl_Load(object sender, EventArgs e)
+        {
+            this.Dock = DockStyle.Fill;
         }
     }
     // 성적 정보 클래스
