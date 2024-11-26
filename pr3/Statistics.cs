@@ -128,6 +128,7 @@ namespace pr3
                     MidTermAvg = group.Average(reg => reg.MidTerm * reg.Lecture.Credit),    // 중간고사 평균
                     FinalTermAvg = group.Average(reg => reg.FinalTerm * reg.Lecture.Credit) // 기말고사 평균
                 })
+                .OrderBy(data => data.XLabel) // 레이블 기준으로 정렬
                 .ToList();
 
             // 성적 데이터 추가
