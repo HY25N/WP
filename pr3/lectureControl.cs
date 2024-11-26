@@ -68,14 +68,25 @@ namespace pr3
 
         private void searchbutton_Click(object sender, EventArgs e)
         {
-            string Code = numbertextBox.Text;
-            string Name = subjecttextBox.Text;
-            string Manager = professortextBox.Text;
+            string Code = numbertextBox.Text.Trim();
+            string Name = subjecttextBox.Text.Trim();
+            string Manager = professortextBox.Text.Trim();
             string Completion = completioncomboBox.SelectedItem?.ToString();
+            string Credit = creditcomboBox.SelectedItem?.ToString();
+            string Place = placetextBox.Text.Trim();
+            string Capacity = capacitytextBox.Text.Trim();
+
+            // 검색 조건이 비어있는지 확인
+            if (string.IsNullOrEmpty(Code) && string.IsNullOrEmpty(Name) && string.IsNullOrEmpty(Manager) && string.IsNullOrEmpty(Completion) &&
+                string.IsNullOrEmpty(Credit) && string.IsNullOrEmpty(Place) && string.IsNullOrEmpty(Capacity))
+            {
+                MessageBox.Show("검색된 강의가 없습니다."); // 모든 조건이 비어있을 때 메시지 출력
+                return;
+            }
 
             string filterExpression = "";
 
-            // 필터 조건이 비어있는 경우에도 잘 작동하도록 작성
+            // 조건에 맞는 필터를 추가
             if (!string.IsNullOrEmpty(Code))
                 filterExpression += $"Code LIKE '%{Code}%'";
             if (!string.IsNullOrEmpty(Name))
@@ -84,6 +95,15 @@ namespace pr3
                 filterExpression += (filterExpression.Length > 0 ? " AND " : "") + $"Manager LIKE '%{Manager}%'";
             if (!string.IsNullOrEmpty(Completion))
                 filterExpression += (filterExpression.Length > 0 ? " AND " : "") + $"Completion LIKE '%{Completion}%'";
+
+            // Credit과 Capacity는 숫자로 가정
+            if (int.TryParse(Credit, out int parsedCredit))
+                filterExpression += (filterExpression.Length > 0 ? " AND " : "") + $"Credit = {parsedCredit}";
+            if (int.TryParse(Capacity, out int parsedCapacity))
+                filterExpression += (filterExpression.Length > 0 ? " AND " : "") + $"Capacity = {parsedCapacity}";
+
+            if (!string.IsNullOrEmpty(Place))
+                filterExpression += (filterExpression.Length > 0 ? " AND " : "") + $"Place LIKE '%{Place}%'";
 
             try
             {
@@ -106,7 +126,7 @@ namespace pr3
                 // 예외 처리
                 MessageBox.Show($"필터링 오류: {ex.Message}");
             }
-        }
+    }
 
         private void resetButton_Click(object sender, EventArgs e)
         {
@@ -115,6 +135,9 @@ namespace pr3
             subjecttextBox.Text = "";
             professortextBox.Text = "";
             completioncomboBox.SelectedIndex = -1; // 선택된 항목을 없애기
+            creditcomboBox.SelectedIndex = -1; // Credit 콤보박스 초기화
+            placetextBox.Text = "";
+            capacitytextBox.Text = "";
 
             // 원본 데이터로 DataGridView의 데이터를 초기화
             lectureGridView.DataSource = context.Lectures.ToList();
@@ -124,28 +147,66 @@ namespace pr3
         private void lectureGridView_CellEnter(object sender, DataGridViewCellEventArgs e)
         {
             numbertextBox.Text = lectureGridView.Rows[e.RowIndex].Cells["CodeColumn"].Value.ToString() ?? "";
-            professortextBox.Text = lectureGridView.Rows[e.RowIndex].Cells["managerColumn"].Value.ToString() ?? "";
-            // todo 이하 작성 필요
+            subjecttextBox.Text = lectureGridView.Rows[e.RowIndex].Cells["NameColumn"].Value.ToString() ?? ""; // "NameColumn"을 실제 열 이름으로 수정
+            professortextBox.Text = lectureGridView.Rows[e.RowIndex].Cells["ManagerColumn"].Value.ToString() ?? ""; // "ManagerColumn"을 실제 열 이름으로 수정
+            completioncomboBox.SelectedItem = lectureGridView.Rows[e.RowIndex].Cells["CompletionColumn"].Value.ToString() ?? ""; // "CompletionColumn"을 실제 열 이름으로 수정
+            creditcomboBox.SelectedItem = lectureGridView.Rows[e.RowIndex].Cells["Credit"].Value.ToString() ?? ""; // "Credit"을 실제 열 이름으로 수정
+            placetextBox.Text = lectureGridView.Rows[e.RowIndex].Cells["PlaceColumn"].Value.ToString() ?? ""; // "PlaceColumn"을 실제 열 이름으로 수정
+            capacitytextBox.Text = lectureGridView.Rows[e.RowIndex].Cells["CapacityColumn"].Value.ToString() ?? ""; // "CapacityColumn"을 실제 열 이름으로 수정
         }
 
         private void modifybutton_Click(object sender, EventArgs e)
         {
-            int lectureId = int.Parse(lectureGridView.SelectedRows[0].Cells["Id"].Value.ToString());
-            Lecture lec = context.Lectures.SingleOrDefault(v => v.Id == lectureId);
-
-
-            // todo 지금은 강좌명만 바꾸고 있다. 다른 값도 다 바꿔야 한다.
-            lec.Name = subjecttextBox.Text;
-
             try
             {
-                // 없는 것은 새로, 있는 것은 수정하는 메서드
+                if (lectureGridView.SelectedRows.Count == 0)
+                {
+                    MessageBox.Show("수정할 강의를 선택해주세요.");
+                    return;
+                }
+
+                // Get the selected lecture ID
+                int lectureId = int.Parse(lectureGridView.SelectedRows[0].Cells["Id"].Value.ToString());
+                Lecture lec = context.Lectures.SingleOrDefault(v => v.Id == lectureId);
+
+                if (lec == null)
+                {
+                    MessageBox.Show("선택한 강의를 찾을 수 없습니다.");
+                    return;
+                }
+
+                // Update lecture properties with values from the input controls
+                lec.Code = numbertextBox.Text;
+                lec.Name = subjecttextBox.Text;
+                lec.Manager = professortextBox.Text;
+                lec.Completion = completioncomboBox.SelectedItem?.ToString();
+                lec.Credit = int.TryParse(creditcomboBox.Text, out int creditValue) ? creditValue : lec.Credit;
+                lec.Place = placetextBox.Text;
+                lec.Capacity = int.TryParse(capacitytextBox.Text, out int capacityValue) ? capacityValue : lec.Capacity;
+
+                // Save changes to the database
                 context.Lectures.AddOrUpdate(lec);
                 context.SaveChanges();
+
+                // Update the corresponding row in the DataTable
+                DataRow row = lectureDataTable.Select($"Id = {lectureId}").FirstOrDefault();
+                if (row != null)
+                {
+                    row["Code"] = lec.Code;
+                    row["Name"] = lec.Name;
+                    row["Manager"] = lec.Manager;
+                    row["Completion"] = lec.Completion;
+                    row["Credit"] = lec.Credit;
+                    row["Place"] = lec.Place;
+                    row["Capacity"] = lec.Capacity;
+                }
+
+                lectureGridView.DataSource = lectureDataTable; // Refresh the grid view
+                MessageBox.Show("강의 정보가 성공적으로 수정되었습니다.");
             }
             catch (Exception ex)
             {
-                MessageBox.Show("알 수 없는 문제\n나중에 다시 시도해주세요." + ex.Message);
+                MessageBox.Show($"강의를 수정하는 중 문제가 발생했습니다.\n{ex.Message}");
             }
         }
 
@@ -172,6 +233,57 @@ namespace pr3
             {
                 MessageBox.Show("알 수 없는 문제\n페이지를 다시 로드해 주세요." + ex.Message);
                 return;
+            }
+        }
+
+        private void createbutton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Validate input data
+                if (string.IsNullOrEmpty(numbertextBox.Text) || string.IsNullOrEmpty(subjecttextBox.Text) ||
+                    string.IsNullOrEmpty(professortextBox.Text) || completioncomboBox.SelectedIndex == -1)
+                {
+                    MessageBox.Show("모든 강의를 입력해주세요.");
+                    return;
+                }
+
+                // Create a new lecture object
+                Lecture newLecture = new Lecture
+                {
+                    Code = numbertextBox.Text,
+                    Name = subjecttextBox.Text,
+                    Manager = professortextBox.Text,
+                    Completion = completioncomboBox.SelectedItem.ToString(),
+                    Credit = int.TryParse(creditcomboBox.Text, out int creditValue) ? creditValue : 0,
+                    Place = placetextBox.Text,
+                    Capacity = int.TryParse(capacitytextBox.Text, out int capacityValue) ? capacityValue : 0
+                };
+
+                // Add the lecture to the database
+                context.Lectures.Add(newLecture);
+                context.SaveChanges();
+
+                // Add the new lecture to the DataTable
+                DataRow newRow = lectureDataTable.NewRow();
+                newRow["Id"] = newLecture.Id; // ID will be generated automatically by the database
+                newRow["Code"] = newLecture.Code;
+                newRow["Name"] = newLecture.Name;
+                newRow["Completion"] = newLecture.Completion;
+                newRow["Manager"] = newLecture.Manager;
+                newRow["Credit"] = newLecture.Credit;
+                newRow["Place"] = newLecture.Place;
+                newRow["Capacity"] = newLecture.Capacity;
+                lectureDataTable.Rows.Add(newRow);
+
+                // Refresh the grid view
+                lectureGridView.DataSource = lectureDataTable;
+
+                MessageBox.Show("새 강의가 추가되었습니다.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("강의를 추가하는 중 문제가 발생했습니다.\n" + ex.Message);
             }
         }
     }

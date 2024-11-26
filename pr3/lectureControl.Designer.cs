@@ -46,24 +46,24 @@
             this.creditlabel = new System.Windows.Forms.Label();
             this.lectureGridView = new System.Windows.Forms.DataGridView();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CodeColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CompletionColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.managerColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Credit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PlaceColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CapacityColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lectureBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.editgroupBox = new System.Windows.Forms.GroupBox();
             this.createbutton = new System.Windows.Forms.Button();
             this.deletebutton = new System.Windows.Forms.Button();
             this.modifybutton = new System.Windows.Forms.Button();
             this.resetbutton = new System.Windows.Forms.Button();
             this.searchbutton = new System.Windows.Forms.Button();
-            this.CodeColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.managerColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PlaceColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CapacityColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lectureBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.searchgroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lectureGridView)).BeginInit();
-            this.editgroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lectureBindingSource)).BeginInit();
+            this.editgroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // professortextBox
@@ -252,6 +252,22 @@
             this.Id.ReadOnly = true;
             this.Id.Visible = false;
             // 
+            // CodeColumn
+            // 
+            this.CodeColumn.DataPropertyName = "Code";
+            this.CodeColumn.HeaderText = "학수번호";
+            this.CodeColumn.MinimumWidth = 9;
+            this.CodeColumn.Name = "CodeColumn";
+            this.CodeColumn.ReadOnly = true;
+            // 
+            // nameColumn
+            // 
+            this.nameColumn.DataPropertyName = "Name";
+            this.nameColumn.HeaderText = "교과목명";
+            this.nameColumn.MinimumWidth = 9;
+            this.nameColumn.Name = "nameColumn";
+            this.nameColumn.ReadOnly = true;
+            // 
             // CompletionColumn
             // 
             this.CompletionColumn.DataPropertyName = "Completion";
@@ -260,6 +276,14 @@
             this.CompletionColumn.Name = "CompletionColumn";
             this.CompletionColumn.ReadOnly = true;
             // 
+            // managerColumn
+            // 
+            this.managerColumn.DataPropertyName = "Manager";
+            this.managerColumn.HeaderText = "교수명";
+            this.managerColumn.MinimumWidth = 9;
+            this.managerColumn.Name = "managerColumn";
+            this.managerColumn.ReadOnly = true;
+            // 
             // Credit
             // 
             this.Credit.DataPropertyName = "Credit";
@@ -267,6 +291,26 @@
             this.Credit.MinimumWidth = 9;
             this.Credit.Name = "Credit";
             this.Credit.ReadOnly = true;
+            // 
+            // PlaceColumn
+            // 
+            this.PlaceColumn.DataPropertyName = "Place";
+            this.PlaceColumn.HeaderText = "강의 요일 / 시간";
+            this.PlaceColumn.MinimumWidth = 9;
+            this.PlaceColumn.Name = "PlaceColumn";
+            this.PlaceColumn.ReadOnly = true;
+            // 
+            // CapacityColumn
+            // 
+            this.CapacityColumn.DataPropertyName = "Capacity";
+            this.CapacityColumn.HeaderText = "수강인원";
+            this.CapacityColumn.MinimumWidth = 9;
+            this.CapacityColumn.Name = "CapacityColumn";
+            this.CapacityColumn.ReadOnly = true;
+            // 
+            // lectureBindingSource
+            // 
+            this.lectureBindingSource.DataSource = typeof(pr3.Lecture);
             // 
             // editgroupBox
             // 
@@ -289,6 +333,7 @@
             this.createbutton.TabIndex = 20;
             this.createbutton.Text = "등록";
             this.createbutton.UseVisualStyleBackColor = true;
+            this.createbutton.Click += new System.EventHandler(this.createbutton_Click);
             // 
             // deletebutton
             // 
@@ -330,50 +375,6 @@
             this.searchbutton.UseVisualStyleBackColor = true;
             this.searchbutton.Click += new System.EventHandler(this.searchbutton_Click);
             // 
-            // CodeColumn
-            // 
-            this.CodeColumn.DataPropertyName = "Code";
-            this.CodeColumn.HeaderText = "학수번호";
-            this.CodeColumn.MinimumWidth = 9;
-            this.CodeColumn.Name = "CodeColumn";
-            this.CodeColumn.ReadOnly = true;
-            // 
-            // nameColumn
-            // 
-            this.nameColumn.DataPropertyName = "Name";
-            this.nameColumn.HeaderText = "교과목명";
-            this.nameColumn.MinimumWidth = 9;
-            this.nameColumn.Name = "nameColumn";
-            this.nameColumn.ReadOnly = true;
-            // 
-            // managerColumn
-            // 
-            this.managerColumn.DataPropertyName = "Manager";
-            this.managerColumn.HeaderText = "교수명";
-            this.managerColumn.MinimumWidth = 9;
-            this.managerColumn.Name = "managerColumn";
-            this.managerColumn.ReadOnly = true;
-            // 
-            // PlaceColumn
-            // 
-            this.PlaceColumn.DataPropertyName = "Place";
-            this.PlaceColumn.HeaderText = "강의 요일 / 시간";
-            this.PlaceColumn.MinimumWidth = 9;
-            this.PlaceColumn.Name = "PlaceColumn";
-            this.PlaceColumn.ReadOnly = true;
-            // 
-            // CapacityColumn
-            // 
-            this.CapacityColumn.DataPropertyName = "Capacity";
-            this.CapacityColumn.HeaderText = "수강인원";
-            this.CapacityColumn.MinimumWidth = 9;
-            this.CapacityColumn.Name = "CapacityColumn";
-            this.CapacityColumn.ReadOnly = true;
-            // 
-            // lectureBindingSource
-            // 
-            this.lectureBindingSource.DataSource = typeof(pr3.Lecture);
-            // 
             // LectureControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -386,8 +387,8 @@
             this.searchgroupBox.ResumeLayout(false);
             this.searchgroupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lectureGridView)).EndInit();
-            this.editgroupBox.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.lectureBindingSource)).EndInit();
+            this.editgroupBox.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
