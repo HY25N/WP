@@ -29,26 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.btnCalculateAverage = new System.Windows.Forms.Button();
-            this.txtAverage = new System.Windows.Forms.TextBox();
             this.dgvScores = new System.Windows.Forms.DataGridView();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.enrollmentIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.enrollmentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lectureIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lectureDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.midTermDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.finalTermDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.attendanceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.registrationBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.lstScores = new System.Windows.Forms.ListBox();
             this.btnDeleteScore = new System.Windows.Forms.Button();
             this.btnUpdateScore = new System.Windows.Forms.Button();
             this.btnAddScore = new System.Windows.Forms.Button();
             this.txtAttendance = new System.Windows.Forms.TextBox();
             this.txtStudentName = new System.Windows.Forms.TextBox();
             this.txtStudentId = new System.Windows.Forms.TextBox();
-            this.lblAverage = new System.Windows.Forms.Label();
             this.lblAttendance = new System.Windows.Forms.Label();
             this.lblSubject = new System.Windows.Forms.Label();
             this.lblStudentName = new System.Windows.Forms.Label();
@@ -64,126 +51,46 @@
             this.txtYear = new System.Windows.Forms.TextBox();
             this.txtsemester = new System.Windows.Forms.TextBox();
             this.lectureComboBox = new System.Windows.Forms.ComboBox();
+            this.EnrollmentDataGridView = new System.Windows.Forms.DataGridView();
+            this.EnrollmentId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.yearDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.semesterDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.enrollmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.registrationBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.LectureId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LectureName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.midTermDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.finalTermDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.attendanceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvScores)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.registrationBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.EnrollmentDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.enrollmentBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.registrationBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btnCalculateAverage
-            // 
-            this.btnCalculateAverage.Location = new System.Drawing.Point(219, 617);
-            this.btnCalculateAverage.Name = "btnCalculateAverage";
-            this.btnCalculateAverage.Size = new System.Drawing.Size(103, 42);
-            this.btnCalculateAverage.TabIndex = 31;
-            this.btnCalculateAverage.Text = "평균계산";
-            this.btnCalculateAverage.UseVisualStyleBackColor = true;
-            this.btnCalculateAverage.Click += new System.EventHandler(this.btnCalculateAverage_Click);
-            // 
-            // txtAverage
-            // 
-            this.txtAverage.Location = new System.Drawing.Point(117, 556);
-            this.txtAverage.Name = "txtAverage";
-            this.txtAverage.ReadOnly = true;
-            this.txtAverage.Size = new System.Drawing.Size(205, 32);
-            this.txtAverage.TabIndex = 29;
             // 
             // dgvScores
             // 
+            this.dgvScores.AllowUserToAddRows = false;
+            this.dgvScores.AllowUserToDeleteRows = false;
             this.dgvScores.AutoGenerateColumns = false;
             this.dgvScores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvScores.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn,
-            this.enrollmentIdDataGridViewTextBoxColumn,
-            this.enrollmentDataGridViewTextBoxColumn,
-            this.lectureIdDataGridViewTextBoxColumn,
-            this.lectureDataGridViewTextBoxColumn,
+            this.LectureId,
+            this.LectureName,
             this.midTermDataGridViewTextBoxColumn,
             this.finalTermDataGridViewTextBoxColumn,
             this.attendanceDataGridViewTextBoxColumn});
             this.dgvScores.DataSource = this.registrationBindingSource;
             this.dgvScores.Location = new System.Drawing.Point(389, 21);
             this.dgvScores.Name = "dgvScores";
+            this.dgvScores.ReadOnly = true;
             this.dgvScores.RowHeadersWidth = 51;
             this.dgvScores.RowTemplate.Height = 24;
+            this.dgvScores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvScores.Size = new System.Drawing.Size(883, 300);
             this.dgvScores.TabIndex = 30;
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // enrollmentIdDataGridViewTextBoxColumn
-            // 
-            this.enrollmentIdDataGridViewTextBoxColumn.DataPropertyName = "EnrollmentId";
-            this.enrollmentIdDataGridViewTextBoxColumn.HeaderText = "EnrollmentId";
-            this.enrollmentIdDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.enrollmentIdDataGridViewTextBoxColumn.Name = "enrollmentIdDataGridViewTextBoxColumn";
-            this.enrollmentIdDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // enrollmentDataGridViewTextBoxColumn
-            // 
-            this.enrollmentDataGridViewTextBoxColumn.DataPropertyName = "Enrollment";
-            this.enrollmentDataGridViewTextBoxColumn.HeaderText = "Enrollment";
-            this.enrollmentDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.enrollmentDataGridViewTextBoxColumn.Name = "enrollmentDataGridViewTextBoxColumn";
-            this.enrollmentDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // lectureIdDataGridViewTextBoxColumn
-            // 
-            this.lectureIdDataGridViewTextBoxColumn.DataPropertyName = "LectureId";
-            this.lectureIdDataGridViewTextBoxColumn.HeaderText = "LectureId";
-            this.lectureIdDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.lectureIdDataGridViewTextBoxColumn.Name = "lectureIdDataGridViewTextBoxColumn";
-            this.lectureIdDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // lectureDataGridViewTextBoxColumn
-            // 
-            this.lectureDataGridViewTextBoxColumn.DataPropertyName = "Lecture";
-            this.lectureDataGridViewTextBoxColumn.HeaderText = "Lecture";
-            this.lectureDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.lectureDataGridViewTextBoxColumn.Name = "lectureDataGridViewTextBoxColumn";
-            this.lectureDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // midTermDataGridViewTextBoxColumn
-            // 
-            this.midTermDataGridViewTextBoxColumn.DataPropertyName = "MidTerm";
-            this.midTermDataGridViewTextBoxColumn.HeaderText = "MidTerm";
-            this.midTermDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.midTermDataGridViewTextBoxColumn.Name = "midTermDataGridViewTextBoxColumn";
-            this.midTermDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // finalTermDataGridViewTextBoxColumn
-            // 
-            this.finalTermDataGridViewTextBoxColumn.DataPropertyName = "FinalTerm";
-            this.finalTermDataGridViewTextBoxColumn.HeaderText = "FinalTerm";
-            this.finalTermDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.finalTermDataGridViewTextBoxColumn.Name = "finalTermDataGridViewTextBoxColumn";
-            this.finalTermDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // attendanceDataGridViewTextBoxColumn
-            // 
-            this.attendanceDataGridViewTextBoxColumn.DataPropertyName = "Attendance";
-            this.attendanceDataGridViewTextBoxColumn.HeaderText = "Attendance";
-            this.attendanceDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.attendanceDataGridViewTextBoxColumn.Name = "attendanceDataGridViewTextBoxColumn";
-            this.attendanceDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // registrationBindingSource
-            // 
-            this.registrationBindingSource.DataSource = typeof(pr3.Registration);
-            // 
-            // lstScores
-            // 
-            this.lstScores.FormattingEnabled = true;
-            this.lstScores.ItemHeight = 21;
-            this.lstScores.Location = new System.Drawing.Point(19, 392);
-            this.lstScores.Name = "lstScores";
-            this.lstScores.Size = new System.Drawing.Size(328, 172);
-            this.lstScores.TabIndex = 27;
+            this.dgvScores.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvScores_CellDoubleClick);
             // 
             // btnDeleteScore
             // 
@@ -237,15 +144,6 @@
             this.txtStudentId.Name = "txtStudentId";
             this.txtStudentId.Size = new System.Drawing.Size(205, 32);
             this.txtStudentId.TabIndex = 17;
-            // 
-            // lblAverage
-            // 
-            this.lblAverage.AutoSize = true;
-            this.lblAverage.Location = new System.Drawing.Point(15, 567);
-            this.lblAverage.Name = "lblAverage";
-            this.lblAverage.Size = new System.Drawing.Size(52, 21);
-            this.lblAverage.TabIndex = 28;
-            this.lblAverage.Text = "평균";
             // 
             // lblAttendance
             // 
@@ -324,9 +222,9 @@
             // 
             // panel1
             // 
-            this.panel1.Location = new System.Drawing.Point(1157, 353);
+            this.panel1.Location = new System.Drawing.Point(456, 327);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(420, 379);
+            this.panel1.Size = new System.Drawing.Size(841, 355);
             this.panel1.TabIndex = 32;
             // 
             // IbltxtYear
@@ -375,10 +273,113 @@
             this.lectureComboBox.Size = new System.Drawing.Size(188, 29);
             this.lectureComboBox.TabIndex = 40;
             // 
+            // EnrollmentDataGridView
+            // 
+            this.EnrollmentDataGridView.AllowUserToAddRows = false;
+            this.EnrollmentDataGridView.AllowUserToDeleteRows = false;
+            this.EnrollmentDataGridView.AutoGenerateColumns = false;
+            this.EnrollmentDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.EnrollmentDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.EnrollmentId,
+            this.yearDataGridViewTextBoxColumn,
+            this.semesterDataGridViewTextBoxColumn});
+            this.EnrollmentDataGridView.DataSource = this.enrollmentBindingSource;
+            this.EnrollmentDataGridView.Location = new System.Drawing.Point(24, 392);
+            this.EnrollmentDataGridView.Name = "EnrollmentDataGridView";
+            this.EnrollmentDataGridView.ReadOnly = true;
+            this.EnrollmentDataGridView.RowHeadersWidth = 72;
+            this.EnrollmentDataGridView.RowTemplate.Height = 34;
+            this.EnrollmentDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.EnrollmentDataGridView.Size = new System.Drawing.Size(426, 307);
+            this.EnrollmentDataGridView.TabIndex = 41;
+            this.EnrollmentDataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.EnrollmentDataGridView_CellDoubleClick);
+            // 
+            // EnrollmentId
+            // 
+            this.EnrollmentId.DataPropertyName = "Id";
+            this.EnrollmentId.HeaderText = "Id";
+            this.EnrollmentId.MinimumWidth = 9;
+            this.EnrollmentId.Name = "EnrollmentId";
+            this.EnrollmentId.ReadOnly = true;
+            this.EnrollmentId.Visible = false;
+            this.EnrollmentId.Width = 175;
+            // 
+            // yearDataGridViewTextBoxColumn
+            // 
+            this.yearDataGridViewTextBoxColumn.DataPropertyName = "Year";
+            this.yearDataGridViewTextBoxColumn.HeaderText = "Year";
+            this.yearDataGridViewTextBoxColumn.MinimumWidth = 9;
+            this.yearDataGridViewTextBoxColumn.Name = "yearDataGridViewTextBoxColumn";
+            this.yearDataGridViewTextBoxColumn.ReadOnly = true;
+            this.yearDataGridViewTextBoxColumn.Width = 40;
+            // 
+            // semesterDataGridViewTextBoxColumn
+            // 
+            this.semesterDataGridViewTextBoxColumn.DataPropertyName = "Semester";
+            this.semesterDataGridViewTextBoxColumn.HeaderText = "Semester";
+            this.semesterDataGridViewTextBoxColumn.MinimumWidth = 9;
+            this.semesterDataGridViewTextBoxColumn.Name = "semesterDataGridViewTextBoxColumn";
+            this.semesterDataGridViewTextBoxColumn.ReadOnly = true;
+            this.semesterDataGridViewTextBoxColumn.Width = 80;
+            // 
+            // enrollmentBindingSource
+            // 
+            this.enrollmentBindingSource.DataSource = typeof(pr3.Enrollment);
+            // 
+            // registrationBindingSource
+            // 
+            this.registrationBindingSource.DataSource = typeof(pr3.Registration);
+            // 
+            // LectureId
+            // 
+            this.LectureId.DataPropertyName = "Id";
+            this.LectureId.HeaderText = "LectureId";
+            this.LectureId.MinimumWidth = 9;
+            this.LectureId.Name = "LectureId";
+            this.LectureId.ReadOnly = true;
+            this.LectureId.Width = 175;
+            // 
+            // LectureName
+            // 
+            this.LectureName.DataPropertyName = "LectureName";
+            this.LectureName.HeaderText = "교과명";
+            this.LectureName.MinimumWidth = 9;
+            this.LectureName.Name = "LectureName";
+            this.LectureName.ReadOnly = true;
+            this.LectureName.Width = 175;
+            // 
+            // midTermDataGridViewTextBoxColumn
+            // 
+            this.midTermDataGridViewTextBoxColumn.DataPropertyName = "MidTerm";
+            this.midTermDataGridViewTextBoxColumn.HeaderText = "MidTerm";
+            this.midTermDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.midTermDataGridViewTextBoxColumn.Name = "midTermDataGridViewTextBoxColumn";
+            this.midTermDataGridViewTextBoxColumn.ReadOnly = true;
+            this.midTermDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // finalTermDataGridViewTextBoxColumn
+            // 
+            this.finalTermDataGridViewTextBoxColumn.DataPropertyName = "FinalTerm";
+            this.finalTermDataGridViewTextBoxColumn.HeaderText = "FinalTerm";
+            this.finalTermDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.finalTermDataGridViewTextBoxColumn.Name = "finalTermDataGridViewTextBoxColumn";
+            this.finalTermDataGridViewTextBoxColumn.ReadOnly = true;
+            this.finalTermDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // attendanceDataGridViewTextBoxColumn
+            // 
+            this.attendanceDataGridViewTextBoxColumn.DataPropertyName = "Attendance";
+            this.attendanceDataGridViewTextBoxColumn.HeaderText = "Attendance";
+            this.attendanceDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.attendanceDataGridViewTextBoxColumn.Name = "attendanceDataGridViewTextBoxColumn";
+            this.attendanceDataGridViewTextBoxColumn.ReadOnly = true;
+            this.attendanceDataGridViewTextBoxColumn.Width = 125;
+            // 
             // ScoreControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.EnrollmentDataGridView);
             this.Controls.Add(this.lectureComboBox);
             this.Controls.Add(this.txtsemester);
             this.Controls.Add(this.txtYear);
@@ -389,17 +390,13 @@
             this.Controls.Add(this.lblFinalTerm);
             this.Controls.Add(this.lblMidTerm);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.btnCalculateAverage);
-            this.Controls.Add(this.txtAverage);
             this.Controls.Add(this.dgvScores);
-            this.Controls.Add(this.lstScores);
             this.Controls.Add(this.btnDeleteScore);
             this.Controls.Add(this.btnUpdateScore);
             this.Controls.Add(this.btnAddScore);
             this.Controls.Add(this.txtAttendance);
             this.Controls.Add(this.txtStudentName);
             this.Controls.Add(this.txtStudentId);
-            this.Controls.Add(this.lblAverage);
             this.Controls.Add(this.lblAttendance);
             this.Controls.Add(this.lblSubject);
             this.Controls.Add(this.lblStudentName);
@@ -408,19 +405,17 @@
             this.Name = "ScoreControl";
             this.Size = new System.Drawing.Size(1605, 771);
             ((System.ComponentModel.ISupportInitialize)(this.dgvScores)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.registrationBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.EnrollmentDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.enrollmentBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.registrationBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnCalculateAverage;
-        private System.Windows.Forms.TextBox txtAverage;
         private System.Windows.Forms.DataGridView dgvScores;
-        private System.Windows.Forms.ListBox lstScores;
         private System.Windows.Forms.Button btnDeleteScore;
         private System.Windows.Forms.Button btnUpdateScore;
         private System.Windows.Forms.Button btnAddScore;
@@ -428,7 +423,6 @@
         private System.Windows.Forms.TextBox txtAttendance;
         private System.Windows.Forms.TextBox txtStudentName;
         private System.Windows.Forms.TextBox txtStudentId;
-        private System.Windows.Forms.Label lblAverage;
         private System.Windows.Forms.Label lblAttendance;
         private System.Windows.Forms.Label lblSubject;
         private System.Windows.Forms.Label lblStudentName;
@@ -437,14 +431,6 @@
         private System.Windows.Forms.TextBox txtMidTerm;
         private System.Windows.Forms.Label lblFinalTerm;
         private System.Windows.Forms.Label lblMidTerm;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn enrollmentIdDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn enrollmentDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn lectureIdDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn lectureDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn midTermDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn finalTermDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn attendanceDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource registrationBindingSource;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label IbltxtYear;
@@ -452,5 +438,15 @@
         private System.Windows.Forms.TextBox txtYear;
         private System.Windows.Forms.TextBox txtsemester;
         private System.Windows.Forms.ComboBox lectureComboBox;
+        private System.Windows.Forms.DataGridView EnrollmentDataGridView;
+        private System.Windows.Forms.BindingSource enrollmentBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EnrollmentId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn yearDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn semesterDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LectureId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LectureName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn midTermDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn finalTermDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn attendanceDataGridViewTextBoxColumn;
     }
 }

@@ -23,6 +23,24 @@ namespace pr3.Properties {
             }
         }
         
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("아이디를 입력하세요.")]
+        public string usernameInputPlaceholder {
+            get {
+                return ((string)(this["usernameInputPlaceholder"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("비밀번호를 입력하세요.")]
+        public string passwordInputPlaceholder {
+            get {
+                return ((string)(this["passwordInputPlaceholder"]));
+            }
+        }
+        
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("qw")]
@@ -44,24 +62,6 @@ namespace pr3.Properties {
             }
             set {
                 this["loginPassword"] = value;
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("아이디를 입력하세요.")]
-        public string usernameInputPlaceholder {
-            get {
-                return ((string)(this["usernameInputPlaceholder"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("비밀번호를 입력하세요.")]
-        public string passwordInputPlaceholder {
-            get {
-                return ((string)(this["passwordInputPlaceholder"]));
             }
         }
     }
