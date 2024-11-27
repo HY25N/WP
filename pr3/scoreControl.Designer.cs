@@ -52,15 +52,14 @@
             this.txtsemester = new System.Windows.Forms.TextBox();
             this.lectureComboBox = new System.Windows.Forms.ComboBox();
             this.EnrollmentDataGridView = new System.Windows.Forms.DataGridView();
-            this.EnrollmentId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.EnrollmentId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.registrationBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.yearDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.semesterDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.enrollmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LectureId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LectureName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.midTermDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.finalTermDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -82,28 +81,29 @@
             this.dgvScores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvScores.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
-            this.LectureId,
             this.LectureName,
             this.midTermDataGridViewTextBoxColumn,
             this.finalTermDataGridViewTextBoxColumn,
             this.attendanceDataGridViewTextBoxColumn});
             this.dgvScores.DataSource = this.registrationBindingSource;
             this.dgvScores.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvScores.Location = new System.Drawing.Point(429, 3);
+            this.dgvScores.Location = new System.Drawing.Point(273, 2);
+            this.dgvScores.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvScores.Name = "dgvScores";
             this.dgvScores.ReadOnly = true;
             this.dgvScores.RowHeadersWidth = 51;
             this.dgvScores.RowTemplate.Height = 24;
             this.dgvScores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvScores.Size = new System.Drawing.Size(1133, 478);
+            this.dgvScores.Size = new System.Drawing.Size(721, 273);
             this.dgvScores.TabIndex = 30;
             this.dgvScores.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvScores_CellDoubleClick);
             // 
             // btnDeleteScore
             // 
-            this.btnDeleteScore.Location = new System.Drawing.Point(263, 373);
+            this.btnDeleteScore.Location = new System.Drawing.Point(167, 213);
+            this.btnDeleteScore.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnDeleteScore.Name = "btnDeleteScore";
-            this.btnDeleteScore.Size = new System.Drawing.Size(103, 42);
+            this.btnDeleteScore.Size = new System.Drawing.Size(66, 24);
             this.btnDeleteScore.TabIndex = 26;
             this.btnDeleteScore.Text = "삭제";
             this.btnDeleteScore.UseVisualStyleBackColor = true;
@@ -111,9 +111,10 @@
             // 
             // btnUpdateScore
             // 
-            this.btnUpdateScore.Location = new System.Drawing.Point(143, 373);
+            this.btnUpdateScore.Location = new System.Drawing.Point(91, 213);
+            this.btnUpdateScore.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnUpdateScore.Name = "btnUpdateScore";
-            this.btnUpdateScore.Size = new System.Drawing.Size(103, 42);
+            this.btnUpdateScore.Size = new System.Drawing.Size(66, 24);
             this.btnUpdateScore.TabIndex = 25;
             this.btnUpdateScore.Text = "수정";
             this.btnUpdateScore.UseVisualStyleBackColor = true;
@@ -121,9 +122,10 @@
             // 
             // btnAddScore
             // 
-            this.btnAddScore.Location = new System.Drawing.Point(34, 373);
+            this.btnAddScore.Location = new System.Drawing.Point(22, 213);
+            this.btnAddScore.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAddScore.Name = "btnAddScore";
-            this.btnAddScore.Size = new System.Drawing.Size(103, 42);
+            this.btnAddScore.Size = new System.Drawing.Size(66, 24);
             this.btnAddScore.TabIndex = 24;
             this.btnAddScore.Text = "추가";
             this.btnAddScore.UseVisualStyleBackColor = true;
@@ -131,63 +133,62 @@
             // 
             // txtAttendance
             // 
-            this.txtAttendance.Location = new System.Drawing.Point(143, 329);
+            this.txtAttendance.Location = new System.Drawing.Point(91, 188);
+            this.txtAttendance.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtAttendance.Name = "txtAttendance";
-            this.txtAttendance.Size = new System.Drawing.Size(150, 32);
+            this.txtAttendance.Size = new System.Drawing.Size(97, 21);
             this.txtAttendance.TabIndex = 23;
             // 
             // txtStudentName
             // 
-            this.txtStudentName.Location = new System.Drawing.Point(161, 95);
-            this.txtStudentName.Margin = new System.Windows.Forms.Padding(4);
+            this.txtStudentName.Location = new System.Drawing.Point(102, 54);
+            this.txtStudentName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtStudentName.Name = "txtStudentName";
-            this.txtStudentName.Size = new System.Drawing.Size(205, 32);
+            this.txtStudentName.Size = new System.Drawing.Size(132, 21);
             this.txtStudentName.TabIndex = 19;
             // 
             // txtStudentId
             // 
-            this.txtStudentId.Location = new System.Drawing.Point(161, 50);
-            this.txtStudentId.Margin = new System.Windows.Forms.Padding(4);
+            this.txtStudentId.Location = new System.Drawing.Point(102, 29);
+            this.txtStudentId.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtStudentId.Name = "txtStudentId";
-            this.txtStudentId.Size = new System.Drawing.Size(205, 32);
+            this.txtStudentId.Size = new System.Drawing.Size(132, 21);
             this.txtStudentId.TabIndex = 17;
             // 
             // lblAttendance
             // 
             this.lblAttendance.AutoSize = true;
-            this.lblAttendance.Location = new System.Drawing.Point(43, 329);
+            this.lblAttendance.Location = new System.Drawing.Point(27, 188);
+            this.lblAttendance.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblAttendance.Name = "lblAttendance";
-            this.lblAttendance.Size = new System.Drawing.Size(59, 21);
+            this.lblAttendance.Size = new System.Drawing.Size(33, 12);
             this.lblAttendance.TabIndex = 22;
             this.lblAttendance.Text = "출석:";
             // 
             // lblSubject
             // 
             this.lblSubject.AutoSize = true;
-            this.lblSubject.Location = new System.Drawing.Point(43, 218);
-            this.lblSubject.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblSubject.Location = new System.Drawing.Point(27, 125);
             this.lblSubject.Name = "lblSubject";
-            this.lblSubject.Size = new System.Drawing.Size(59, 21);
+            this.lblSubject.Size = new System.Drawing.Size(33, 12);
             this.lblSubject.TabIndex = 20;
             this.lblSubject.Text = "과목:";
             // 
             // lblStudentName
             // 
             this.lblStudentName.AutoSize = true;
-            this.lblStudentName.Location = new System.Drawing.Point(43, 98);
-            this.lblStudentName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblStudentName.Location = new System.Drawing.Point(27, 56);
             this.lblStudentName.Name = "lblStudentName";
-            this.lblStudentName.Size = new System.Drawing.Size(59, 21);
+            this.lblStudentName.Size = new System.Drawing.Size(33, 12);
             this.lblStudentName.TabIndex = 18;
             this.lblStudentName.Text = "이름:";
             // 
             // lblStudentId
             // 
             this.lblStudentId.AutoSize = true;
-            this.lblStudentId.Location = new System.Drawing.Point(43, 54);
-            this.lblStudentId.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblStudentId.Location = new System.Drawing.Point(27, 31);
             this.lblStudentId.Name = "lblStudentId";
-            this.lblStudentId.Size = new System.Drawing.Size(94, 21);
+            this.lblStudentId.Size = new System.Drawing.Size(58, 12);
             this.lblStudentId.TabIndex = 16;
             this.lblStudentId.Text = "학번 (ID):";
             // 
@@ -197,88 +198,92 @@
             // 
             // txtFinalTerm
             // 
-            this.txtFinalTerm.Location = new System.Drawing.Point(149, 282);
+            this.txtFinalTerm.Location = new System.Drawing.Point(95, 161);
+            this.txtFinalTerm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtFinalTerm.Name = "txtFinalTerm";
-            this.txtFinalTerm.Size = new System.Drawing.Size(150, 32);
+            this.txtFinalTerm.Size = new System.Drawing.Size(97, 21);
             this.txtFinalTerm.TabIndex = 35;
             // 
             // txtMidTerm
             // 
-            this.txtMidTerm.Location = new System.Drawing.Point(161, 244);
+            this.txtMidTerm.Location = new System.Drawing.Point(102, 139);
+            this.txtMidTerm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtMidTerm.Name = "txtMidTerm";
-            this.txtMidTerm.Size = new System.Drawing.Size(150, 32);
+            this.txtMidTerm.Size = new System.Drawing.Size(97, 21);
             this.txtMidTerm.TabIndex = 33;
             // 
             // lblFinalTerm
             // 
             this.lblFinalTerm.AutoSize = true;
-            this.lblFinalTerm.Location = new System.Drawing.Point(35, 285);
+            this.lblFinalTerm.Location = new System.Drawing.Point(22, 163);
+            this.lblFinalTerm.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblFinalTerm.Name = "lblFinalTerm";
-            this.lblFinalTerm.Size = new System.Drawing.Size(108, 21);
+            this.lblFinalTerm.Size = new System.Drawing.Size(61, 12);
             this.lblFinalTerm.TabIndex = 34;
             this.lblFinalTerm.Text = "기말 고사:";
             // 
             // lblMidTerm
             // 
             this.lblMidTerm.AutoSize = true;
-            this.lblMidTerm.Location = new System.Drawing.Point(29, 264);
+            this.lblMidTerm.Location = new System.Drawing.Point(18, 151);
+            this.lblMidTerm.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblMidTerm.Name = "lblMidTerm";
-            this.lblMidTerm.Size = new System.Drawing.Size(108, 21);
+            this.lblMidTerm.Size = new System.Drawing.Size(61, 12);
             this.lblMidTerm.TabIndex = 32;
             this.lblMidTerm.Text = "중간 고사:";
             // 
             // panel1
             // 
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(429, 487);
+            this.panel1.Location = new System.Drawing.Point(273, 279);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1133, 479);
+            this.panel1.Size = new System.Drawing.Size(721, 273);
             this.panel1.TabIndex = 32;
             // 
             // IbltxtYear
             // 
             this.IbltxtYear.AutoSize = true;
-            this.IbltxtYear.Location = new System.Drawing.Point(43, 145);
-            this.IbltxtYear.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.IbltxtYear.Location = new System.Drawing.Point(27, 83);
             this.IbltxtYear.Name = "IbltxtYear";
-            this.IbltxtYear.Size = new System.Drawing.Size(80, 21);
+            this.IbltxtYear.Size = new System.Drawing.Size(45, 12);
             this.IbltxtYear.TabIndex = 36;
             this.IbltxtYear.Text = "학년도:";
             // 
             // IbltxtSemester
             // 
             this.IbltxtSemester.AutoSize = true;
-            this.IbltxtSemester.Location = new System.Drawing.Point(43, 179);
-            this.IbltxtSemester.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.IbltxtSemester.Location = new System.Drawing.Point(27, 102);
             this.IbltxtSemester.Name = "IbltxtSemester";
-            this.IbltxtSemester.Size = new System.Drawing.Size(59, 21);
+            this.IbltxtSemester.Size = new System.Drawing.Size(33, 12);
             this.IbltxtSemester.TabIndex = 37;
             this.IbltxtSemester.Text = "학기:";
             // 
             // txtYear
             // 
-            this.txtYear.Location = new System.Drawing.Point(157, 142);
-            this.txtYear.Margin = new System.Windows.Forms.Padding(4);
+            this.txtYear.Location = new System.Drawing.Point(100, 81);
+            this.txtYear.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtYear.Name = "txtYear";
-            this.txtYear.Size = new System.Drawing.Size(205, 32);
+            this.txtYear.Size = new System.Drawing.Size(132, 21);
             this.txtYear.TabIndex = 38;
             // 
             // txtsemester
             // 
-            this.txtsemester.Location = new System.Drawing.Point(143, 176);
-            this.txtsemester.Margin = new System.Windows.Forms.Padding(4);
+            this.txtsemester.Location = new System.Drawing.Point(91, 101);
+            this.txtsemester.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtsemester.Name = "txtsemester";
-            this.txtsemester.Size = new System.Drawing.Size(205, 32);
+            this.txtsemester.Size = new System.Drawing.Size(132, 21);
             this.txtsemester.TabIndex = 39;
             // 
             // lectureComboBox
             // 
             this.lectureComboBox.FormattingEnabled = true;
-            this.lectureComboBox.ItemHeight = 21;
-            this.lectureComboBox.Location = new System.Drawing.Point(149, 210);
+            this.lectureComboBox.ItemHeight = 12;
+            this.lectureComboBox.Location = new System.Drawing.Point(95, 120);
+            this.lectureComboBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.lectureComboBox.MaxDropDownItems = 12;
             this.lectureComboBox.Name = "lectureComboBox";
-            this.lectureComboBox.Size = new System.Drawing.Size(188, 29);
+            this.lectureComboBox.Size = new System.Drawing.Size(121, 20);
             this.lectureComboBox.TabIndex = 40;
             // 
             // EnrollmentDataGridView
@@ -293,25 +298,16 @@
             this.semesterDataGridViewTextBoxColumn});
             this.EnrollmentDataGridView.DataSource = this.enrollmentBindingSource;
             this.EnrollmentDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.EnrollmentDataGridView.Location = new System.Drawing.Point(3, 487);
+            this.EnrollmentDataGridView.Location = new System.Drawing.Point(2, 279);
+            this.EnrollmentDataGridView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.EnrollmentDataGridView.Name = "EnrollmentDataGridView";
             this.EnrollmentDataGridView.ReadOnly = true;
             this.EnrollmentDataGridView.RowHeadersWidth = 72;
             this.EnrollmentDataGridView.RowTemplate.Height = 34;
             this.EnrollmentDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.EnrollmentDataGridView.Size = new System.Drawing.Size(420, 479);
+            this.EnrollmentDataGridView.Size = new System.Drawing.Size(267, 273);
             this.EnrollmentDataGridView.TabIndex = 41;
             this.EnrollmentDataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.EnrollmentDataGridView_CellDoubleClick);
-            // 
-            // EnrollmentId
-            // 
-            this.EnrollmentId.DataPropertyName = "Id";
-            this.EnrollmentId.HeaderText = "Id";
-            this.EnrollmentId.MinimumWidth = 9;
-            this.EnrollmentId.Name = "EnrollmentId";
-            this.EnrollmentId.ReadOnly = true;
-            this.EnrollmentId.Visible = false;
-            this.EnrollmentId.Width = 175;
             // 
             // tableLayoutPanel2
             // 
@@ -324,11 +320,12 @@
             this.tableLayoutPanel2.Controls.Add(this.EnrollmentDataGridView, 0, 1);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1565, 969);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(996, 554);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // groupBox1
@@ -353,12 +350,25 @@
             this.groupBox1.Controls.Add(this.lblMidTerm);
             this.groupBox1.Controls.Add(this.btnDeleteScore);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.Location = new System.Drawing.Point(3, 3);
+            this.groupBox1.Location = new System.Drawing.Point(2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(420, 478);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Size = new System.Drawing.Size(267, 273);
             this.groupBox1.TabIndex = 41;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
+            // 
+            // EnrollmentId
+            // 
+            this.EnrollmentId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.EnrollmentId.DataPropertyName = "Id";
+            this.EnrollmentId.HeaderText = "Id";
+            this.EnrollmentId.MinimumWidth = 9;
+            this.EnrollmentId.Name = "EnrollmentId";
+            this.EnrollmentId.ReadOnly = true;
+            this.EnrollmentId.Visible = false;
+            this.EnrollmentId.Width = 10;
             // 
             // registrationBindingSource
             // 
@@ -366,21 +376,21 @@
             // 
             // yearDataGridViewTextBoxColumn
             // 
+            this.yearDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.yearDataGridViewTextBoxColumn.DataPropertyName = "Year";
-            this.yearDataGridViewTextBoxColumn.HeaderText = "Year";
+            this.yearDataGridViewTextBoxColumn.HeaderText = "년도";
             this.yearDataGridViewTextBoxColumn.MinimumWidth = 9;
             this.yearDataGridViewTextBoxColumn.Name = "yearDataGridViewTextBoxColumn";
             this.yearDataGridViewTextBoxColumn.ReadOnly = true;
-            this.yearDataGridViewTextBoxColumn.Width = 40;
             // 
             // semesterDataGridViewTextBoxColumn
             // 
+            this.semesterDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.semesterDataGridViewTextBoxColumn.DataPropertyName = "Semester";
-            this.semesterDataGridViewTextBoxColumn.HeaderText = "Semester";
+            this.semesterDataGridViewTextBoxColumn.HeaderText = "학기";
             this.semesterDataGridViewTextBoxColumn.MinimumWidth = 9;
             this.semesterDataGridViewTextBoxColumn.Name = "semesterDataGridViewTextBoxColumn";
             this.semesterDataGridViewTextBoxColumn.ReadOnly = true;
-            this.semesterDataGridViewTextBoxColumn.Width = 80;
             // 
             // enrollmentBindingSource
             // 
@@ -388,6 +398,7 @@
             // 
             // Id
             // 
+            this.Id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.Id.DataPropertyName = "Id";
             this.Id.HeaderText = "Id";
             this.Id.MinimumWidth = 8;
@@ -396,60 +407,50 @@
             this.Id.Visible = false;
             this.Id.Width = 150;
             // 
-            // LectureId
-            // 
-            this.LectureId.DataPropertyName = "LectureId";
-            this.LectureId.HeaderText = "LectureId";
-            this.LectureId.MinimumWidth = 9;
-            this.LectureId.Name = "LectureId";
-            this.LectureId.ReadOnly = true;
-            this.LectureId.Visible = false;
-            this.LectureId.Width = 175;
-            // 
             // LectureName
             // 
+            this.LectureName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.LectureName.DataPropertyName = "LectureName";
             this.LectureName.HeaderText = "교과명";
             this.LectureName.MinimumWidth = 9;
             this.LectureName.Name = "LectureName";
             this.LectureName.ReadOnly = true;
-            this.LectureName.Width = 175;
             // 
             // midTermDataGridViewTextBoxColumn
             // 
+            this.midTermDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.midTermDataGridViewTextBoxColumn.DataPropertyName = "MidTerm";
-            this.midTermDataGridViewTextBoxColumn.HeaderText = "MidTerm";
+            this.midTermDataGridViewTextBoxColumn.HeaderText = "중간고사";
             this.midTermDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.midTermDataGridViewTextBoxColumn.Name = "midTermDataGridViewTextBoxColumn";
             this.midTermDataGridViewTextBoxColumn.ReadOnly = true;
-            this.midTermDataGridViewTextBoxColumn.Width = 125;
             // 
             // finalTermDataGridViewTextBoxColumn
             // 
+            this.finalTermDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.finalTermDataGridViewTextBoxColumn.DataPropertyName = "FinalTerm";
-            this.finalTermDataGridViewTextBoxColumn.HeaderText = "FinalTerm";
+            this.finalTermDataGridViewTextBoxColumn.HeaderText = "기말고사";
             this.finalTermDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.finalTermDataGridViewTextBoxColumn.Name = "finalTermDataGridViewTextBoxColumn";
             this.finalTermDataGridViewTextBoxColumn.ReadOnly = true;
-            this.finalTermDataGridViewTextBoxColumn.Width = 125;
             // 
             // attendanceDataGridViewTextBoxColumn
             // 
+            this.attendanceDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.attendanceDataGridViewTextBoxColumn.DataPropertyName = "Attendance";
-            this.attendanceDataGridViewTextBoxColumn.HeaderText = "Attendance";
+            this.attendanceDataGridViewTextBoxColumn.HeaderText = "출석";
             this.attendanceDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.attendanceDataGridViewTextBoxColumn.Name = "attendanceDataGridViewTextBoxColumn";
             this.attendanceDataGridViewTextBoxColumn.ReadOnly = true;
-            this.attendanceDataGridViewTextBoxColumn.Width = 125;
             // 
             // ScoreControl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 21F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tableLayoutPanel2);
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "ScoreControl";
-            this.Size = new System.Drawing.Size(1565, 969);
+            this.Size = new System.Drawing.Size(996, 554);
             this.Load += new System.EventHandler(this.ScoreControl_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvScores)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
@@ -489,13 +490,12 @@
         private System.Windows.Forms.ComboBox lectureComboBox;
         private System.Windows.Forms.DataGridView EnrollmentDataGridView;
         private System.Windows.Forms.BindingSource enrollmentBindingSource;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridViewTextBoxColumn EnrollmentId;
         private System.Windows.Forms.DataGridViewTextBoxColumn yearDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn semesterDataGridViewTextBoxColumn;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn LectureId;
         private System.Windows.Forms.DataGridViewTextBoxColumn LectureName;
         private System.Windows.Forms.DataGridViewTextBoxColumn midTermDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn finalTermDataGridViewTextBoxColumn;
