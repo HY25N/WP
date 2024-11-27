@@ -276,6 +276,8 @@ namespace pr3
 
         private void studentDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.RowIndex == -1) return;
+
             ViewPanel.Controls.Clear();
             // ViewPanel.Controls.Add(new ScoreControl());
             int studentId = int.Parse(studentDataGridView.Rows[e.RowIndex].Cells["StudentID"].Value.ToString());

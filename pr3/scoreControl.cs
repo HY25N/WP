@@ -12,6 +12,7 @@ using System.Security;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.AxHost;
 
 namespace pr3
 {
@@ -20,6 +21,7 @@ namespace pr3
         // 성적 데이터를 저장할 리스트
         private List<Registration> scores = new List<Registration>();
         private Student student;
+        private Statistics stat;
 
         public ScoreControl()
         {
@@ -48,7 +50,7 @@ namespace pr3
 
             ViewEnrollmentInfo(0);
 
-            Statistics stat = new Statistics(Repository.GetContext());
+            stat = new Statistics(Repository.GetContext());
             stat.GetRegistrationsByStudentid(student.StudentID);
             stat.Dock = DockStyle.Fill;
             panel1.Controls.Add(stat);
@@ -98,6 +100,17 @@ namespace pr3
                 int finalTerm = int.Parse(txtFinalTerm.Text);
                 int attendance = int.Parse(txtAttendance.Text);
 
+                if (student == null)
+                {
+                    student = Repository.GetContext().Students.SingleOrDefault(v => v.StudentID == studentId);
+
+                    stat = new Statistics(Repository.GetContext());
+                    stat.GetRegistrationsByStudentid(student.StudentID);
+                    stat.Dock = DockStyle.Fill;
+                    panel1.Controls.Add(stat);
+                }
+                   
+
                 // 위의 학생정보와 년도학기 정보를 기준으로 db의 등록학기 정보를 가져온다. 없으면 새로 만든다.
                 Enrollment enroll = Repository.GetContext().Enrollments.SingleOrDefault(v =>
                                         v.StudentId == studentId && v.Year == year && v.Semester == semester) ??
@@ -105,6 +118,7 @@ namespace pr3
 
                 // 없어서 새로 만든 경우 새 학기의 점수를 등록할 것이니, 새로 만든 등록학기 정보를 컨텍스트에서 추적하게 한다.
                 Repository.GetContext().Enrollments.AddOrUpdate(enroll);
+                Repository.GetContext().SaveChanges();
 
                 // 박스 컨드롤들을 기준으로 점수(registration) 를 만든다.
                 Registration newScore = new Registration(enroll.Id, lectureId, midTerm, finalTerm, attendance);
@@ -117,6 +131,7 @@ namespace pr3
                 Repository.GetContext().SaveChanges();
 
                 // DataGridView에 성적 데이터 갱신
+                stat.GetRegistrationsByStudentid(student.StudentID);
                 ViewEnrollmentInfo(0);
 
                 ClearFields();
@@ -134,18 +149,27 @@ namespace pr3
         // 성적 수정 버튼 클릭 이벤트
         private void btnUpdateScore_Click(object sender, EventArgs e)
         {
-            int regId = int.Parse(dgvScores.SelectedRows[0].Cells["Id"].Value.ToString());
-            Registration reg = Repository.GetContext().Registrations.SingleOrDefault(v => v.Id == regId);
+            try
+            {
+                int regId = int.Parse(dgvScores.SelectedRows[0].Cells["Id"].Value.ToString());
+                Registration reg = Repository.GetContext().Registrations.SingleOrDefault(v => v.Id == regId);
 
-            reg.LectureId = int.Parse(lectureComboBox.SelectedValue.ToString());
-            reg.MidTerm = int.Parse(txtMidTerm.Text);
-            reg.FinalTerm = int.Parse(txtFinalTerm.Text);
-            reg.Attendance = int.Parse(txtAttendance.Text);
+                reg.LectureId = int.Parse(lectureComboBox.SelectedValue.ToString());
+                reg.MidTerm = int.Parse(txtMidTerm.Text);
+                reg.FinalTerm = int.Parse(txtFinalTerm.Text);
+                reg.Attendance = int.Parse(txtAttendance.Text);
 
-            Repository.GetContext().Registrations.AddOrUpdate(reg);
-            Repository.GetContext().SaveChanges();
+                Repository.GetContext().Registrations.AddOrUpdate(reg);
+                Repository.GetContext().SaveChanges();
 
-            ViewEnrollmentInfo(0);
+                ViewEnrollmentInfo(0);
+                stat.GetRegistrationsByStudentid(student.StudentID);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"문제가 발생했어요!", "문제");
+            }
+            
 
             // if (lstScores.SelectedItem != null)
             // {
@@ -165,14 +189,21 @@ namespace pr3
         // 성적 삭제 버튼 클릭 이벤트
         private void btnDeleteScore_Click(object sender, EventArgs e)
         {
+            try
+            {
+                int regId = int.Parse(dgvScores.SelectedRows[0].Cells["Id"].Value.ToString());
+                Registration reg = Repository.GetContext().Registrations.SingleOrDefault(v => v.Id == regId);
 
-            int regId = int.Parse(dgvScores.SelectedRows[0].Cells["Id"].Value.ToString());
-            Registration reg = Repository.GetContext().Registrations.SingleOrDefault(v => v.Id == regId);
+                Repository.GetContext().Registrations.Remove(reg);
+                Repository.GetContext().SaveChanges();
 
-            Repository.GetContext().Registrations.Remove(reg);
-            Repository.GetContext().SaveChanges();
-
-            ViewEnrollmentInfo(0);
+                ViewEnrollmentInfo(0);
+                stat.GetRegistrationsByStudentid(student.StudentID);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"문제가 발생했어요!", "문제");
+            }
 
 
             // if (lstScores.SelectedItem != null)
@@ -214,12 +245,14 @@ namespace pr3
 
         private void EnrollmentDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.RowIndex == -1) return;
             ViewEnrollmentInfo(e.RowIndex);
         }
 
         private void dgvScores_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            Debug.WriteLine(e.RowIndex + "\n::" +dgvScores.Rows[e.RowIndex].Cells["LectureId"].Value.ToString());
+            if (e.RowIndex == -1) return;
+            // Debug.WriteLine(e.RowIndex + "\n::" +dgvScores.Rows[e.RowIndex].Cells["LectureId"].Value.ToString());
 
             lectureComboBox.SelectedValue = int.Parse(dgvScores.Rows[e.RowIndex].Cells["LectureId"].Value.ToString());
             txtMidTerm.Text = dgvScores.Rows[e.RowIndex].Cells["midTermDataGridViewTextBoxColumn"].Value.ToString();

@@ -47,11 +47,6 @@ namespace pr3
             // chart.Series.Add(series2);
         }
 
-        private void Statistics_Paint(object sender, PaintEventArgs e)
-        {
-            // Graphics g = e.Graphics;
-        }
-
         private List<GradeStats> LoadStudentStatistics()
         {
             // 학생 데이터 가져오기
@@ -84,6 +79,10 @@ namespace pr3
 
         public void GetRegistrationsByStudentid(int studentId)
         {
+            this.Controls.Remove(chart1);
+            chart1 = new Chart();
+            this.Controls.Add(chart1);
+            chart1.Dock = DockStyle.Fill;
 
             // 데이터 가져오기
             Student s = Context.Students.FirstOrDefault(v => v.StudentID == studentId);

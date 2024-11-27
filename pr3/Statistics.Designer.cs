@@ -52,7 +52,6 @@
             this.Name = "Statistics";
             this.Size = new System.Drawing.Size(1423, 908);
             this.Load += new System.EventHandler(this.Statistics_Load);
-            this.Paint += new System.Windows.Forms.PaintEventHandler(this.Statistics_Paint);
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.ResumeLayout(false);
 
