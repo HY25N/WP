@@ -15,16 +15,14 @@ namespace pr3
 {
     public partial class LectureControl : UserControl
     {
-        public ApplicationDbContext context;
+        // public ApplicationDbContext context;
         private DataTable lectureDataTable;
-        private Repository repo;
 
-        public LectureControl(ApplicationDbContext context, Repository repo)
+        public LectureControl(ApplicationDbContext context)
         {
             InitializeComponent();
             // this.Dock = DockStyle.Fill;
-            this.context = context;
-            this.repo = repo;
+            // this.context = context;
             InitializeDataTable();
             
             // lectureGridView.DataSource = lectureDataTable;
@@ -48,7 +46,7 @@ namespace pr3
 
             // lectureGridView.DataSource = context.Lectures.ToList();
             // db를 읽어오고, 렉처그리드뷰의 데이터소스에 렉쳐테이블을 대입한다.
-            foreach (var lecture in context.Lectures.ToList())
+            foreach (var lecture in Repository.GetContext().Lectures.ToList())
             {
                 DataRow row = lectureDataTable.NewRow();
                 row["Id"] = lecture.Id;
@@ -141,7 +139,7 @@ namespace pr3
             capacitytextBox.Text = "";
 
             // 원본 데이터로 DataGridView의 데이터를 초기화
-            lectureGridView.DataSource = context.Lectures.ToList();
+            lectureGridView.DataSource = Repository.GetContext().Lectures.ToList();
         }
 
         // 데이터그리드뷰에서 선택한 값 텍스트 박스에 띄우기
@@ -168,7 +166,7 @@ namespace pr3
 
                 // Get the selected lecture ID
                 int lectureId = int.Parse(lectureGridView.SelectedRows[0].Cells["Id"].Value.ToString());
-                Lecture lec = context.Lectures.SingleOrDefault(v => v.Id == lectureId);
+                Lecture lec = Repository.GetContext().Lectures.SingleOrDefault(v => v.Id == lectureId);
 
                 if (lec == null)
                 {
@@ -186,8 +184,8 @@ namespace pr3
                 lec.Capacity = int.TryParse(capacitytextBox.Text, out int capacityValue) ? capacityValue : lec.Capacity;
 
                 // Save changes to the database
-                context.Lectures.AddOrUpdate(lec);
-                context.SaveChanges();
+                Repository.GetContext().Lectures.AddOrUpdate(lec);
+                Repository.GetContext().SaveChanges();
 
                 // Update the corresponding row in the DataTable
                 DataRow row = lectureDataTable.Select($"Id = {lectureId}").FirstOrDefault();
@@ -217,9 +215,9 @@ namespace pr3
             {
                 int lectureId = int.Parse(lectureGridView.SelectedRows[0].Cells["Id"].Value.ToString());
                 // db 처리
-                Lecture lec = context.Lectures.SingleOrDefault(v => v.Id == lectureId);
-                context.Lectures.Remove(lec);
-                context.SaveChanges();
+                Lecture lec = Repository.GetContext().Lectures.SingleOrDefault(v => v.Id == lectureId);
+                Repository.GetContext().Lectures.Remove(lec);
+                Repository.GetContext().SaveChanges();
 
 
                 // 뷰(데이터테이블) 처리
@@ -252,7 +250,7 @@ namespace pr3
                 string lectureCode = numbertextBox.Text.Trim();
 
                 // 강의 코드 중복 체크
-                var existingLecture = context.Lectures.FirstOrDefault(l => l.Code == lectureCode);
+                var existingLecture = Repository.GetContext().Lectures.FirstOrDefault(l => l.Code == lectureCode);
                 if (existingLecture != null)
                 {
                     MessageBox.Show("이미 존재하는 강의 코드입니다. 다른 강의 코드를 입력해주세요.");
@@ -272,8 +270,8 @@ namespace pr3
                 };
 
                 // 강의를 데이터베이스에 추가
-                context.Lectures.Add(newLecture);
-                context.SaveChanges();
+                Repository.GetContext().Lectures.Add(newLecture);
+                Repository.GetContext().SaveChanges();
 
                 // 새로운 강의를 DataTable에 추가
                 DataRow newRow = lectureDataTable.NewRow();

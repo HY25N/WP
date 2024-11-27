@@ -18,7 +18,7 @@ namespace pr3
 
     public partial class MainForm : Form
     {
-        public ApplicationDbContext context;
+        // public ApplicationDbContext context;
         private StudentControl studentListViewControl;
         private Repository repo;
 
@@ -41,10 +41,10 @@ namespace pr3
         private void Form1_Load(object sender, EventArgs e)
         {
             repo = new Repository("db");
-            context = Repository.GetContext();
+            // context = Repository.GetContext();
 
 
-            studentListViewControl = new StudentControl(context, viewPanel);
+            studentListViewControl = new StudentControl(Repository.GetContext(), viewPanel);
 
             UpdateStudentGridView();
         }
@@ -61,7 +61,7 @@ namespace pr3
             // 유저컨트롤의 경우, 디자이너 화면에는 dock 속성이 보이질 않아 코드로 작성함. 
             studentListViewControl.Dock = DockStyle.Fill;
 
-            var students = context.Students.ToList();
+            var students = Repository.GetContext().Students.ToList();
 
             studentListViewControl.CreateView(students, null);
 
@@ -71,7 +71,7 @@ namespace pr3
 
         private void lectureView()
         {
-            LectureControl lectureViewControl = new LectureControl(context, repo);
+            LectureControl lectureViewControl = new LectureControl(Repository.GetContext());
 
             lectureViewControl.Dock = DockStyle.Fill;
 

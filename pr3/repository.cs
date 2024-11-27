@@ -19,7 +19,7 @@ namespace pr3
 {
     public class Repository
     {
-        public static ApplicationDbContext context;
+        private static ApplicationDbContext context;
 
         public Repository(String dbName)
         {
@@ -39,7 +39,7 @@ namespace pr3
 
         public static ApplicationDbContext GetContext()
         {
-            return context;
+            return context ?? (context = new ApplicationDbContext());
         }
 
         private void InitDB(String dbName)
@@ -326,7 +326,7 @@ namespace pr3
         public Boolean BackupDb(string backupPath)
         {
             string sourcePath = AppDomain.CurrentDomain.BaseDirectory;
-            Debug.WriteLine("소스는" + sourcePath);
+            // Debug.WriteLine("소스는" + sourcePath);
             sourcePath = Path.Combine(sourcePath, "db.sqlite");
 
             var sourceFile = new SQLiteConnection($"Data Source={sourcePath}");
@@ -346,8 +346,11 @@ namespace pr3
             string targetPath = AppDomain.CurrentDomain.BaseDirectory;
             string destinationPath = Path.Combine(targetPath, "db.sqlite");
 
+            context.Dispose();
+            context = null;
             // 파일 복사 (덮어쓰기)
             File.Copy(sourcePath, destinationPath, overwrite: true);
+            context = new ApplicationDbContext();
         }
     }
 

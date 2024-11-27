@@ -16,13 +16,13 @@ namespace pr3
 {
     public partial class StudentControl : UserControl
     {
-        public ApplicationDbContext Context;
+        // public ApplicationDbContext Context;
         public Panel ViewPanel;
 
         public StudentControl(ApplicationDbContext context, Panel viewPanel)
         {
             InitializeComponent();
-            Context = context;
+            // Context = context;
             ViewPanel = viewPanel;
         }
 
@@ -86,7 +86,7 @@ namespace pr3
             if (result1 == DialogResult.No) { MessageBox.Show("취소되었습니다."); return; }
 
             int StudentID = CreateStudentByUserInterface().StudentID;
-            Student student = Context.Students.SingleOrDefault(s => s.StudentID == StudentID);
+            Student student = Repository.GetContext().Students.SingleOrDefault(s => s.StudentID == StudentID);
             if (student == null) { MessageBox.Show("존재하지 않는 학생입니다."); return; }
 
             StudentID = int.Parse(studentIDBox.Text);
@@ -101,21 +101,21 @@ namespace pr3
 
             try
             {
-                Context.Students.AddOrUpdate(student);
-                Context.SaveChanges();
+                Repository.GetContext().Students.AddOrUpdate(student);
+                Repository.GetContext().SaveChanges();
                 MessageBox.Show("수정되었습니다.");
             }
             catch (System.Data.Entity.Infrastructure.DbUpdateException ex)
             {
                 MessageBox.Show("다시 시도해 주십시오.");
-                Context.Database.Connection.Close();
-                Context = new ApplicationDbContext();
+                // Context.Database.Connection.Close();
+                // Context = new ApplicationDbContext();
             }
             catch (Exception ex)
             {
                 MessageBox.Show("오류");
-                Context.Database.Connection.Close();
-                Context = new ApplicationDbContext();
+                // Context.Database.Connection.Close();
+                // Context = new ApplicationDbContext();
             }
         }
 
@@ -149,7 +149,7 @@ namespace pr3
                     int studentID = Convert.ToInt32(selectedRow.Cells["StudentID"].Value);
 
 
-                    Student removeTarget = Context.Students.SingleOrDefault(student => student.StudentID == studentID);
+                    Student removeTarget = Repository.GetContext().Students.SingleOrDefault(student => student.StudentID == studentID);
                     if (removeTarget == null) { MessageBox.Show("존재하지 않는 학생입니다."); return; }
 
 
@@ -162,8 +162,8 @@ namespace pr3
 
                     try
                     {
-                        Context.Students.Remove(removeTarget);
-                        Context.SaveChanges();
+                        Repository.GetContext().Students.Remove(removeTarget);
+                        Repository.GetContext().SaveChanges();
                     }
                     catch (Exception ex)
                     {
@@ -190,22 +190,22 @@ namespace pr3
             // 그래서 예외 발생시 디비 연결을 다시 한다.
             try
             {
-                Context.Students.Add(student);
+                Repository.GetContext().Students.Add(student);
                 // Context.Students.Attach(student);
-                Context.SaveChanges();
+                Repository.GetContext().SaveChanges();
                 MessageBox.Show("등록되었습니다.");
             }
             catch (System.Data.Entity.Infrastructure.DbUpdateException ex)
             {
                 MessageBox.Show("이미 등록된 정보입니다.\n등록할 수 없습니다.");
-                Context.Database.Connection.Close();
-                Context = new ApplicationDbContext();
+                // Context.Database.Connection.Close();
+                // Context = new ApplicationDbContext();
             }
             catch (Exception ex)
             {
                 MessageBox.Show("알 수 없는 오류가 발생했습니다.\n등록할 수 없습니다.");
-                Context.Database.Connection.Close();
-                Context = new ApplicationDbContext();
+                // Context.Database.Connection.Close();
+                // Context = new ApplicationDbContext();
             }
 
         }
@@ -249,7 +249,7 @@ namespace pr3
 
         private void resetButton_Click(object sender, EventArgs e)
         {
-            CreateView(Context.Students.ToList(), null);
+            CreateView(Repository.GetContext().Students.ToList(), null);
         }
 
 

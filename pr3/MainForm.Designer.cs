@@ -74,7 +74,7 @@
             this.sidebar.Location = new System.Drawing.Point(3, 4);
             this.sidebar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.sidebar.Name = "sidebar";
-            this.sidebar.Size = new System.Drawing.Size(206, 773);
+            this.sidebar.Size = new System.Drawing.Size(206, 895);
             this.sidebar.TabIndex = 52;
             // 
             // panel3
@@ -105,7 +105,7 @@
             // 
             this.splitter1.Location = new System.Drawing.Point(0, 0);
             this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(3, 773);
+            this.splitter1.Size = new System.Drawing.Size(3, 895);
             this.splitter1.TabIndex = 3;
             this.splitter1.TabStop = false;
             // 
@@ -155,11 +155,12 @@
             this.viewPanel.Location = new System.Drawing.Point(220, 10);
             this.viewPanel.Margin = new System.Windows.Forms.Padding(8, 10, 8, 10);
             this.viewPanel.Name = "viewPanel";
-            this.viewPanel.Size = new System.Drawing.Size(1573, 761);
+            this.viewPanel.Size = new System.Drawing.Size(1873, 883);
             this.viewPanel.TabIndex = 0;
             // 
             // menuStrip1
             // 
+            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(28, 28);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.파일FToolStripMenuItem,
@@ -168,7 +169,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(7, 3, 0, 3);
-            this.menuStrip1.Size = new System.Drawing.Size(1801, 42);
+            this.menuStrip1.Size = new System.Drawing.Size(2101, 49);
             this.menuStrip1.TabIndex = 54;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -180,7 +181,7 @@
             this.toolStripMenuItem2,
             this.끝내기XToolStripMenuItem});
             this.파일FToolStripMenuItem.Name = "파일FToolStripMenuItem";
-            this.파일FToolStripMenuItem.Size = new System.Drawing.Size(95, 36);
+            this.파일FToolStripMenuItem.Size = new System.Drawing.Size(95, 43);
             this.파일FToolStripMenuItem.Text = "파일(&F)";
             // 
             // toolStripMenuItem1
@@ -214,7 +215,7 @@
             this.toolStripMenuItem3,
             this.데이터백업ToolStripMenuItem});
             this.관리ToolStripMenuItem.Name = "관리ToolStripMenuItem";
-            this.관리ToolStripMenuItem.Size = new System.Drawing.Size(104, 36);
+            this.관리ToolStripMenuItem.Size = new System.Drawing.Size(104, 43);
             this.관리ToolStripMenuItem.Text = "관리(&M)";
             // 
             // 계정수정미구현ToolStripMenuItem
@@ -243,7 +244,7 @@
             this.toolStripMenuItem4,
             this.프로그램정보ToolStripMenuItem});
             this.도움말ToolStripMenuItem2.Name = "도움말ToolStripMenuItem2";
-            this.도움말ToolStripMenuItem2.Size = new System.Drawing.Size(121, 36);
+            this.도움말ToolStripMenuItem2.Size = new System.Drawing.Size(121, 43);
             this.도움말ToolStripMenuItem2.Text = "도움말(&H)";
             // 
             // 도움말보기ToolStripMenuItem
@@ -276,12 +277,12 @@
             this.tableLayoutPanel1.Controls.Add(this.viewPanel, 1, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.FixedSize;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 42);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 57);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1801, 781);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(2101, 903);
             this.tableLayoutPanel1.TabIndex = 55;
             // 
             // rToolStripMenuItem1
@@ -299,7 +300,7 @@
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MinimumSize = new System.Drawing.Size(1298, 696);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

@@ -16,12 +16,12 @@ namespace pr3
 {
     public partial class Statistics : UserControl
     {
-        public ApplicationDbContext Context;
+        // public ApplicationDbContext Context;
 
         public Statistics(ApplicationDbContext context)
         {
             InitializeComponent();
-            Context = context;
+            // Context = context;
         }
 
 
@@ -50,7 +50,7 @@ namespace pr3
         private List<GradeStats> LoadStudentStatistics()
         {
             // 학생 데이터 가져오기
-            List<Student>  students = Context.Students.ToList();
+            List<Student>  students = Repository.GetContext().Students.ToList();
 
             // 학년별 학생 수 통계 계산
             var gradeStats = students
@@ -65,7 +65,7 @@ namespace pr3
         private List<DepartmentStats> LoadDepartmentStatsStatistics()
         {
             // 학생 데이터 가져오기
-            List<Student>  students = Context.Students.ToList();
+            List<Student>  students = Repository.GetContext().Students.ToList();
 
             // 학년별 학생 수 통계 계산
             // 학과별 학생 수 통계 계산
@@ -85,15 +85,15 @@ namespace pr3
             chart1.Dock = DockStyle.Fill;
 
             // 데이터 가져오기
-            Student s = Context.Students.FirstOrDefault(v => v.StudentID == studentId);
-            List<Enrollment> enrollments = Context.Enrollments.Where(v => v.StudentId == studentId).ToList();
+            Student s = Repository.GetContext().Students.FirstOrDefault(v => v.StudentID == studentId);
+            List<Enrollment> enrollments = Repository.GetContext().Enrollments.Where(v => v.StudentId == studentId).ToList();
 
             List<Registration> registrations = new List<Registration>();
 
             foreach (var e in enrollments)
             {
                 // registrations.AddRange(Context.Registrations.Where(v => v.EnrollmentId == e.Id).Include(r => r.Lecture));
-                registrations.AddRange(Context.Registrations.Where(v => v.EnrollmentId == e.Id).Include(r => r.Lecture).ToList());
+                registrations.AddRange(Repository.GetContext().Registrations.Where(v => v.EnrollmentId == e.Id).Include(r => r.Lecture).ToList());
             }
 
 
