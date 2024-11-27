@@ -52,9 +52,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.birthdayDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.grade2Box = new System.Windows.Forms.ComboBox();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.departmentBox = new System.Windows.Forms.TextBox();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.nameBox = new System.Windows.Forms.TextBox();
             this.grade1Box = new System.Windows.Forms.ComboBox();
             this.studentIDBox = new System.Windows.Forms.TextBox();
@@ -120,6 +118,7 @@
             this.studentDataGridView.AllowUserToResizeRows = false;
             this.studentDataGridView.AutoGenerateColumns = false;
             this.studentDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.studentDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ControlDark;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -142,7 +141,7 @@
             this.studentDataGridView.DataSource = this.studentBindingSource;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("굴림", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -230,9 +229,7 @@
             this.studentInfoGroupBox.Controls.Add(this.label6);
             this.studentInfoGroupBox.Controls.Add(this.birthdayDateTimePicker);
             this.studentInfoGroupBox.Controls.Add(this.grade2Box);
-            this.studentInfoGroupBox.Controls.Add(this.radioButton1);
             this.studentInfoGroupBox.Controls.Add(this.departmentBox);
-            this.studentInfoGroupBox.Controls.Add(this.radioButton2);
             this.studentInfoGroupBox.Controls.Add(this.nameBox);
             this.studentInfoGroupBox.Controls.Add(this.grade1Box);
             this.studentInfoGroupBox.Controls.Add(this.studentIDBox);
@@ -303,7 +300,7 @@
             // emailBox
             // 
             this.emailBox.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.emailBox.Location = new System.Drawing.Point(665, 152);
+            this.emailBox.Location = new System.Drawing.Point(640, 152);
             this.emailBox.Margin = new System.Windows.Forms.Padding(4);
             this.emailBox.Name = "emailBox";
             this.emailBox.Size = new System.Drawing.Size(287, 40);
@@ -323,7 +320,7 @@
             // phoneNumberBox
             // 
             this.phoneNumberBox.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.phoneNumberBox.Location = new System.Drawing.Point(374, 95);
+            this.phoneNumberBox.Location = new System.Drawing.Point(349, 95);
             this.phoneNumberBox.Margin = new System.Windows.Forms.Padding(4);
             this.phoneNumberBox.Mask = "000-9000-0000";
             this.phoneNumberBox.Name = "phoneNumberBox";
@@ -355,7 +352,7 @@
             // birthdayDateTimePicker
             // 
             this.birthdayDateTimePicker.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.birthdayDateTimePicker.Location = new System.Drawing.Point(690, 99);
+            this.birthdayDateTimePicker.Location = new System.Drawing.Point(665, 99);
             this.birthdayDateTimePicker.Margin = new System.Windows.Forms.Padding(4);
             this.birthdayDateTimePicker.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             this.birthdayDateTimePicker.Name = "birthdayDateTimePicker";
@@ -370,54 +367,28 @@
             this.grade2Box.Items.AddRange(new object[] {
             " 1",
             " 2"});
-            this.grade2Box.Location = new System.Drawing.Point(786, 42);
+            this.grade2Box.Location = new System.Drawing.Point(761, 42);
             this.grade2Box.Margin = new System.Windows.Forms.Padding(4);
             this.grade2Box.Name = "grade2Box";
             this.grade2Box.Size = new System.Drawing.Size(93, 36);
             this.grade2Box.TabIndex = 60;
             // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.radioButton1.Location = new System.Drawing.Point(900, 23);
-            this.radioButton1.Margin = new System.Windows.Forms.Padding(4);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(93, 32);
-            this.radioButton1.TabIndex = 58;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "재학";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            // 
             // departmentBox
             // 
             this.departmentBox.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.departmentBox.Location = new System.Drawing.Point(72, 36);
+            this.departmentBox.Location = new System.Drawing.Point(57, 36);
             this.departmentBox.Margin = new System.Windows.Forms.Padding(4);
             this.departmentBox.Name = "departmentBox";
-            this.departmentBox.Size = new System.Drawing.Size(321, 40);
+            this.departmentBox.Size = new System.Drawing.Size(314, 40);
             this.departmentBox.TabIndex = 54;
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.radioButton2.Location = new System.Drawing.Point(900, 59);
-            this.radioButton2.Margin = new System.Windows.Forms.Padding(4);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(93, 32);
-            this.radioButton2.TabIndex = 59;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "휴학";
-            this.radioButton2.UseVisualStyleBackColor = true;
             // 
             // nameBox
             // 
             this.nameBox.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.nameBox.Location = new System.Drawing.Point(72, 87);
+            this.nameBox.Location = new System.Drawing.Point(57, 87);
             this.nameBox.Margin = new System.Windows.Forms.Padding(4);
             this.nameBox.Name = "nameBox";
-            this.nameBox.Size = new System.Drawing.Size(186, 40);
+            this.nameBox.Size = new System.Drawing.Size(179, 40);
             this.nameBox.TabIndex = 52;
             // 
             // grade1Box
@@ -435,7 +406,7 @@
             "7",
             "8",
             "9"});
-            this.grade1Box.Location = new System.Drawing.Point(690, 44);
+            this.grade1Box.Location = new System.Drawing.Point(665, 44);
             this.grade1Box.Margin = new System.Windows.Forms.Padding(4);
             this.grade1Box.Name = "grade1Box";
             this.grade1Box.Size = new System.Drawing.Size(88, 36);
@@ -444,7 +415,7 @@
             // studentIDBox
             // 
             this.studentIDBox.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.studentIDBox.Location = new System.Drawing.Point(492, 39);
+            this.studentIDBox.Location = new System.Drawing.Point(467, 39);
             this.studentIDBox.Margin = new System.Windows.Forms.Padding(4);
             this.studentIDBox.Name = "studentIDBox";
             this.studentIDBox.Size = new System.Drawing.Size(87, 40);
@@ -486,10 +457,10 @@
             // addressBox
             // 
             this.addressBox.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.addressBox.Location = new System.Drawing.Point(72, 141);
+            this.addressBox.Location = new System.Drawing.Point(57, 141);
             this.addressBox.Margin = new System.Windows.Forms.Padding(4);
             this.addressBox.Name = "addressBox";
-            this.addressBox.Size = new System.Drawing.Size(464, 40);
+            this.addressBox.Size = new System.Drawing.Size(457, 40);
             this.addressBox.TabIndex = 53;
             // 
             // label2
@@ -632,9 +603,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DateTimePicker birthdayDateTimePicker;
         private System.Windows.Forms.ComboBox grade2Box;
-        private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.TextBox departmentBox;
-        private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.TextBox nameBox;
         private System.Windows.Forms.ComboBox grade1Box;
         private System.Windows.Forms.TextBox studentIDBox;
