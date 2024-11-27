@@ -228,19 +228,19 @@
             // 도움말보기ToolStripMenuItem
             // 
             this.도움말보기ToolStripMenuItem.Name = "도움말보기ToolStripMenuItem";
-            this.도움말보기ToolStripMenuItem.Size = new System.Drawing.Size(290, 40);
+            this.도움말보기ToolStripMenuItem.Size = new System.Drawing.Size(315, 40);
             this.도움말보기ToolStripMenuItem.Text = "도움말 보기(&V)";
             this.도움말보기ToolStripMenuItem.Click += new System.EventHandler(this.도움말보기ToolStripMenuItem_Click);
             // 
             // toolStripMenuItem4
             // 
             this.toolStripMenuItem4.Name = "toolStripMenuItem4";
-            this.toolStripMenuItem4.Size = new System.Drawing.Size(287, 6);
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(312, 6);
             // 
             // 프로그램정보ToolStripMenuItem
             // 
             this.프로그램정보ToolStripMenuItem.Name = "프로그램정보ToolStripMenuItem";
-            this.프로그램정보ToolStripMenuItem.Size = new System.Drawing.Size(290, 40);
+            this.프로그램정보ToolStripMenuItem.Size = new System.Drawing.Size(315, 40);
             this.프로그램정보ToolStripMenuItem.Text = "프로그램 정보(&A)";
             this.프로그램정보ToolStripMenuItem.Click += new System.EventHandler(this.프로그램정보ToolStripMenuItem_Click);
             // 

@@ -143,6 +143,9 @@ namespace pr3
                 {
                     // 선택한 파일 경로
                     string filePath = openFileDialog.FileName;
+                    string fileExtension = Path.GetExtension(filePath).ToLower();
+
+                    if (fileExtension != ".sqlite") throw new Exception("올바르지 데이터베이스 파일입니다.");
 
                     repo.OverwriteDb(filePath);
 
@@ -155,7 +158,7 @@ namespace pr3
                 catch (Exception ex)
                 {
                     // 오류 처리
-                    MessageBox.Show($"파일을 불러오는 중 오류가 발생했습니다: {ex.Message}", "오류", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show($"파일을 불러오는 중 오류가 발생했습니다.\n{ex.Message}", "오류", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         
