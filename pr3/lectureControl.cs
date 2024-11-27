@@ -241,7 +241,7 @@ namespace pr3
         {
             try
             {
-                // Validate input data
+                // 입력 데이터 검증
                 if (string.IsNullOrEmpty(numbertextBox.Text) || string.IsNullOrEmpty(subjecttextBox.Text) ||
                     string.IsNullOrEmpty(professortextBox.Text) || completioncomboBox.SelectedIndex == -1)
                 {
@@ -249,25 +249,35 @@ namespace pr3
                     return;
                 }
 
-                // Create a new lecture object
+                string lectureCode = numbertextBox.Text.Trim();
+
+                // 강의 코드 중복 체크
+                var existingLecture = context.Lectures.FirstOrDefault(l => l.Code == lectureCode);
+                if (existingLecture != null)
+                {
+                    MessageBox.Show("이미 존재하는 강의 코드입니다. 다른 강의 코드를 입력해주세요.");
+                    return; // 중복된 코드가 있으면 강의를 추가하지 않음
+                }
+
+                // 새로운 강의 객체 생성
                 Lecture newLecture = new Lecture
                 {
-                    Code = numbertextBox.Text,
-                    Name = subjecttextBox.Text,
-                    Manager = professortextBox.Text,
+                    Code = lectureCode,
+                    Name = subjecttextBox.Text.Trim(),
+                    Manager = professortextBox.Text.Trim(),
                     Completion = completioncomboBox.SelectedItem.ToString(),
                     Credit = int.TryParse(creditcomboBox.Text, out int creditValue) ? creditValue : 0,
-                    Place = placetextBox.Text,
+                    Place = placetextBox.Text.Trim(),
                     Capacity = int.TryParse(capacitytextBox.Text, out int capacityValue) ? capacityValue : 0
                 };
 
-                // Add the lecture to the database
+                // 강의를 데이터베이스에 추가
                 context.Lectures.Add(newLecture);
                 context.SaveChanges();
 
-                // Add the new lecture to the DataTable
+                // 새로운 강의를 DataTable에 추가
                 DataRow newRow = lectureDataTable.NewRow();
-                newRow["Id"] = newLecture.Id; // ID will be generated automatically by the database
+                newRow["Id"] = newLecture.Id; // ID는 데이터베이스에서 자동으로 생성됨
                 newRow["Code"] = newLecture.Code;
                 newRow["Name"] = newLecture.Name;
                 newRow["Completion"] = newLecture.Completion;
@@ -277,9 +287,10 @@ namespace pr3
                 newRow["Capacity"] = newLecture.Capacity;
                 lectureDataTable.Rows.Add(newRow);
 
-                // Refresh the grid view
+                // 그리드뷰 갱신
                 lectureGridView.DataSource = lectureDataTable;
 
+                // 강의 추가 완료 메시지
                 MessageBox.Show("새 강의가 추가되었습니다.");
             }
             catch (Exception ex)
