@@ -426,6 +426,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Info;
             this.Controls.Add(this.editgroupBox);
             this.Controls.Add(this.searchgroupBox);
             this.Controls.Add(this.lectureGridView);

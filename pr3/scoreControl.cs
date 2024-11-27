@@ -24,11 +24,16 @@ namespace pr3
         public ScoreControl()
         {
             InitializeComponent();
+
+            lectureComboBox.DataSource = Repository.GetContext().Lectures.ToList();
+            lectureComboBox.DisplayMember = "Name"; // 사용자에게 표시할 항목
+            lectureComboBox.ValueMember = "Id";
         }
 
         public ScoreControl(int studentId)
         {
             InitializeComponent();
+
             this.student = Repository.GetContext().Students.SingleOrDefault(v => v.StudentID == studentId);
             if (this.student==null) return;
 
