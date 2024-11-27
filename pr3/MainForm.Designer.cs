@@ -30,6 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.sidebar = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.scorebutton = new System.Windows.Forms.Label();
             this.lectureButton = new System.Windows.Forms.Label();
@@ -37,7 +40,6 @@
             this.viewPanel = new System.Windows.Forms.Panel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.파일FToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.파일불러오기ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
             this.끝내기XToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -51,9 +53,6 @@
             this.프로그램정보ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.rToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.sidebar.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -76,6 +75,30 @@
             this.sidebar.Name = "sidebar";
             this.sidebar.Size = new System.Drawing.Size(243, 889);
             this.sidebar.TabIndex = 52;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.Black;
+            this.panel3.Location = new System.Drawing.Point(3, 291);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(243, 2);
+            this.panel3.TabIndex = 6;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Black;
+            this.panel2.Location = new System.Drawing.Point(1, 195);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(243, 2);
+            this.panel2.TabIndex = 5;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Black;
+            this.panel1.Location = new System.Drawing.Point(0, 99);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(243, 2);
+            this.panel1.TabIndex = 4;
             // 
             // splitter1
             // 
@@ -156,7 +179,6 @@
             // 파일FToolStripMenuItem
             // 
             this.파일FToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem1,
             this.파일불러오기ToolStripMenuItem,
             this.toolStripMenuItem2,
             this.끝내기XToolStripMenuItem});
@@ -164,27 +186,22 @@
             this.파일FToolStripMenuItem.Size = new System.Drawing.Size(108, 36);
             this.파일FToolStripMenuItem.Text = "파일(&F)";
             // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(329, 6);
-            // 
             // 파일불러오기ToolStripMenuItem
             // 
             this.파일불러오기ToolStripMenuItem.Name = "파일불러오기ToolStripMenuItem";
-            this.파일불러오기ToolStripMenuItem.Size = new System.Drawing.Size(332, 44);
+            this.파일불러오기ToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
             this.파일불러오기ToolStripMenuItem.Text = "파일 불러오기(&O)";
             this.파일불러오기ToolStripMenuItem.Click += new System.EventHandler(this.파일불러오기ToolStripMenuItem_Click);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(329, 6);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(356, 6);
             // 
             // 끝내기XToolStripMenuItem
             // 
             this.끝내기XToolStripMenuItem.Name = "끝내기XToolStripMenuItem";
-            this.끝내기XToolStripMenuItem.Size = new System.Drawing.Size(332, 44);
+            this.끝내기XToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
             this.끝내기XToolStripMenuItem.Text = "끝내기(&X)";
             this.끝내기XToolStripMenuItem.Click += new System.EventHandler(this.끝내기XToolStripMenuItem_Click);
             // 
@@ -201,19 +218,19 @@
             // 계정수정미구현ToolStripMenuItem
             // 
             this.계정수정미구현ToolStripMenuItem.Name = "계정수정미구현ToolStripMenuItem";
-            this.계정수정미구현ToolStripMenuItem.Size = new System.Drawing.Size(302, 44);
+            this.계정수정미구현ToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
             this.계정수정미구현ToolStripMenuItem.Text = "비밀번호 변경";
             this.계정수정미구현ToolStripMenuItem.Click += new System.EventHandler(this.비밀번호변경ToolStripMenuItem_Click);
             // 
             // toolStripMenuItem3
             // 
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(299, 6);
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(356, 6);
             // 
             // 데이터백업ToolStripMenuItem
             // 
             this.데이터백업ToolStripMenuItem.Name = "데이터백업ToolStripMenuItem";
-            this.데이터백업ToolStripMenuItem.Size = new System.Drawing.Size(302, 44);
+            this.데이터백업ToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
             this.데이터백업ToolStripMenuItem.Text = "데이터 백업&(S)";
             this.데이터백업ToolStripMenuItem.Click += new System.EventHandler(this.데이터백업ToolStripMenuItem_Click);
             // 
@@ -230,19 +247,19 @@
             // 도움말보기ToolStripMenuItem
             // 
             this.도움말보기ToolStripMenuItem.Name = "도움말보기ToolStripMenuItem";
-            this.도움말보기ToolStripMenuItem.Size = new System.Drawing.Size(329, 44);
+            this.도움말보기ToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
             this.도움말보기ToolStripMenuItem.Text = "도움말 보기(&V)";
             this.도움말보기ToolStripMenuItem.Click += new System.EventHandler(this.도움말보기ToolStripMenuItem_Click);
             // 
             // toolStripMenuItem4
             // 
             this.toolStripMenuItem4.Name = "toolStripMenuItem4";
-            this.toolStripMenuItem4.Size = new System.Drawing.Size(326, 6);
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(356, 6);
             // 
             // 프로그램정보ToolStripMenuItem
             // 
             this.프로그램정보ToolStripMenuItem.Name = "프로그램정보ToolStripMenuItem";
-            this.프로그램정보ToolStripMenuItem.Size = new System.Drawing.Size(329, 44);
+            this.프로그램정보ToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
             this.프로그램정보ToolStripMenuItem.Text = "프로그램 정보(&A)";
             this.프로그램정보ToolStripMenuItem.Click += new System.EventHandler(this.프로그램정보ToolStripMenuItem_Click);
             // 
@@ -270,30 +287,6 @@
             this.rToolStripMenuItem1.Name = "rToolStripMenuItem1";
             this.rToolStripMenuItem1.Size = new System.Drawing.Size(32, 19);
             this.rToolStripMenuItem1.Text = "r";
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.Black;
-            this.panel1.Location = new System.Drawing.Point(0, 99);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(243, 2);
-            this.panel1.TabIndex = 4;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.Black;
-            this.panel2.Location = new System.Drawing.Point(1, 195);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(243, 2);
-            this.panel2.TabIndex = 5;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.Black;
-            this.panel3.Location = new System.Drawing.Point(3, 291);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(243, 2);
-            this.panel3.TabIndex = 6;
             // 
             // MainForm
             // 
@@ -339,7 +332,6 @@
         private System.Windows.Forms.Label scorebutton;
         private System.Windows.Forms.Splitter splitter1;
         private System.Windows.Forms.ToolStripMenuItem 파일불러오기ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem3;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem4;
