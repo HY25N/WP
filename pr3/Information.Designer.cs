@@ -66,21 +66,20 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 426);
+            this.label4.Location = new System.Drawing.Point(12, 409);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(105, 21);
+            this.label4.Size = new System.Drawing.Size(287, 21);
             this.label4.TabIndex = 3;
-            this.label4.Text = "제작 : 7조";
+            this.label4.Text = "제작 : 윈도우 프로그래밍 7조";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(22, 230);
+            this.label5.Location = new System.Drawing.Point(12, 234);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(304, 168);
+            this.label5.Size = new System.Drawing.Size(262, 126);
             this.label5.TabIndex = 4;
-            this.label5.Text = "본 프로그램은 다음 기여자들의\r\n도움으로 개발되었습니다.\r\n\r\n-강민 : 성적 조회\r\n-김주현 : 성적 관리\r\n-백홍빈 : 학생 추가\r\n-이규찬 " +
-    ": 비밀번호 변경\r\n-이윤효 : 로그인";
+            this.label5.Text = "v1.0.0 주요 기능\r\n\r\n학생 정보 등록, 수정, 삭제\r\n강의 등록, 수정, 삭제\r\n성적 등록,수정, 삭제\r\n비밀번호 변경 기능 추가";
             // 
             // label6
             // 
