@@ -43,7 +43,7 @@ namespace pr3
             lectureDataTable.Columns.Add("Place", typeof(string));   // 강의 요일/시간
             lectureDataTable.Columns.Add("Capacity", typeof(int));   // 수강인원
 
-            if (!context.Lectures.Any()) repo.AddLectureSampleData(lectureDataTable);
+            // if (!context.Lectures.Any()) repo.AddLectureSampleData(lectureDataTable);
             
 
             // lectureGridView.DataSource = context.Lectures.ToList();

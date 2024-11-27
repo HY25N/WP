@@ -24,6 +24,15 @@ namespace pr3
         public Repository(String dbName)
         {
             InitDB(dbName);
+
+            // 학생만 검사함.
+            if (!context.Students.Any())
+            {
+                // DialogResult result1 = MessageBox.Show($"DB가 비어있습니다.\n 샘플 DB를 불러오겠습니까?", "데이터베이스", MessageBoxButtons.YesNo);
+                // if (result1 == DialogResult.No) return;
+                CreateStudentsDummy(10);
+            }
+            if (!context.Lectures.Any()) AddLectureSampleData();
             if (!context.Enrollments.Any()) CreateEnrollentDummy();
             if (!context.Registrations.Any()) CreateRegistrationDummy();
         }
@@ -228,7 +237,7 @@ namespace pr3
             context.SaveChanges();
         }
 
-        public List<Lecture> AddLectureSampleData(DataTable targetDataTable)
+        public List<Lecture> AddLectureSampleData()
         {
             List<Lecture> lectureList = new List<Lecture> {
                 new Lecture("CS101", "프로그래밍 기초", "전공 필수", "홍길동", 3, "월 10:00-12:00, 화 10:00-11:00", 40),

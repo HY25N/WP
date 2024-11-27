@@ -47,8 +47,6 @@ namespace pr3
             studentListViewControl = new StudentControl(context, viewPanel);
 
             UpdateStudentGridView();
-
-            if (!context.Students.Any()) repo.CreateStudentsDummy(30);
         }
 
 
