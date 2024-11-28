@@ -165,7 +165,7 @@ namespace pr3
                 ViewEnrollmentInfo(0);
                 stat.GetRegistrationsByStudentid(student.StudentID);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 MessageBox.Show($"문제가 발생했어요!", "문제");
             }
@@ -200,7 +200,7 @@ namespace pr3
                 ViewEnrollmentInfo(0);
                 stat.GetRegistrationsByStudentid(student.StudentID);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 MessageBox.Show($"문제가 발생했어요!", "문제");
             }

@@ -105,17 +105,15 @@ namespace pr3
                 Repository.GetContext().SaveChanges();
                 MessageBox.Show("수정되었습니다.");
             }
-            catch (System.Data.Entity.Infrastructure.DbUpdateException ex)
+            catch (System.Data.Entity.Infrastructure.DbUpdateException)
             {
                 MessageBox.Show("다시 시도해 주십시오.");
-                // Context.Database.Connection.Close();
-                // Context = new ApplicationDbContext();
+                Repository.Reset();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 MessageBox.Show("오류");
-                // Context.Database.Connection.Close();
-                // Context = new ApplicationDbContext();
+                Repository.Reset();
             }
         }
 
@@ -195,17 +193,15 @@ namespace pr3
                 Repository.GetContext().SaveChanges();
                 MessageBox.Show("등록되었습니다.");
             }
-            catch (System.Data.Entity.Infrastructure.DbUpdateException ex)
+            catch (System.Data.Entity.Infrastructure.DbUpdateException)
             {
                 MessageBox.Show("이미 등록된 정보입니다.\n등록할 수 없습니다.");
-                // Context.Database.Connection.Close();
-                // Context = new ApplicationDbContext();
+                Repository.Reset();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 MessageBox.Show("알 수 없는 오류가 발생했습니다.\n등록할 수 없습니다.");
-                // Context.Database.Connection.Close();
-                // Context = new ApplicationDbContext();
+                Repository.Reset();
             }
 
         }

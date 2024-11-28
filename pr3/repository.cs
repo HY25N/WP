@@ -13,6 +13,7 @@ using System.Xml.Linq;
 using System.Data.SQLite;
 using System.Diagnostics;
 using System.Data;
+using System.Data.Entity.Core.Metadata.Edm;
 
 
 namespace pr3
@@ -40,6 +41,15 @@ namespace pr3
         public static ApplicationDbContext GetContext()
         {
             return context ?? (context = new ApplicationDbContext());
+        }
+
+        public static void Reset()
+        {
+            context.Database.Connection.Close();
+            context.Dispose();
+            SQLiteConnection.ClearAllPools();
+            context = null;
+            context = new ApplicationDbContext();
         }
 
         private void InitDB(String dbName)
@@ -320,12 +330,10 @@ namespace pr3
             context.SaveChanges();
         }
 
-
-
-
         public Boolean BackupDb(string backupPath)
         {
-            string sourcePath = AppDomain.CurrentDomain.BaseDirectory;
+            string sourcePath = AppDomain.CurrentDomain.GetData("DataDirectory")?.ToString();
+            if (sourcePath == null) sourcePath = AppDomain.CurrentDomain.BaseDirectory;
             // Debug.WriteLine("소스는" + sourcePath);
             sourcePath = Path.Combine(sourcePath, "db.sqlite");
 
@@ -343,14 +351,73 @@ namespace pr3
 
         public void OverwriteDb(string sourcePath)
         {
-            string targetPath = AppDomain.CurrentDomain.BaseDirectory;
+            // string targetPath = AppDomain.CurrentDomain.BaseDirectory;
+            // string destinationPath = Path.Combine(targetPath, "db.sqlite");
+            // destinationPath = AppDomain.CurrentDomain.GetData("DataDirectory")?.ToString();
+            // destinationPath = Path.Combine(destinationPath, "db.sqlite");
+            //
+            // context.Database.Connection.Close();
+            // context.Dispose();
+            // context = null;
+            // SQLiteConnection.ClearAllPools();
+            //
+            // if (File.Exists(destinationPath))
+            // {
+            //     File.Delete(destinationPath);
+            // }
+            // // 파일 복사 (덮어쓰기)
+            // File.Copy(sourcePath, destinationPath, overwrite: true);
+            // SQLiteConnection.ClearAllPools();
+            // context = new ApplicationDbContext();
+            //
+            // MessageBox.Show("데이터베이스가 복원되었습니다. 프로그램을 다시 시작합니다.");
+
+
+            string targetPath = AppDomain.CurrentDomain.GetData("DataDirectory")?.ToString();
+            if (string.IsNullOrEmpty(targetPath))
+            {
+                // throw new Exception("DataDirectory 경로를 찾을 수 없습니다.");
+                targetPath = AppDomain.CurrentDomain.BaseDirectory;
+            }
             string destinationPath = Path.Combine(targetPath, "db.sqlite");
 
-            context.Dispose();
-            context = null;
-            // 파일 복사 (덮어쓰기)
-            File.Copy(sourcePath, destinationPath, overwrite: true);
-            context = new ApplicationDbContext();
+            try
+            {
+                // 모든 SQLite 연결 해제
+                SQLiteConnection.ClearAllPools();
+
+                // 기존 DbContext 해제
+                if (context != null)
+                {
+                    context.Database.Connection.Close();
+                    context.Dispose();
+                    context = null;
+                }
+
+                // 강제로 가비지 컬렉터 실행
+                GC.Collect();
+                GC.WaitForPendingFinalizers();
+
+                // 기존 파일 삭제
+                if (File.Exists(destinationPath))
+                {
+                    File.Delete(destinationPath);
+                }
+
+                // 파일 복사 (덮어쓰기)
+                File.Copy(sourcePath, destinationPath, overwrite: true);
+
+                // 새로운 DbContext 생성
+                context = new ApplicationDbContext();
+
+                MessageBox.Show("데이터베이스가 성공적으로 복원되었습니다.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"복구 중 오류 발생: {ex.Message}");
+            }
+
+
         }
     }
 

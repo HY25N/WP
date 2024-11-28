@@ -43,7 +43,7 @@ namespace pr3.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("qw")]
+        [global::System.Configuration.DefaultSettingValueAttribute("wk")]
         public string loginUsername {
             get {
                 return ((string)(this["loginUsername"]));
@@ -55,7 +55,7 @@ namespace pr3.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("qw")]
+        [global::System.Configuration.DefaultSettingValueAttribute("wk")]
         public string loginPassword {
             get {
                 return ((string)(this["loginPassword"]));

@@ -9,10 +9,10 @@
       <Value Profile="(Default)">비밀번호를 입력하세요.</Value>
     </Setting>
     <Setting Name="loginUsername" Type="System.String" Scope="User">
-      <Value Profile="(Default)">qw</Value>
+      <Value Profile="(Default)">wk</Value>
     </Setting>
     <Setting Name="loginPassword" Type="System.String" Scope="User">
-      <Value Profile="(Default)">qw</Value>
+      <Value Profile="(Default)">wk</Value>
     </Setting>
   </Settings>
 </SettingsFile>
